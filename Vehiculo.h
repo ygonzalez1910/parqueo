@@ -9,10 +9,10 @@ class Vehiculo {
 public:
 	Vehiculo(string,string,float,string);
 	~Vehiculo();
-	string setMarca();
-	string setPlaca();
-	float setTonelaje();
-	string setColor();
+	void setMarca(string);
+	void setPlaca(string);
+	void setTonelaje(float);
+	void setColor(int);
 private:
 	string marca;
 	string placa;

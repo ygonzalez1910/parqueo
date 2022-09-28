@@ -10,19 +10,19 @@ Vehiculo::~Vehiculo() {
 }
 
 
-string Vehiculo::setMarca ( ) {
-	marca = marca;
+void Vehiculo::setMarca (string marca) {
+	this->marca = marca;
 }
 
-string Vehiculo::setPlaca ( ) {
-placa = placa;
+void Vehiculo::setPlaca (string placa) {
+	this->placa = placa;
 }
 
-float Vehiculo::setTonelaje ( ) {
-	tonelaje = tonelaje;
+void Vehiculo::setTonelaje (float tonelaje) {
+	this->tonelaje = tonelaje;
 }
 
-string Vehiculo::setColor ( ) {
-	color = color;
+void Vehiculo::setColor (int color) {
+	this->color=color;
 }
 
