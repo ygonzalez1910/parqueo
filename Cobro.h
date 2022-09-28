@@ -9,8 +9,6 @@ public:
 	~Cobro();
 	
 private:
-	string EntradaVehiculo;
-	string SalidaVehiculo;
 	const double PrecioHora = 800.00;
 
 };
