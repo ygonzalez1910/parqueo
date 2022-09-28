@@ -8,8 +8,8 @@ class Hora {
 public:
 	Hora(string,string);
 	~Hora();
-	string setHoraEntrada();
-	string setHoraSalida();
+	void setHoraEntrada(string);
+	void setHoraSalida(string);
 	
 private:
 	string horaEntrada;

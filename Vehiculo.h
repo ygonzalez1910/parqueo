@@ -12,7 +12,8 @@ public:
 	void setMarca(string);
 	void setPlaca(string);
 	void setTonelaje(float);
-	void setColor(int);
+	void setColor(string);
+	
 private:
 	string marca;
 	string placa;

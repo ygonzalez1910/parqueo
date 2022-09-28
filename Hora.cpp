@@ -9,11 +9,11 @@ Hora::~Hora() {
 	
 }
 
-string Hora::setHoraEntrada ( ) {
-	horaEntrada = horaEntrada;
+void Hora::setHoraEntrada (string) {
+	this->horaEntrada = horaEntrada;
 }
 
-string Hora::setHoraSalida ( ) {
-	horaSalida = horaSalida;
+void Hora::setHoraSalida (string) {
+	this->horaSalida = horaSalida;
 }
 

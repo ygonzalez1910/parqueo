@@ -14,20 +14,15 @@ void Vehiculo::setMarca (string marca) {
 	this->marca = marca;
 }
 
-<<<<<<< Updated upstream
 void Vehiculo::setPlaca (string placa) {
 	this->placa = placa;
-=======
-string Vehiculo::setPlaca ( ) {
-	placa = placa;
->>>>>>> Stashed changes
 }
 
 void Vehiculo::setTonelaje (float tonelaje) {
 	this->tonelaje = tonelaje;
 }
 
-void Vehiculo::setColor (int color) {
+void Vehiculo::setColor (string color) {
 	this->color=color;
 }
 
