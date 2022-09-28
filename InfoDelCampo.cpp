@@ -8,3 +8,4 @@ InfoDelCampo::~InfoDelCampo() {
 	
 }
 
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
