@@ -10,11 +10,11 @@ Chofer::~Chofer() {
 }
 
 
-void Chofer::setNombre (string nombre) {
-	nombre = nombre;
+void Chofer::setNombre(string nombre){
+	this->nombre = nombre;
 }
 
-void Chofer::setCedula (string cedula) {
-	cedula = cedula;
+void Chofer::setCedula(string cedula){
+	this->cedula = cedula;
 }
 
