@@ -5,12 +5,14 @@ using namespace std;
 
 class Chofer {
 public:
-	Chofer();
+	Chofer(string,string);
 	~Chofer();
+	void setNombre(string);
+	void setCedula(string);
 	
 private:
-	int CedulaChofer;
-	string NombreChofer;
+	string nombre;
+	string cedula;
 	
 };
 
