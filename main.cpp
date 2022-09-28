@@ -12,6 +12,7 @@ int main () {
 	cin>>telefono;
 	cout<<"Digite la direccion del Mall."<<endl;
 	cin>>direccion;
+	//sdasfgdsgff
 	//holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	cout<<"1 - Ver TODOS los campos del parqueo, (solo lugar, estado y placa)"<<endl;
 	cout<<"2 - Ver solo los campos que estan OCUPADOS.(solo lugar, estado y placa)"<<endl;
