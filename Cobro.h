@@ -12,6 +12,7 @@ private:
 	string EntradaVehiculo;
 	string SalidaVehiculo;
 	const double PrecioHora = 800.00;
+	//hello
 };
 
 #endif
