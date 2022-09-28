@@ -9,6 +9,7 @@ class Vehiculo {
 public:
 	Vehiculo(string,string,float,string);
 	~Vehiculo();
+	string getPlaca();
 	void setMarca(string);
 	void setPlaca(string);
 	void setTonelaje(float);

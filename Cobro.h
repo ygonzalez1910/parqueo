@@ -6,11 +6,11 @@ using namespace std;
 
 class Cobro {
 public:
-	Cobro();
+	Cobro(Hora*);
 	~Cobro();
 	double totalAPagar();
 private:
-	Hora* hora;
+	Hora* totalHoras;
 	const double PrecioHora = 800.00;
 
 };

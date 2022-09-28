@@ -1,6 +1,6 @@
 #include "Cobro.h"
 
-Cobro::Cobro() {
+Cobro::Cobro(Hora* totalHoras): totalHoras(totalHoras) {
 	
 }
 

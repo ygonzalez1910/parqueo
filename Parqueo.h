@@ -7,17 +7,17 @@ using namespace std;
 
 class Parqueo {
 public:
-	Parqueo();
+	Parqueo(int,int);
 	~Parqueo();
 	int getCantidad();
 	int getTamano();
 	void setCantidad(int);
 	void setTamano(int);
+	string toString();
 private:
-	int lugarParqueo;
+	InfoDelCampo** lugaresParqueo;
 	int cantidad;
 	int tamano;
-	InfoDelCampo* infoDelCampo;
 };
 
 #endif

@@ -26,3 +26,7 @@ void Vehiculo::setColor (string color) {
 	this->color=color;
 }
 
+string Vehiculo::getPlaca ( ) {
+	return placa;
+}
+
