@@ -7,15 +7,19 @@ using namespace std;
 
 class Vehiculo {
 public:
-	Vehiculo();
+	Vehiculo(string,string,float,string);
 	~Vehiculo();
+	string setMarca();
+	string setPlaca();
+	float setTonelaje();
+	string setColor();
 private:
-	string Marca;
-	int Placa;
-	float Tonelaje;
-	string Color;
-	Chofer* Chofer;
-	Cobro* Cobro;
+	string marca;
+	string placa;
+	float tonelaje;
+	string color;
+	Chofer* chofer;
+	Cobro* cobro;
 	
 };
 
