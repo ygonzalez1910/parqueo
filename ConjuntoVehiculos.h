@@ -1,11 +1,20 @@
 #ifndef CONJUNTOVEHICULOS_H
 #define CONJUNTOVEHICULOS_H
+#include "Vehiculo.h"
+#include <iostream>
+using namespace std;
 
 class ConjuntoVehiculos {
 public:
-	ConjuntoVehiculos();
+	ConjuntoVehiculos(int,int);
 	~ConjuntoVehiculos();
+	void agregarVehiculo(Vehiculo*);
+	bool estaLleno();
+	string toString();
 private:
+	Vehiculo** vehiculos;
+	int cantidad;
+	int tamano;
 };
 
 #endif

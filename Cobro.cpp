@@ -12,7 +12,7 @@ Cobro::~Cobro() {
 double Cobro::totalAPagar ( ) {
 	
 	double cobroAdicional;
-	if(tonelaje <= 1.0 && tonelaje <= 1.5){
+	if(tonelaje <= 1.0 && getTonelaje <= 1.5){
 		cobroAdicional = 0.05;
 	}else if(tonelaje <= 1.6 && tonelaje <= 3.5){
 		cobroAdicional = 0.10;

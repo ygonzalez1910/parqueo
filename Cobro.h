@@ -10,8 +10,7 @@ public:
 	~Cobro();
 	double totalAPagar();
 private:
-	Hora* horaEntrada;
-	Hora* horaSalida;
+	Hora* totalHoras;
 	double precioHora;
 
 };
