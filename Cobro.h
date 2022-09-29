@@ -10,8 +10,9 @@ public:
 	~Cobro();
 	double totalAPagar();
 private:
-	Hora* totalHoras;
-	const double PrecioHora = 800.00;
+	Hora* horaEntrada;
+	Hora* horaSalida;
+	double precioHora;
 
 };
 

@@ -1,11 +1,11 @@
 #include "Chofer.h"
 
 Chofer::Chofer(string nombre, string cedula):
-	nombre(nombre),cedula(cedula) {
+	nombre(nombre),cedula(cedula){
 	
 }
 
-Chofer::~Chofer() {
+Chofer::~Chofer(){
 	
 }
 

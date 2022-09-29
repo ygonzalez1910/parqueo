@@ -5,15 +5,15 @@ Hora::Hora(string horaEntrada,string horaSalida):
 	
 }
 
-Hora::~Hora() {
+Hora::~Hora(){
 	
 }
 
-void Hora::setHoraEntrada (string) {
+void Hora::setHoraEntrada(string){
 	this->horaEntrada = horaEntrada;
 }
 
-void Hora::setHoraSalida (string) {
+void Hora::setHoraSalida(string){
 	this->horaSalida = horaSalida;
 }
 
