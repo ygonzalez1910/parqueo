@@ -39,3 +39,9 @@ string Parqueo::toString ( ) {
 	return r.str();
 }
 
+void Parqueo::agregarVehiculo(InfoDelCampo* vehiculo ){
+	lugaresParqueo[cantidad++]=vehiculo;
+	
+}
+
+

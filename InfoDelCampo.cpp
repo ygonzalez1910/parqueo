@@ -15,7 +15,7 @@ string InfoDelCampo::toString ( ) {
 	stringstream r;
 	r << "Lugar: " << numeroCampo << endl;
 	r << "Estado: " << estadoCampo << endl;
-	r << "Placa: " <<  vehiculo.getPlaca() << endl;
+	r << "Placa: " <<  vehiculo->getPlaca() << endl;
 	return r.str();
 }
 

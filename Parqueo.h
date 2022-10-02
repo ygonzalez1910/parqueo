@@ -14,6 +14,7 @@ public:
 	void setCantidad(int);
 	void setTamano(int);
 	string toString();
+	void agregarVehiculo(InfoDelCampo* vehiculo);
 	
 private:
 	InfoDelCampo** lugaresParqueo;
