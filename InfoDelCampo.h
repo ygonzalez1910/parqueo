@@ -7,7 +7,11 @@ using namespace std;
 
 class InfoDelCampo {
 public:
+<<<<<<< Updated upstream
 	InfoDelCampo(int,char);
+=======
+	InfoDelCampo(Vehiculo*,Vehiculo*);
+>>>>>>> Stashed changes
 	~InfoDelCampo();
 	string toString();
 	void setEstadoCampo(char);
@@ -16,8 +20,13 @@ public:
 	char getEstadoCampo();
 	
 private:
+<<<<<<< Updated upstream
 	int numeroCampo;
 	char estadoCampo;
+=======
+	Vehiculo* numeroCampo;
+	Vehiculo* estadoCampo;
+>>>>>>> Stashed changes
 	ConjuntoVehiculos* conjuntoVehiculos;
 	
 };
