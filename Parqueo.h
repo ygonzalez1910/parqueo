@@ -7,13 +7,16 @@ using namespace std;
 
 class Parqueo {
 public:
-	Parqueo(int,int);
+	Parqueo(int);
 	~Parqueo();
 	int getCantidad();
 	int getTamano();
 	void setCantidad(int);
 	void setTamano(int);
 	string toString();
+	string toStringLibres();
+	string toStringOcupados();
+	string toStringMantenimiento();
 	void agregarVehiculo(InfoDelCampo* vehiculo);
 	
 private:

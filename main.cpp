@@ -1,22 +1,32 @@
 #include<iostream>
 using namespace std;
+#include "Parqueo.h"
 
 int main () {
 	
 	string nombre=" ", direccion=" ";
 	int telefono=0, opc=0;
+	int cantEspaciosParqueo=0;
 	
-	cout<<"Digite el nombre del Mall."<<endl;
-	cin>>nombre;
-	cout<<"Digite el telefono del Mall."<<endl;
-	cin>>telefono;
-	cout<<"Digite la direccion del Mall."<<endl;
-	cin>>direccion;
+//	cout<<"Digite el nombre del Mall."<<endl;
+//	cin>>nombre;
+//	cout<<"Digite el telefono del Mall."<<endl;
+//	cin>>telefono;
+//	cout<<"Digite la direccion del Mall."<<endl;
+//	cin>>direccion;
+	
+	cout<<"Digite la cantidad de espacios del parqueo del Mall."<<endl;
+	cin>>cantEspaciosParqueo;
+	
+	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
+	InfoDelCampo* info = new InfoDelCampo(4, 'O');
+	
+	parqueo->agregarVehiculo(info);
 	
 	for(;;){
 		cout<<"-----------------------MENU-----------------------"<<endl;
 		cout<<"Bienvenidos al parqueo de "<<nombre<<" ."<<endl;
-		cout<<"1 - Ver TODOS los campos del parqueo, (solo lugar, estado y placa)"<<endl;
+		cout<<"1 - Ver TODOS los campos del parqueo. (solo lugar, estado y placa)"<<endl;
 		cout<<"2 - Ver solo los campos que estan OCUPADOS.(solo lugar, estado y placa)"<<endl;
 		cout<<"3 - Ver solo los campos que estan en MANTENIMIENTO.(solo lugar Y estado)"<<endl;
 		cout<<"4 - Ingresar un vehiculo al parqueo. Solicitar posicion o lugar."<<endl;
@@ -35,6 +45,7 @@ int main () {
 		cout<<"17 - Mostrar la informacion de todos (que esten o no) los vehiculos del parqueo."<<endl;
 		cout<<"18 - Mostrar los vehiculos que se encuentran en el rango de tonelaje de 1.0 a 1.5."<<endl;
 		cout<<"19 - Salir."<<endl;
+		
 		cout<<"--------------------------------------------------"<<endl;
 		cout<<"Digite la opcion a realizar: ";
 		cin>>opc;
@@ -43,7 +54,7 @@ int main () {
 		switch(opc){
 		case 1:
 			system("cls");
-			
+			cout<<parqueo->toString();
 			system("pause");
 			break;
 		case 2:

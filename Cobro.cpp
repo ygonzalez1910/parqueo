@@ -11,16 +11,16 @@ Cobro::~Cobro() {
 
 double Cobro::totalAPagar ( ) {
 	
-	double cobroAdicional;
-	if(tonelaje <= 1.0 && getTonelaje <= 1.5){
-		cobroAdicional = 0.05;
-	}else if(tonelaje <= 1.6 && tonelaje <= 3.5){
-		cobroAdicional = 0.10;
-	}else if(tonelaje <= 3.6 && tonelaje <= 5.0){
-		cobroAdicional = 0.15;
-	}else{
-		cobroAdicional = 0.20;
-	}
+//	double cobroAdicional;
+//	if(tonelaje <= 1.0 && getTonelaje <= 1.5){
+//		cobroAdicional = 0.05;
+//	}else if(tonelaje <= 1.6 && tonelaje <= 3.5){
+//		cobroAdicional = 0.10;
+//	}else if(tonelaje <= 3.6 && tonelaje <= 5.0){
+//		cobroAdicional = 0.15;
+//	}else{
+//		cobroAdicional = 0.20;
+//	}
 	
 }
 

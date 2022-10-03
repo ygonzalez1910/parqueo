@@ -7,13 +7,17 @@ using namespace std;
 
 class InfoDelCampo {
 public:
-	InfoDelCampo(int,string);
+	InfoDelCampo(int,char);
 	~InfoDelCampo();
 	string toString();
+	void setEstadoCampo(char);
+	void setNumeroCampo(int);
+	int getNumeroCampo();
+	char getEstadoCampo();
 	
 private:
 	int numeroCampo;
-	string estadoCampo;
+	char estadoCampo;
 	ConjuntoVehiculos* conjuntoVehiculos;
 	
 };
