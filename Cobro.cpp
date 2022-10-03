@@ -21,7 +21,7 @@ double Cobro::totalAPagar ( ) {
 //	}else{
 //		cobroAdicional = 0.20;
 //	}
-	;;
+	
 }
 
 //double descuento(double costoTransporte){ //funcion que calcule el descuento

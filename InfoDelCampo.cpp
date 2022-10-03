@@ -12,7 +12,7 @@ InfoDelCampo::~InfoDelCampo() {
 
 
 string InfoDelCampo::toString(){
-	stringstream r;;;
+	stringstream r;
 
 	if(estadoCampo == 'L'){
 		r << "Estado libre\n";

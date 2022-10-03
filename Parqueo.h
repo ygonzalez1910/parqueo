@@ -22,7 +22,7 @@ public:
 private:
 	InfoDelCampo** lugaresParqueo;
 	int cantidad;
-	int tamano;;;
+	int tamano;
 };
 
 #endif

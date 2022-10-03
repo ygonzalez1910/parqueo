@@ -9,7 +9,7 @@ public:
 	Hora(string,string);
 	~Hora();
 	void setHoraEntrada(string);
-	void setHoraSalida(string);;;
+	void setHoraSalida(string);
 	
 private:
 	string horaEntrada;

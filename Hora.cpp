@@ -10,7 +10,7 @@ Hora::~Hora(){
 }
 
 void Hora::setHoraEntrada(string){
-	this->horaEntrada = horaEntrada;;;
+	this->horaEntrada = horaEntrada;
 }
 
 void Hora::setHoraSalida(string){
