@@ -9,7 +9,7 @@ class InfoDelCampo {
 public:
 	InfoDelCampo(int,char);
 	~InfoDelCampo();
-	string toString();
+	string toString();;;
 	void setEstadoCampo(char);
 	void setNumeroCampo(int);
 	int getNumeroCampo();

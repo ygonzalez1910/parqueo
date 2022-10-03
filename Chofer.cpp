@@ -11,7 +11,7 @@ Chofer::~Chofer(){
 
 
 void Chofer::setNombre(string nombre){
-	this->nombre = nombre;
+	this->nombre = nombre;;;
 }
 
 void Chofer::setCedula(string cedula){

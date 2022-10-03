@@ -6,8 +6,9 @@ Parqueo::Parqueo(int tamano)
 	:cantidad(0),tamano(tamano),lugaresParqueo(new InfoDelCampo*[tamano]){
 	
 	for(int i=0; i < tamano; i++){ //llena el vector de campos vacios 
-		lugaresParqueo[i] = nullptr;
+		lugaresParqueo[i] = nullptr;;;
 	}
+	
 }
 
 Parqueo::~Parqueo() {
