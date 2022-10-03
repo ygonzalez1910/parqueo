@@ -35,15 +35,14 @@ void Parqueo::setTamano (int tamano) {
 string Parqueo::toString(){
 	stringstream r;
 	cout<<"Campos del parqueo: "<<endl;
-	for(int i=0; i < cantidad; i++){
-		r << i+1 <<".\n"<< lugaresParqueo[i]->toString();	
+	for(int i = 0; i < cantidad; i++){
+	r << i+1 <<".\n"<< lugaresParqueo[i]-> toString();	
 	}
-	
 	return r.str();
 }
 
 void Parqueo::agregarVehiculo(InfoDelCampo* vehiculo){
-	lugaresParqueo[cantidad++]=vehiculo;
+	lugaresParqueo[cantidad++] = vehiculo;
 }
 
 
@@ -77,5 +76,32 @@ string Parqueo::toStringMantenimiento ( ) {
 		}
 	}
 	return r.str();
+}
+
+void Parqueo::cantidadEspaciosLibres ( ) {
+	int contadorEspaciosLibres = 0;
+	for(int i = 0; i < cantidad; i++){
+		if(lugaresParqueo[i] -> getEstadoCampo() == 'L'){
+			contadorEspaciosLibres;
+		}
+	}
+}
+
+void Parqueo::cantidadEspaciosOcupados ( ) {
+	int contadorEspaciosOcupados = 0;
+	for(int i = 0; i < cantidad; i++){
+		if(lugaresParqueo[i] -> getEstadoCampo() == 'O'){
+			contadorEspaciosOcupados;
+		}
+	}
+}
+
+void Parqueo::cantidadEspaciosMantenimiento ( ) {
+	int contadorEspaciosMantenimiento = 0;
+	for(int i = 0; i < cantidad; i++){
+		if(lugaresParqueo[i] -> getEstadoCampo() == 'M'){
+			contadorEspaciosMantenimiento;
+		}
+	}
 }
 

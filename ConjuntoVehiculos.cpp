@@ -20,7 +20,7 @@ string ConjuntoVehiculos::toString ( ) {
 	stringstream r;
 	for(int i=0; i < cantidad; i++){
 		if(vehiculos[i] != nullptr){
-			r << i <<"."<< vehiculos[i]->toString();	
+			r << i <<"."<< vehiculos[i]-> toString();	
 		}
 	}
 	return r.str();
@@ -28,3 +28,12 @@ string ConjuntoVehiculos::toString ( ) {
 bool ConjuntoVehiculos::estaLleno(){
 	return cantidad == tamano;
 }
+
+Vehiculo * ConjuntoVehiculos::seleccionarParqueo ( int posicion ) {
+	if(posicion >= 0 && posicion < tamano){
+		return vehiculos[posicion];
+	}else{
+		return nullptr;
+	}
+}
+

@@ -3,8 +3,6 @@
 #include "InfoDelCampo.h"
 #include<iostream>
 using namespace std;
-
-
 class Parqueo {
 public:
 	Parqueo(int);
@@ -18,6 +16,9 @@ public:
 	string toStringOcupados();
 	string toStringMantenimiento();
 	void agregarVehiculo(InfoDelCampo* vehiculo);
+	void cantidadEspaciosLibres();
+	void cantidadEspaciosOcupados();
+	void cantidadEspaciosMantenimiento();
 	
 private:
 	InfoDelCampo** lugaresParqueo;

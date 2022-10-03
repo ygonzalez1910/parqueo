@@ -11,10 +11,12 @@ public:
 	void agregarVehiculo(Vehiculo*);
 	bool estaLleno();
 	string toString();
+	Vehiculo* seleccionarParqueo( int );
 private:
 	Vehiculo** vehiculos;
 	int cantidad;
 	int tamano;
+	
 };
 
 #endif

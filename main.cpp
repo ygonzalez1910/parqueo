@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 #include "Parqueo.h"
+#include "ConjuntoVehiculos.h"
 
 int main () {
 	
@@ -15,14 +16,19 @@ int main () {
 //	cout<<"Digite la direccion del Mall."<<endl;
 //	cin>>direccion;
 	
-	cout<<"Digite la cantidad de espacios del parqueo del Mall."<<endl;
-	cin>>cantEspaciosParqueo;
+	cout << "Digite la cantidad de espacios del parqueo del Mall." << endl;
+	cin >> cantEspaciosParqueo;
 	
+<<<<<<< Updated upstream
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
 	;;
+=======
+	Parqueo* parqueo = new Parqueo(cantEspaciosParqueo);
+>>>>>>> Stashed changes
 	InfoDelCampo* info = new InfoDelCampo(4, 'O');
 	
 	parqueo->agregarVehiculo(info);
+	
 	
 	for(;;){
 		cout<<"-----------------------MENU-----------------------"<<endl;
@@ -55,17 +61,17 @@ int main () {
 		switch(opc){
 		case 1:
 			system("cls");
-			cout<<parqueo->toString();
+			cout << parqueo-> toString();
 			system("pause");
 			break;
 		case 2:
 			system("cls");
-			
+			cout << parqueo-> toStringOcupados();
 			system("pause");
 			break;
 		case 3:
 			system("cls");
-			
+			cout << parqueo-> toStringMantenimiento();
 			system("pause");
 			break;
 		case 4:
@@ -80,7 +86,7 @@ int main () {
 			break;
 		case 6:
 			system("cls");
-			
+			cout<< parqueo-> toStringLibres();
 			system("pause");
 			break;
 		case 7:
@@ -89,7 +95,7 @@ int main () {
 			break;
 		case 8:
 			system("cls");
-			
+			parqueo-> cantidadEspaciosLibres();
 			system("pause");
 			break;
 		case 9:

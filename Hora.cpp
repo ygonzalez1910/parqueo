@@ -10,10 +10,14 @@ Hora::~Hora(){
 }
 
 void Hora::setHoraEntrada(string){
+<<<<<<< Updated upstream
 	this->horaEntrada = horaEntrada;;;
+=======
+	this -> horaEntrada = horaEntrada;
+>>>>>>> Stashed changes
 }
 
 void Hora::setHoraSalida(string){
-	this->horaSalida = horaSalida;
+	this -> horaSalida = horaSalida;
 }
 
