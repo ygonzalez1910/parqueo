@@ -19,11 +19,13 @@ public:
 	void cantidadEspaciosLibres();
 	void cantidadEspaciosOcupados();
 	void cantidadEspaciosMantenimiento();
+	void rangoTonelaje();
 	
 private:
 	InfoDelCampo** lugaresParqueo;
 	int cantidad;
-	int tamano;;;
+	int tamano;
+	Vehiculo* vehiculo;
 };
 
 #endif

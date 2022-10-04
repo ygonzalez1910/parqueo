@@ -10,7 +10,6 @@ Cobro::~Cobro() {
 
 double Cobro::totalAPagar (Vehiculo* vehiculo ) {
 	
-
 	double cobroAdicional;
 	if(vehiculo->getTonelaje() <= 1.0 && vehiculo->getTonelaje() <= 1.5){
 		cobroAdicional = 0.05;
