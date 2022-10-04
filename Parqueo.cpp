@@ -82,7 +82,7 @@ void Parqueo::cantidadEspaciosLibres ( ) {
 	int contadorEspaciosLibres = 0;
 	for(int i = 0; i < cantidad; i++){
 		if(lugaresParqueo[i] -> getEstadoCampo() == 'L'){
-			contadorEspaciosLibres;
+			contadorEspaciosLibres++;
 		}
 	}  
 }
@@ -91,7 +91,7 @@ void Parqueo::cantidadEspaciosOcupados ( ) {
 	int contadorEspaciosOcupados = 0;
 	for(int i = 0; i < cantidad; i++){
 		if(lugaresParqueo[i] -> getEstadoCampo() == 'O'){
-			contadorEspaciosOcupados;
+			contadorEspaciosOcupados++;
 		}
 	}
 }
@@ -100,8 +100,17 @@ void Parqueo::cantidadEspaciosMantenimiento ( ) {
 	int contadorEspaciosMantenimiento = 0;
 	for(int i = 0; i < cantidad; i++){
 		if(lugaresParqueo[i] -> getEstadoCampo() == 'M'){
-			contadorEspaciosMantenimiento;
+			contadorEspaciosMantenimiento++;
 		}
 	}
+}
+
+void Parqueo::rangoTonelaje ( ) {
+	for(int i = 0; i < cantidad; i++){
+		if(vehiculo-> getTonelaje() <= 1.0 || vehiculo-> getTonelaje() <= 1.5){
+			cout << lugaresParqueo[i];
+		}
+	}
+	
 }
 

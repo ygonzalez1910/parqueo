@@ -103,12 +103,12 @@ int main () {
 			break;
 		case 9:
 			system("cls");
-			
+			parqueo-> cantidadEspaciosOcupados();
 			system("pause");
 			break;
 		case 10:
 			system("cls");
-			
+			parqueo-> cantidadEspaciosMantenimiento();
 			system("pause");
 			break;
 		case 11:
