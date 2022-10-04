@@ -146,7 +146,7 @@ int main () {
 			break;
 		case 19:
 			system("cls");
-			
+			parqueo->rangoTonelaje();
 			system("pause");
 			break;
 		case 20:
