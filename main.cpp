@@ -27,10 +27,10 @@ int main () {
 	
 	parqueo->agregarVehiculo(info);
 
-    Hora* hora = new Hora( "6", "10");
-    Cobro* cobro = new Cobro( hora, 800 );
-    Vehiculo* vehiculo = new Vehiculo();
-    cobro->totalAPagar( vehiculo->getTonelaje() );
+    //Hora* hora = new Hora( "6", "10");
+    //Cobro* cobro = new Cobro( hora, 800 );
+    //Vehiculo* vehiculo = new Vehiculo();
+    //cobro->totalAPagar( vehiculo->getTonelaje() );
 
 	
 	for(;;){
