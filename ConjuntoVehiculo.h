@@ -4,7 +4,7 @@
 class ConjuntoVehiculo {
 public:
 	ConjuntoVehiculo();
-	~ConjuntoVehiculo();
+	~ConjuntoVehiculo();;;
 	
 private:
 	

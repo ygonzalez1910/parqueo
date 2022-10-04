@@ -19,6 +19,7 @@ int main () {
 	cin>>cantEspaciosParqueo;
 	
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
+	;;
 	InfoDelCampo* info = new InfoDelCampo(4, 'O');
 	
 	parqueo->agregarVehiculo(info);

@@ -11,7 +11,7 @@ public:
 	~Cobro();
 	double totalAPagar( Vehiculo*);
 private:
-	Hora* totalHoras;
+	Hora* totalHoras;	;;
 	double precioHora;
 
 };

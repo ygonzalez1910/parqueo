@@ -18,10 +18,14 @@ InfoDelCampo::~InfoDelCampo() {
 
 <<<<<<< Updated upstream
 string InfoDelCampo::toString(){
+<<<<<<< HEAD
 =======
 string InfoDelCampo::toString (  ) {
 >>>>>>> Stashed changes
 	stringstream r;
+=======
+	stringstream r;;;
+>>>>>>> parent of 546e591... Revert "Merge remote-tracking branch 'origin/main' into main"
 
 	if(estadoCampo == 'L'){
 		r << "Estado libre\n";

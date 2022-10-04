@@ -22,6 +22,7 @@ double Cobro::totalAPagar (Vehiculo* vehiculo ) {
 //	}else{
 //		cobroAdicional = 0.20;
 //	}
+<<<<<<< HEAD
 =======
 	double cobroAdicional;
 	if(vehiculo->getTonelaje() <= 1.0 && vehiculo->getTonelaje() <= 1.5){
@@ -35,6 +36,9 @@ double Cobro::totalAPagar (Vehiculo* vehiculo ) {
 	}
 >>>>>>> Stashed changes
 	
+=======
+	;;
+>>>>>>> parent of 546e591... Revert "Merge remote-tracking branch 'origin/main' into main"
 }
 
 //double descuento(double costoTransporte){ //funcion que calcule el descuento

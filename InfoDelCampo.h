@@ -13,7 +13,7 @@ public:
 	InfoDelCampo(Vehiculo*,Vehiculo*);
 >>>>>>> Stashed changes
 	~InfoDelCampo();
-	string toString();
+	string toString();;;
 	void setEstadoCampo(char);
 	void setNumeroCampo(int);
 	int getNumeroCampo();
