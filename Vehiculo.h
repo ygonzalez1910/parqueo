@@ -16,8 +16,9 @@ public:
 	void setColor(string);
 	string getMarca();
 	float getTonelaje();
-	string getColor();;;
+	string getColor();
 	string toString();
+	
 private:
 	string marca;
 	string placa;

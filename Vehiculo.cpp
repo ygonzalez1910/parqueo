@@ -13,23 +13,19 @@ Vehiculo::~Vehiculo(){
 
 
 void Vehiculo::setMarca(string marca){
-<<<<<<< Updated upstream
-	this->marca = marca;;;
-=======
-	this -> marca = marca;
->>>>>>> Stashed changes
+	this->marca = marca;
 }
 
 void Vehiculo::setPlaca(string placa){
-	this -> placa = placa;
+	this->placa = placa;
 }
 
 void Vehiculo::setTonelaje(float tonelaje){
-	this -> tonelaje = tonelaje;
+	this->tonelaje = tonelaje;
 }
 
 void Vehiculo::setColor(string color){
-	this -> color=color;
+	this->color=color;
 }
 
 string Vehiculo::getPlaca ( ) {

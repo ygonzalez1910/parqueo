@@ -7,6 +7,7 @@ using namespace std;
 
 class InfoDelCampo {
 public:
+	
 	InfoDelCampo(int,char);
 	~InfoDelCampo();
 	string toString();;;
@@ -19,6 +20,7 @@ private:
 	int numeroCampo;
 	char estadoCampo;
 	ConjuntoVehiculos* conjuntoVehiculos;
+	Vehiculo* vehiculo;
 	
 };
 

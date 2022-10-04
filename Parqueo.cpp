@@ -84,7 +84,7 @@ void Parqueo::cantidadEspaciosLibres ( ) {
 		if(lugaresParqueo[i] -> getEstadoCampo() == 'L'){
 			contadorEspaciosLibres;
 		}
-	}
+	}  
 }
 
 void Parqueo::cantidadEspaciosOcupados ( ) {

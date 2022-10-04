@@ -18,13 +18,9 @@ int main () {
 	
 	cout << "Digite la cantidad de espacios del parqueo del Mall." << endl;
 	cin >> cantEspaciosParqueo;
-	
-<<<<<<< Updated upstream
+
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
-	;;
-=======
-	Parqueo* parqueo = new Parqueo(cantEspaciosParqueo);
->>>>>>> Stashed changes
+	
 	InfoDelCampo* info = new InfoDelCampo(4, 'O');
 	
 	parqueo->agregarVehiculo(info);

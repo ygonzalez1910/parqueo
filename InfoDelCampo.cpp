@@ -3,17 +3,16 @@
 using std::stringstream;
 
 InfoDelCampo::InfoDelCampo(int numeroCampo,char estadoCampo):numeroCampo(numeroCampo),estadoCampo(estadoCampo) {
+
+}
+
+InfoDelCampo::~InfoDelCampo(){
 	
 }
 
-InfoDelCampo::~InfoDelCampo() {
-	
-}
-
-
-string InfoDelCampo::toString(){
-	
+string InfoDelCampo::toString (  ) {
 	stringstream r;
+
 
 	if(estadoCampo == 'L'){
 		r << "Estado libre\n";
@@ -23,7 +22,7 @@ string InfoDelCampo::toString(){
 		r << "Estado en mantenimiento\n";
 	}
 	r << "Lugar: " << numeroCampo << endl;
-	//r << "Placa: " <<  Vehiculo->getPlaca() << endl;
+	r << "Placa: " <<  vehiculo->getPlaca() << endl;
 	
 	return r.str();
 }
