@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 #include "Parqueo.h"
+#include "Cobro.h"
+#include "Hora.h"
 #include "ConjuntoVehiculos.h"
 
 int main () {
@@ -24,7 +26,12 @@ int main () {
 	InfoDelCampo* info = new InfoDelCampo(4, 'O');
 	
 	parqueo->agregarVehiculo(info);
-	
+
+    Hora* hora = new Hora( "6", "10");
+    Cobro* cobro = new Cobro( hora, 800 );
+    Vehiculo* vehiculo = new Vehiculo();
+    cobro->totalAPagar( vehiculo->getTonelaje() );
+
 	
 	for(;;){
 		cout<<"-----------------------MENU-----------------------"<<endl;
