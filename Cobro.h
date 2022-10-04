@@ -9,7 +9,7 @@ class Cobro {
 public:
 	Cobro(Hora*);
 	~Cobro();
-	double totalAPagar( Vehiculo*);
+	//double totalAPagar(Vehiculo*);
 private:
 	Hora* totalHoras;	;;
 	double precioHora;

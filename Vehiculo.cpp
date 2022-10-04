@@ -13,7 +13,7 @@ Vehiculo::~Vehiculo(){
 
 
 void Vehiculo::setMarca(string marca){
-	this->marca = marca;;;
+	this->marca = marca;
 }
 
 void Vehiculo::setPlaca(string placa){

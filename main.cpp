@@ -19,7 +19,7 @@ int main () {
 	cin>>cantEspaciosParqueo;
 	
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
-	;;
+	
 	InfoDelCampo* info = new InfoDelCampo(4, 'O');
 	
 	parqueo->agregarVehiculo(info);
@@ -60,7 +60,7 @@ int main () {
 			break;
 		case 2:
 			system("cls");
-			
+			cout<<parqueo->toStringOcupados();
 			system("pause");
 			break;
 		case 3:

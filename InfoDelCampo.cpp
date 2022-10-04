@@ -2,30 +2,17 @@
 #include <sstream>
 using std::stringstream;
 
-<<<<<<< Updated upstream
 InfoDelCampo::InfoDelCampo(int numeroCampo,char estadoCampo):numeroCampo(numeroCampo),estadoCampo(estadoCampo) {
-=======
-InfoDelCampo::InfoDelCampo(Vehiculo* numeroCampo,Vehiculo* estadoCampo):
-	numeroCampo(numeroCampo),estadoCampo(estadoCampo) {
->>>>>>> Stashed changes
+
+}
+
+InfoDelCampo::~InfoDelCampo(){
 	
 }
 
-InfoDelCampo::~InfoDelCampo() {
-	
-}
-
-
-<<<<<<< Updated upstream
-string InfoDelCampo::toString(){
-<<<<<<< HEAD
-=======
 string InfoDelCampo::toString (  ) {
->>>>>>> Stashed changes
 	stringstream r;
-=======
-	stringstream r;;;
->>>>>>> parent of 546e591... Revert "Merge remote-tracking branch 'origin/main' into main"
+
 
 	if(estadoCampo == 'L'){
 		r << "Estado libre\n";
