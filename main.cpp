@@ -1,13 +1,22 @@
 #include<iostream>
 using namespace std;
 #include "Parqueo.h"
-//#include "ConjuntoVehiculos.h"
+#include "ConjuntoVehiculos.h"
+#include "Chofer.h"
+#include "Hora.h"
+#include "InfoDelCampo.h"
 
 int main () {
 	
 	string nombre=" ", direccion=" ";
 	int telefono=0, opc=0;
 	int cantEspaciosParqueo=0;
+	string nombreChofer;
+	string cedulaChofer;
+	string horaEntrada, horaSalida;
+	int numeroCampo;
+	char estadoCampo;
+	char continuar = 'S';
 	
 	string marca = " ", placa = " ", color = " ";
 	float tonelaje = 0.0;
@@ -23,6 +32,11 @@ int main () {
 	cin >> cantEspaciosParqueo;
 
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
+	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(tamano);
+	Chofer* chofer = new Chofer(nombreChofer,cedulaChofer);
+	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color);
+	Hora* horaEntradaParqueo = new Hora(horaEntrada,horaSalida);
+	InfoDelCampo* numCampo = new InfoDelCampo(numeroCampo,estadoCampo);
 	
 	InfoDelCampo* info = new InfoDelCampo(4, 'O');
 	InfoDelCampo* info2 = new InfoDelCampo(2, 'L');
@@ -35,7 +49,7 @@ int main () {
 	for(;;){
 		system("cls");
 		cout<<"-----------------------MENU-----------------------"<<endl;
-		cout<<"Bienvenidos al parqueo de "<<nombre<<"."<<endl;
+		cout<<"\tBienvenidos al parqueo de "<<nombre<<"."<<endl;
 		cout<<"1 - Ver TODOS los campos del parqueo. (solo lugar, estado y placa)"<<endl;
 		cout<<"2 - Ver solo los campos que estan OCUPADOS.(solo lugar, estado y placa)"<<endl;
 		cout<<"3 - Ver solo los campos que estan en MANTENIMIENTO.(solo lugar Y estado)"<<endl;
@@ -78,8 +92,44 @@ int main () {
 			break;
 		case 4:
 			system("cls");
-			
-			
+			//el sistema le deberá permitir, 
+			//ingresar la información básica del vehículo, del chofer, la hora 
+			//de entrada y del número de campo que está siendo utilizado
+			do{
+				if(conjuntoVehiculos->estaLleno() == false){
+					cout << "Digite su nombre: ";
+					cin >> nombreChofer;
+					chofer -> setNombre(nombreChofer);
+					cout << "Digite su cedula: ";
+					cin >> cedulaChofer;
+					chofer -> setCedula(cedulaChofer);
+					cout << "Ingrese la marca: ";
+					cin >> marca;
+					vehiculo -> setMarca(marca);
+					cout << "Ingrese la placa: ";
+					cin >> placa;
+					vehiculo -> setPlaca(placa);
+					cout << "Ingrese el tonelaje: ";
+					cin >> tonelaje;
+					vehiculo -> setTonelaje(tonelaje);
+					cout << "Ingrese el color: ";
+					cin >> color;
+					vehiculo -> setColor(color);
+					cout << "Ingrese la hora de entrada: ";
+					cin >> horaEntrada;
+					horaEntradaParqueo -> setHoraEntrada(horaEntrada);
+					cout << "Ingrese el numero de campo: ";
+					cin >> numeroCampo;
+					numCampo -> setEstadoCampo(numeroCampo);
+					//agregar la informacion de vehiculos al vector
+					conjuntoVehiculos ->agregarVehiculo(vehiculo);
+					cout << "\nDesea agregar mas vehiculos:";
+					cin >> continuar;
+				}else{
+					cout <<"\nYa no puede registrar mas vehiculos en ese parqueo.";
+					continuar = 'N';
+				}
+			} while(continuar == 'S');
 			system("pause");
 			break;
 		case 5:
