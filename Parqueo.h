@@ -20,6 +20,7 @@ public:
 	int cantidadEspaciosMantenimiento();
 	int porcOcupParqueo();
 	int cantCampLibres();
+	int cantVehiculosParqueo();
 	
 private:
 	InfoDelCampo** lugaresParqueo;

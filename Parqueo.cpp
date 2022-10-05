@@ -119,3 +119,15 @@ int Parqueo::cantCampLibres(){
 	return campLibres;
 }
 
+
+int Parqueo::cantVehiculosParqueo ( ) {
+	int cantVehiculos = 0;
+	
+	for(int i = 0; i < tamano; i++){
+		if(lugaresParqueo[i] -> getEstadoCampo() == 'O' || lugaresParqueo[i] -> getEstadoCampo() == 'L' || lugaresParqueo[i] -> getEstadoCampo() == 'M'){
+			cantVehiculos++;
+		}
+	}
+	return cantVehiculos;
+}
+

@@ -26,7 +26,7 @@ string ConjuntoVehiculos::toString ( ) {
 }
 
 bool ConjuntoVehiculos::estaLleno(){
-	return cantidad == tamano;
+	return cantidad == 10;
 }
 
 Vehiculo* ConjuntoVehiculos::seleccionarParqueo (int posicion) {

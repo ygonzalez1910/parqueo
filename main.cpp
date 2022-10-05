@@ -94,7 +94,7 @@ int main () {
 			break;
 		case 7:
 			system("cls");
-			
+			cout<< parqueo-> cantVehiculosParqueo();
 			break;
 		case 8:
 			system("cls");
