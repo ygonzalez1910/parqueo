@@ -158,7 +158,7 @@ int main () {
 			break;
 		case 20:
 			system("cls");
-			cout<<endl<<"Fin del programa, muchas gracias."<<endl;
+			cout<<endl<<"Fin del programa, muchas gracias..."<<endl;
 			return 0;
 			break;
 		default:
