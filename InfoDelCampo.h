@@ -1,6 +1,6 @@
 #ifndef INFODELCAMPO_H
 #define INFODELCAMPO_H
-#include "ConjuntoVehiculos.h"
+
 #include "Vehiculo.h"
 #include<iostream>
 using namespace std;
@@ -19,7 +19,7 @@ public:
 private:
 	int numeroCampo;
 	char estadoCampo;
-	ConjuntoVehiculos* conjuntoVehiculos;
+	//ConjuntoVehiculos* conjuntoVehiculos;
 	Vehiculo* vehiculo;
 	
 };

@@ -49,19 +49,22 @@ void Parqueo::agregarVehiculo(InfoDelCampo* vehiculo){
 
 string Parqueo::toStringLibres ( ) {
 	stringstream r;
+	r << "Campos libres: \n";
 	for(int i=0; i < cantidad; i++){
-		if(lugaresParqueo[i] == nullptr){
-			r << i <<"."<< lugaresParqueo[i]->toString();	
+		if(lugaresParqueo[i] ->getEstadoCampo() == 'L'){
+			r << "Numero campo: " <<lugaresParqueo[i] -> getNumeroCampo() << ".\n";
+			r << "Estado campo: " << "Libre.\n";	
 		}
 	}
 	return r.str();
 }
 
 string Parqueo::toStringOcupados ( ) {
+	
 	stringstream r;
 	for(int i=0; i < cantidad; i++){
-		if(lugaresParqueo[i] == nullptr){
-			r << i <<".\n"<< lugaresParqueo[i]->toString();	
+		if(lugaresParqueo[i] -> getEstadoCampo() == 'O'){
+			r << i+1 <<".\n"<< lugaresParqueo[i]->toString();	
 		}
 	}
 	return r.str();
@@ -70,47 +73,49 @@ string Parqueo::toStringOcupados ( ) {
 string Parqueo::toStringMantenimiento ( ) {
 	stringstream r;
 	
+	r << "Campos en mantenimiento: \n";
 	for(int i=0; i < cantidad; i++){
 		if(lugaresParqueo[i] -> getEstadoCampo() == 'M'){
-			r << i <<"."<< lugaresParqueo[i]->toString();	
+			r << "Numero campo: " <<lugaresParqueo[i] -> getNumeroCampo() << ".\n";
+			r << "Estado campo: " << "Mantenimiento.\n";	
 		}
 	}
 	return r.str();
 }
 
-void Parqueo::cantidadEspaciosLibres ( ) {
-	int contadorEspaciosLibres = 0;
-	for(int i = 0; i < cantidad; i++){
-		if(lugaresParqueo[i] -> getEstadoCampo() == 'L'){
-			contadorEspaciosLibres++;
-		}
-	}  
-}
 
-void Parqueo::cantidadEspaciosOcupados ( ) {
+int Parqueo::cantidadEspaciosOcupados ( ) {
 	int contadorEspaciosOcupados = 0;
 	for(int i = 0; i < cantidad; i++){
 		if(lugaresParqueo[i] -> getEstadoCampo() == 'O'){
 			contadorEspaciosOcupados++;
 		}
 	}
+	return contadorEspaciosOcupados;
 }
 
-void Parqueo::cantidadEspaciosMantenimiento ( ) {
+int Parqueo::cantidadEspaciosMantenimiento ( ) {
 	int contadorEspaciosMantenimiento = 0;
 	for(int i = 0; i < cantidad; i++){
 		if(lugaresParqueo[i] -> getEstadoCampo() == 'M'){
 			contadorEspaciosMantenimiento++;
 		}
 	}
+	return contadorEspaciosMantenimiento;
 }
 
-void Parqueo::rangoTonelaje ( ) {
-	for(int i = 0; i < cantidad; i++){
-		if(vehiculo-> getTonelaje() <= 1.0 || vehiculo-> getTonelaje() <= 1.5){
-			cout << lugaresParqueo[i];
+int Parqueo::porcOcupParqueo(){
+	return (cantidad*100)/tamano;
+}
+
+int Parqueo::cantCampLibres(){
+	int campLibres = 0;
+	//Aqui puse == nullptr porque campos vacios son campos libres, tecnicamente
+	for(int i = 0; i < tamano; i++){
+		if(lugaresParqueo[i] == nullptr || lugaresParqueo[i] -> getEstadoCampo() == 'L'){
+			campLibres++;
 		}
 	}
-	
+	return campLibres;
 }
 

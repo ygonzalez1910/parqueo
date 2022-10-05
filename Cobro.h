@@ -1,18 +1,15 @@
-
-
 #ifndef COBRO_H
 #define COBRO_H
-#include "Hora.h"
 #include<iostream>
 using namespace std;
-
+#include "Hora.h"
 class Cobro {
 public:
 	Cobro(Hora*,double);
 	~Cobro();
-	double totalAPagar(float);
+	double totalAPagar();
 private:
-	Hora* hora;
+	Hora* totalHoras;
 	double precioHora;
 };
 #endif

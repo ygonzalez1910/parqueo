@@ -41,3 +41,15 @@ string Vehiculo::toString ( ) {
 	return r.str();
 }
 
+string Vehiculo::getMarca ( ) {
+	return marca;
+}
+
+float Vehiculo::getTonelaje ( ) {
+	return tonelaje;
+}
+
+string Vehiculo::getColor ( ) {
+	return color;
+}
+

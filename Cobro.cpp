@@ -8,18 +8,19 @@ Cobro::~Cobro() {
 	
 }
 
-double Cobro::totalAPagar (float tonelaje ) {
-
-	double cobroAdicional;
-	if(tonelaje <= 1.0 && tonelaje <= 1.5){
-		cobroAdicional = 0.05;
-	}else if(tonelaje <= 1.6 && tonelaje <= 3.5){
-		cobroAdicional = 0.10;
-	}else if(tonelaje <= 3.6 && tonelaje <= 5.0){
-		cobroAdicional = 0.15;
-	}else{
-		cobroAdicional = 0.20;
-	}
+double Cobro::totalAPagar () {
+	
+//
+//	double cobroAdicional;
+//	if(vehiculo->getTonelaje() <= 1.0 && vehiculo->getTonelaje() <= 1.5){
+//		cobroAdicional = 0.05;
+//	}else if(vehiculo->getTonelaje() <= 1.6 && vehiculo->getTonelaje() <= 3.5){
+//		cobroAdicional = 0.10;
+//	}else if(vehiculo->getTonelaje() <= 3.6 && vehiculo->getTonelaje() <= 5.0){
+//		cobroAdicional = 0.15;
+//	}else{
+//		cobroAdicional = 0.20;
+//	}
 
 }
 

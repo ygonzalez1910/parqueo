@@ -1,4 +1,14 @@
 
+Debug/Chofer.o
+
+Debug/Cobro.o
+
+Debug/ConjuntoVehiculos.o
+
+Debug/Hora.o
+
+Debug/InfoDelCampo.o
+
 Debug/main.o
 
 Debug/MyProject.exe
@@ -7,8 +17,4 @@ Debug/Parqueo.o
 
 Debug/Vehiculo.o
 
-Debug/ConjuntoVehiculos.o
-
-Debug/Hora.o
-
-Debug/InfoDelCampo.o
+*.zpr

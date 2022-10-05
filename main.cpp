@@ -1,9 +1,7 @@
 #include<iostream>
 using namespace std;
 #include "Parqueo.h"
-#include "Cobro.h"
-#include "Hora.h"
-#include "ConjuntoVehiculos.h"
+//#include "ConjuntoVehiculos.h"
 
 int main () {
 	
@@ -11,6 +9,9 @@ int main () {
 	int telefono=0, opc=0;
 	int cantEspaciosParqueo=0;
 	
+	string marca = " ", placa = " ", color = " ";
+	float tonelaje = 0.0;
+
 //	cout<<"Digite el nombre del Mall."<<endl;
 //	cin>>nombre;
 //	cout<<"Digite el telefono del Mall."<<endl;
@@ -24,18 +25,17 @@ int main () {
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
 	
 	InfoDelCampo* info = new InfoDelCampo(4, 'O');
+	InfoDelCampo* info2 = new InfoDelCampo(2, 'L');
+	InfoDelCampo* info3 = new InfoDelCampo(1, 'M');
 	
 	parqueo->agregarVehiculo(info);
-
-    //Hora* hora = new Hora( "6", "10");
-    //Cobro* cobro = new Cobro( hora, 800 );
-    //Vehiculo* vehiculo = new Vehiculo();
-    //cobro->totalAPagar( vehiculo->getTonelaje() );
-
+	parqueo->agregarVehiculo(info2);
+	parqueo->agregarVehiculo(info3);
 	
 	for(;;){
+		system("cls");
 		cout<<"-----------------------MENU-----------------------"<<endl;
-		cout<<"Bienvenidos al parqueo de "<<nombre<<" ."<<endl;
+		cout<<"Bienvenidos al parqueo de "<<nombre<<"."<<endl;
 		cout<<"1 - Ver TODOS los campos del parqueo. (solo lugar, estado y placa)"<<endl;
 		cout<<"2 - Ver solo los campos que estan OCUPADOS.(solo lugar, estado y placa)"<<endl;
 		cout<<"3 - Ver solo los campos que estan en MANTENIMIENTO.(solo lugar Y estado)"<<endl;
@@ -55,7 +55,6 @@ int main () {
 		cout<<"17 - Mostrar la informacion de todos (que esten o no) los vehiculos del parqueo."<<endl;
 		cout<<"18 - Mostrar los vehiculos que se encuentran en el rango de tonelaje de 1.0 a 1.5."<<endl;
 		cout<<"19 - Salir."<<endl;
-		
 		cout<<"--------------------------------------------------"<<endl;
 		cout<<"Digite la opcion a realizar: ";
 		cin>>opc;
@@ -80,6 +79,7 @@ int main () {
 		case 4:
 			system("cls");
 			
+			
 			system("pause");
 			break;
 		case 5:
@@ -98,17 +98,17 @@ int main () {
 			break;
 		case 8:
 			system("cls");
-			parqueo-> cantidadEspaciosLibres();
+			cout << "Cantidad de espacios libres en todo el parqueo: " << parqueo -> cantCampLibres() << endl;
 			system("pause");
 			break;
 		case 9:
 			system("cls");
-			parqueo-> cantidadEspaciosOcupados();
+			
 			system("pause");
 			break;
 		case 10:
 			system("cls");
-			parqueo-> cantidadEspaciosMantenimiento();
+			cout << "Cantidad de espacios en mantenimiento en todo el parqueo: " << parqueo -> cantidadEspaciosMantenimiento() << endl;
 			system("pause");
 			break;
 		case 11:
@@ -133,7 +133,7 @@ int main () {
 			break;
 		case 15:
 			system("cls");
-			
+			cout << "La ocupacion del parqueo es del: "<< parqueo->porcOcupParqueo()<<"%.\n"; 
 			system("pause");
 			break;
 		case 16:
@@ -153,7 +153,7 @@ int main () {
 			break;
 		case 19:
 			system("cls");
-			parqueo->rangoTonelaje();
+			
 			system("pause");
 			break;
 		case 20:

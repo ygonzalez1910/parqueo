@@ -21,8 +21,14 @@ string InfoDelCampo::toString (  ) {
 	}else if(estadoCampo == 'M'){
 		r << "Estado en mantenimiento\n";
 	}
+	
 	r << "Lugar: " << numeroCampo << endl;
-	r << "Placa: " <<  vehiculo->getPlaca() << endl;
+	
+	if(vehiculo != nullptr){
+		r << "Placa: " <<  vehiculo->getPlaca() << endl;
+	}else{
+		r << "No existe placa en este campo."<<endl;
+	}
 	
 	return r.str();
 }

@@ -15,17 +15,17 @@ public:
 	string toStringLibres();
 	string toStringOcupados();
 	string toStringMantenimiento();
-	void agregarVehiculo(InfoDelCampo* vehiculo);
-	void cantidadEspaciosLibres();
-	void cantidadEspaciosOcupados();
-	void cantidadEspaciosMantenimiento();
-	void rangoTonelaje();
+	void agregarVehiculo(InfoDelCampo*);
+	int cantidadEspaciosOcupados();
+	int cantidadEspaciosMantenimiento();
+	int porcOcupParqueo();
+	int cantCampLibres();
 	
 private:
 	InfoDelCampo** lugaresParqueo;
+	Vehiculo* vehiculo;
 	int cantidad;
 	int tamano;
-	Vehiculo* vehiculo;
 };
 
 #endif
