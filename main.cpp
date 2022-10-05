@@ -17,6 +17,7 @@ int main () {
 	int numeroCampo;
 	char estadoCampo;
 	char continuar = 'S';
+	int posicionParqueo;
 	
 	string marca = " ", placa = " ", color = " ";
 	float tonelaje = 0.0;
@@ -82,12 +83,12 @@ int main () {
 			break;
 		case 2:
 			system("cls");
-			cout << parqueo-> toStringOcupados();
+			cout << parqueo -> toStringOcupados();
 			system("pause");
 			break;
 		case 3:
 			system("cls");
-			cout << parqueo-> toStringMantenimiento();
+			cout << parqueo -> toStringMantenimiento();
 			system("pause");
 			break;
 		case 4:
@@ -130,6 +131,18 @@ int main () {
 					continuar = 'N';
 				}
 			} while(continuar == 'S');
+			cout <<"\nLas vehiculos registradas son:\n";
+			cout << conjuntoVehiculos->toString();
+			cout <<"Lugares del parqueo...\n";
+			for(int i = 0; i < cantEspaciosParqueo; i++){
+				cout << lugaresParqueo[i]->toString();
+			}
+			cout << "Seleccione el lugar del parqueo que desea ocupar:";
+			cin >> posicionParqueo;
+			Vehiculo* v1 = conjuntoVehiculos->seleccionarParqueo(posicionParqueo);
+			v1->estadoOcupado();
+			cout << endl;
+			cout << cP->toString()<<"\n";
 			system("pause");
 			break;
 		case 5:
@@ -153,7 +166,7 @@ int main () {
 			break;
 		case 9:
 			system("cls");
-			
+			cout << "Cantidad de espacios ocupados en todo el parqueo: " << parqueo -> cantidadEspaciosOcupados() <
 			system("pause");
 			break;
 		case 10:
