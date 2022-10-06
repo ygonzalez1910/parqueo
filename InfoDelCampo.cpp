@@ -13,8 +13,7 @@ InfoDelCampo::~InfoDelCampo(){
 string InfoDelCampo::toString (  ) {
 	stringstream r;
 
-
-	if(estadoCampo == 'L'){
+	if(estadoCampo == 'L' ){
 		r << "Estado libre\n";
 	}else if(estadoCampo == 'O'){
 		r << "Estado ocupado\n";
@@ -25,7 +24,7 @@ string InfoDelCampo::toString (  ) {
 	r << "Lugar: " << numeroCampo << endl;
 	
 	if(vehiculo != nullptr){
-		r << "Placa: " <<  vehiculo->getPlaca() << endl;
+		r << "Placa: " <<  vehiculo -> getPlaca() << endl;
 	}else{
 		r << "No existe placa en este campo."<<endl;
 	}
@@ -37,7 +36,7 @@ void InfoDelCampo::estadoOcupado(){
 	estadoCampo = 'O';
 }
 void InfoDelCampo::setEstadoCampo (char estadoCampo) {
-	if(estadoCampo == 'M' || 'O' || 'L'){
+	if(estadoCampo == 'M' || 'O' || 'L' || nullptr){
 		this -> estadoCampo = estadoCampo;
 	}
 }

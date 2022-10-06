@@ -5,12 +5,12 @@ using namespace std;
 #include "Hora.h"
 class Cobro {
 public:
-	Cobro(Hora*,double);
+	Cobro(Hora*);
 	~Cobro();
-	double totalAPagar();
+	double totalAPagar( double );
 private:
 	Hora* totalHoras;
-	double precioHora;
+	const int precioHora = 800;
 };
 #endif
 

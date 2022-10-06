@@ -8,7 +8,6 @@ Parqueo::Parqueo(int tamano)
 	for(int i=0; i < tamano; i++){ //llena el vector de campos vacios 
 		lugaresParqueo[i] = nullptr;;;
 	}
-	
 }
 
 Parqueo::~Parqueo() {
@@ -34,6 +33,7 @@ void Parqueo::setTamano (int tamano) {
 
 string Parqueo::toString(){
 	stringstream r;
+	
 	cout<<"Campos del parqueo: "<<endl;
 	for(int i = 0; i < cantidad; i++){
 	r << i+1 <<".\n"<< lugaresParqueo[i]-> toString();	

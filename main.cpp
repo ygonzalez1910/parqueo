@@ -4,6 +4,7 @@ using namespace std;
 #include "ConjuntoVehiculos.h"
 #include "Chofer.h"
 #include "Hora.h"
+#include "Cobro.h"
 #include "InfoDelCampo.h"
 
 int main () {
@@ -41,6 +42,8 @@ int main () {
 	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color);
 	
 	Hora* hora = new Hora(horaEntrada,horaSalida);
+	
+	Cobro* cobro = new Cobro(hora);
 	
 	InfoDelCampo* numCampo = new InfoDelCampo(numeroCampo,estadoCampo);
 	InfoDelCampo* numCampo2 = new InfoDelCampo(numeroCampo,estadoCampo);
@@ -103,13 +106,18 @@ int main () {
 			//el sistema le debera permitir, 
 			//ingresar la informacion basica del vehiculo, del chofer, la hora 
 			//de entrada y del numero de campo que esto siendo utilizado
+			cout <<"Lugares del parqueo...\n";
+			for(int i = 0; i < cantEspaciosParqueo; i++){
+				cout << parqueo -> lugaresParqueo[i]->toString();
+			}
 			
+			//no se estan mostrando la cantidad completa de espacios, solo los vehículos registrados
 			cout << "Seleccione el lugar del parqueo que desea ocupar:";
 			cin >> posicionParqueo;
 				
 			for(int i = 0; i<cantEspaciosParqueo;i++){
 					
-				if(posicionParqueo != numCampo -> getEstadoCampo()){
+				if( posicionParqueo != numCampo -> getEstadoCampo() ){
 						
 					conjuntoVehiculos->seleccionarParqueo(posicionParqueo);
 						
@@ -150,8 +158,6 @@ int main () {
 							
 							cout << endl;
 							cout << conjuntoVehiculos -> toString()<<"\n";
-								
-								
 								//agregar la informacion de vehiculos al vector
 								conjuntoVehiculos ->agregarVehiculo(vehiculo);
 								cout << "\nDesea agregar mas vehiculos: \n Si lo desea digite S, si no digite N.\n";
@@ -160,35 +166,28 @@ int main () {
 								cout <<"\nYa no puede registrar mas vehiculos en ese parqueo.";
 								continuar = 'N';
 							}
-						}while(continuar == 'S');
-							}
-						}
-							
-						cout <<"\nLas vehiculos registradas son:\n";
-						cout << conjuntoVehiculos->toString();
-						cout <<"Lugares del parqueo...\n";
-						
-						cout << parqueo -> toString();
-						
-						
+						}while(continuar == 'N');
+							cout <<"\nLas vehiculos registradas son:\n";
+							cout << conjuntoVehiculos->toString();
 						system("pause");
-						
+					}
+				}
 			
 		}else if(opc == 5){
 			system("cls");
-			
+			cout << cobro -> totalAPagar( vehiculo -> getTonelaje() );
 			system("pause");
 	
 			
 		}else if(opc == 6){
 			system("cls");
-			cout<< parqueo-> toStringLibres();
+			cout<< parqueo -> toStringLibres();
 			system("pause");
 
 			
 		}else if(opc == 7){
 			system("cls");
-			cout<< parqueo-> toStringLibres();
+			cout<< parqueo -> toStringLibres();
 
 			
 		}else if(opc == 8){
