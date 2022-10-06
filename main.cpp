@@ -61,9 +61,9 @@ int main () {
 		cout<<"8 - Saber la cantidad de campos libres en el parqueo."<<endl;
 		cout<<"9 - Saber la cantidad de campos ocupados en el parqueo."<<endl;
 		cout<<"10 - Saber la cantidad de campos en mantenimiento en el parqueo."<<endl;
-		cout<<"11 - Saber la cantidad de vehiculos que han ingresado en el dia."<<endl;
-		cout<<"12 - Saber la cantidad de dinero que ha ingresado al parqueo este dia."<<endl;
-		cout<<"13 - Saber la cantidad de dinero que ha ingresado, por un solo campo."<<endl;
+		cout<<"11 - Saber la cantidad de vehiculos que han ingresado en el dia."<<endl; //
+		cout<<"12 - Saber la cantidad de dinero que ha ingresado al parqueo este dia."<<endl; //
+		cout<<"13 - Saber la cantidad de dinero que ha ingresado, por un solo campo."<<endl;//
 		cout<<"14 - Saber el tonelaje de los vehiculos que hacen mas uso del parqueo."<<endl;
 		cout<<"15 - Saber el porcentaje de ocupacion que tiene el parqueo."<<endl;
 		cout<<"16 - Mostrar la informacion de los vehiculos que han estado en un determinado campo."<<endl;

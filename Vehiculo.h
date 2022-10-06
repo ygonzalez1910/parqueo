@@ -9,7 +9,6 @@ class Vehiculo {
 public:
 	Vehiculo(string,string,float,string);
 	~Vehiculo();
-	string getPlaca();
 	void setMarca(string);
 	void setPlaca(string);
 	void setTonelaje(float);
@@ -17,6 +16,7 @@ public:
 	string getMarca();
 	float getTonelaje();
 	string getColor();
+	string getPlaca();
 	string toString();
 	
 private:

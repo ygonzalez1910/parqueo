@@ -131,3 +131,19 @@ int Parqueo::cantVehiculosParqueo ( ) {
 	return cantVehiculos;
 }
 
+InfoDelCampo * Parqueo::vehiculosDeterminadoCampo ( InfoDelCampo* info ) {
+	
+	int numCampoDigitado;
+	cout << "Digite el numero de campo que desea saber cuales vehiculos han estado: " << endl;
+	cin >> numCampoDigitado;
+	for(int i = 0; i < cantidad; i++){
+		if ( numCampoDigitado == lugaresParqueo[i] -> getEstadoCampo() && lugaresParqueo[i] != nullptr){
+			cout << lugaresParqueo[i] -> toString();
+		}else if( numCampoDigitado == lugaresParqueo[i] -> getEstadoCampo() && lugaresParqueo[i] == nullptr){
+			cout << "Ningun vehiculo ha utilizado ese espacio del parqueo...";
+		}else if( numCampoDigitado != lugaresParqueo[i] -> getEstadoCampo()){
+			cout << "El numero de campo digitado no existe..." << endl;
+		}
+	}
+}
+

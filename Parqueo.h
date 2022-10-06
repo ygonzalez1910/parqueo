@@ -21,6 +21,7 @@ public:
 	int porcOcupParqueo();
 	int cantCampLibres();
 	int cantVehiculosParqueo();
+	InfoDelCampo* vehiculosDeterminadoCampo( InfoDelCampo* );
 	
 private:
 	InfoDelCampo** lugaresParqueo;

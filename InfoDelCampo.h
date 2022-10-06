@@ -19,7 +19,6 @@ public:
 private:
 	int numeroCampo;
 	char estadoCampo;
-	//ConjuntoVehiculos* conjuntoVehiculos;
 	Vehiculo* vehiculo;
 	
 };
