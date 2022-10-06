@@ -43,6 +43,7 @@ int main () {
 	Hora* hora = new Hora(horaEntrada,horaSalida);
 	
 	InfoDelCampo* numCampo = new InfoDelCampo(numeroCampo,estadoCampo);
+	InfoDelCampo* numCampo2 = new InfoDelCampo(numeroCampo,estadoCampo);
 	
 	InfoDelCampo* info = new InfoDelCampo(4, 'O');
 	InfoDelCampo* info2 = new InfoDelCampo(2, 'L');
@@ -230,7 +231,7 @@ int main () {
 			break;
 		case 16:
 			system("cls");
-			
+			cout<< parqueo -> vehiculosDeterminadoCampo(numCampo2);
 			system("pause");
 			break;
 		case 17:
