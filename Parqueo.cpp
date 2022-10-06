@@ -51,7 +51,7 @@ string Parqueo::toStringLibres ( ) {
 	stringstream r;
 	r << "Campos libres: \n";
 	for(int i=0; i < cantidad; i++){
-		if(lugaresParqueo[i] ->getEstadoCampo() == 'L'){
+		if(lugaresParqueo[i] -> getEstadoCampo() == 'L'){
 			r << "Numero campo: " <<lugaresParqueo[i] -> getNumeroCampo() << ".\n";
 			r << "Estado campo: " << "Libre.\n";	
 		}

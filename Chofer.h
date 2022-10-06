@@ -8,7 +8,8 @@ public:
 	Chofer(string,string);
 	~Chofer();
 	void setNombre(string);
-	void setCedula(string);;;
+	void setCedula(string);
+	
 	
 private:
 	string nombre;
