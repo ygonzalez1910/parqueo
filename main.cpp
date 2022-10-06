@@ -16,7 +16,7 @@ int main () {
 	string horaEntrada = " ", horaSalida = " ";
 	int numeroCampo = 0;
 	char estadoCampo = ' ';
-	char continuar = 'S';
+	char continuar;
 	int posicionParqueo = 0;
 	
 	string marca = " ", placa = " ", color = " ";
@@ -67,9 +67,9 @@ int main () {
 		cout<<"8 - Saber la cantidad de campos libres en el parqueo."<<endl;
 		cout<<"9 - Saber la cantidad de campos ocupados en el parqueo."<<endl;
 		cout<<"10 - Saber la cantidad de campos en mantenimiento en el parqueo."<<endl;
-		cout<<"11 - Saber la cantidad de vehiculos que han ingresado en el dia."<<endl; //
-		cout<<"12 - Saber la cantidad de dinero que ha ingresado al parqueo este dia."<<endl; //
-		cout<<"13 - Saber la cantidad de dinero que ha ingresado, por un solo campo."<<endl;//
+		cout<<"11 - Saber la cantidad de vehiculos que han ingresado en el dia."<<endl;
+		cout<<"12 - Saber la cantidad de dinero que ha ingresado al parqueo este dia."<<endl;
+		cout<<"13 - Saber la cantidad de dinero que ha ingresado, por un solo campo."<<endl;
 		cout<<"14 - Saber el tonelaje de los vehiculos que hacen mas uso del parqueo."<<endl;
 		cout<<"15 - Saber el porcentaje de ocupacion que tiene el parqueo."<<endl;
 		cout<<"16 - Mostrar la informacion de los vehiculos que han estado en un determinado campo."<<endl;
@@ -81,184 +81,181 @@ int main () {
 		cin>>opc;
 		cout<<endl;
 		
-		switch(opc){
-		case 1:
+		if(opc == 1){
 			system("cls");
 			cout << parqueo -> toString();
 			system("pause");
-			break;
 			
-		case 2:
+		}else if(opc == 2){
 			system("cls");
 			cout << parqueo -> toStringOcupados();
 			system("pause");
-			break;
 			
-		case 3:
+			
+		}else if(opc == 3){
 			system("cls");
 			cout << parqueo -> toStringMantenimiento();
 			system("pause");
-			break;
 			
-		case 4:
+			
+		}else if(opc == 4){
 			system("cls");
 			//el sistema le debera permitir, 
 			//ingresar la informacion basica del vehiculo, del chofer, la hora 
 			//de entrada y del numero de campo que esto siendo utilizado
 			
-				cout << "Seleccione el lugar del parqueo que desea ocupar:";
-				cin >> posicionParqueo;
+			cout << "Seleccione el lugar del parqueo que desea ocupar:";
+			cin >> posicionParqueo;
 				
-				for(int i = 0; i<cantEspaciosParqueo;i++){
+			for(int i = 0; i<cantEspaciosParqueo;i++){
 					
-					if(posicionParqueo != numCampo -> getEstadoCampo()){
+				if(posicionParqueo != numCampo -> getEstadoCampo()){
 						
-						conjuntoVehiculos->seleccionarParqueo(posicionParqueo);
+					conjuntoVehiculos->seleccionarParqueo(posicionParqueo);
 						
-						numCampo->estadoOcupado();
-			do{
-				if(conjuntoVehiculos->estaLleno() == false){
-					system("cls");
-					cout<<"Datos del chofer: \n";
-					cout << "Digite su nombre: ";
-					cin >> nombreChofer;
-					chofer -> setNombre(nombreChofer);
-					cout << "Digite su cedula: ";
-					cin >> cedulaChofer;
-					chofer -> setCedula(cedulaChofer);
-					cout<<"\n\nDatos del vehiculo: \n";
-					cout << "Ingrese la marca de su vehiculo: ";
-					cin >> marca;
-					vehiculo -> setMarca(marca);
-					cout << "Ingrese la placa de su vehiculo: ";
-					cin >> placa;
-					vehiculo -> setPlaca(placa);
-					cout << "Ingrese el tonelaje de su vehiculo: ";
-					cin >> tonelaje;
-					vehiculo -> setTonelaje(tonelaje);
-					cout << "Ingrese el color: ";
-					cin >> color;
-					vehiculo -> setColor(color);
-					cout << "Ingrese la hora de entrada en numeros enteros: ";
-					cin >> horaEntrada;
-					hora -> setHoraEntrada(horaEntrada);
-					cout << "Ingrese la hora de entrada en numeros enteros: ";
-					cin >> horaEntrada;
-					hora -> setHoraEntrada(horaSalida);
-					
-//					cout << "Ingrese el estado de campo: ";
-//					cin >> numeroCampo;
-//					numCampo -> setEstadoCampo(numeroCampo);
-					
-					cout << endl;
-					cout << parqueo -> toString()<<"\n";
-					
-					
-					//agregar la informacion de vehiculos al vector
-					conjuntoVehiculos ->agregarVehiculo(vehiculo);
-					cout << "\nDesea agregar mas vehiculos: \n Si lo desea digite S, si no digite N.\n";
-					cin >> continuar;
-				}else{
-					cout <<"\nYa no puede registrar mas vehiculos en ese parqueo.";
-					continuar = 'N';
-				}
-			} while(continuar == 'S');
-				}
-			}
-				
-			cout <<"\nLas vehiculos registradas son:\n";
-			cout << conjuntoVehiculos->toString();
-			cout <<"Lugares del parqueo...\n";
+					numCampo->estadoOcupado();
+						
+						do{
+							if(conjuntoVehiculos->estaLleno() == false){
+						system("cls");
+						cout<<"Datos del chofer: \n";
+							cout << "Digite su nombre: ";
+							cin >> nombreChofer;
+							chofer -> setNombre(nombreChofer);
+							cout << "Digite su cedula: ";
+							cin >> cedulaChofer;
+							chofer -> setCedula(cedulaChofer);
+							cout<<"\n\nDatos del vehiculo: \n";
+							cout << "Ingrese la marca de su vehiculo: ";
+							cin >> marca;
+							vehiculo -> setMarca(marca);
+							cout << "Ingrese la placa de su vehiculo: ";
+							cin >> placa;
+							vehiculo -> setPlaca(placa);
+							cout << "Ingrese el tonelaje de su vehiculo: ";
+							cin >> tonelaje;
+							vehiculo -> setTonelaje(tonelaje);
+							cout << "Ingrese el color: ";
+							cin >> color;
+							vehiculo -> setColor(color);
+							cout << "Ingrese la hora de entrada en numeros enteros: ";
+							cin >> horaEntrada;
+							hora -> setHoraEntrada(horaEntrada);
+							cout << "Ingrese la hora de entrada en numeros enteros: ";
+							cin >> horaEntrada;
+							hora -> setHoraEntrada(horaSalida);
+							
+							Vehiculo* vehiculoAgregao = new Vehiculo(marca,placa,tonelaje,color);
+							conjuntoVehiculos->agregarVehiculo(vehiculoAgregao);
+							
+							cout << endl;
+							cout << conjuntoVehiculos -> toString()<<"\n";
+								
+								
+								//agregar la informacion de vehiculos al vector
+								conjuntoVehiculos ->agregarVehiculo(vehiculo);
+								cout << "\nDesea agregar mas vehiculos: \n Si lo desea digite S, si no digite N.\n";
+								cin >> continuar;
+							}else{
+								cout <<"\nYa no puede registrar mas vehiculos en ese parqueo.";
+								continuar = 'N';
+							}
+						}while(continuar == 'S');
+							}
+						}
+							
+						cout <<"\nLas vehiculos registradas son:\n";
+						cout << conjuntoVehiculos->toString();
+						cout <<"Lugares del parqueo...\n";
+						
+						cout << parqueo -> toString();
+						
+						
+						system("pause");
+						
 			
-			cout << parqueo -> toString();
-			
-			
-			system("pause");
-			break;
-		case 5:
+		}else if(opc == 5){
 			system("cls");
 			
 			system("pause");
-			break;
-		case 6:
+	
+			
+		}else if(opc == 6){
 			system("cls");
 			cout<< parqueo-> toStringLibres();
 			system("pause");
-			break;
-		case 7:
+
+			
+		}else if(opc == 7){
 			system("cls");
 			cout<< parqueo-> toStringLibres();
-			break;
-		case 8:
+
+			
+		}else if(opc == 8){
 			system("cls");
 			cout << "Cantidad de espacios libres en todo el parqueo: " << parqueo -> cantCampLibres() << endl;
 			system("pause");
-			break;
-		case 9:
+
+			
+		}else if(opc == 9){
 			system("cls");
 			cout << "Cantidad de espacios ocupados en todo el parqueo: " << parqueo -> cantidadEspaciosOcupados();
 			system("pause");
-			break;
-		case 10:
+
+			
+		}else if(opc == 10){
 			system("cls");
 			cout << "Cantidad de espacios en mantenimiento en todo el parqueo: " << parqueo -> cantidadEspaciosMantenimiento() << endl;
 			system("pause");
-			break;
-		case 11:
+
+			
+		}else if(opc == 11){
 			system("cls");
 			
 			system("pause");
-			break;
-		case 12:
+			
+		}else if(opc == 12){
 			system("cls");
 			
 			system("pause");
-			break;
-		case 13:
+		}else if(opc == 13){
 			system("cls");
 			
 			system("pause");
-			break;
-		case 14:
+
+		}else if(opc == 14){
 			system("cls");
 			
 			system("pause");
-			break;
-		case 15:
+	
+		}else if(opc == 15){
 			system("cls");
 			cout << "La ocupacion del parqueo es del: "<< parqueo->porcOcupParqueo()<<"%.\n"; 
 			system("pause");
-			break;
-		case 16:
+		}else if(opc == 16){
 			system("cls");
 			cout<< parqueo -> vehiculosDeterminadoCampo(numCampo2);
 			system("pause");
-			break;
-		case 17:
+		}else if(opc == 17){
 			system("cls");
 			
 			system("pause");
-			break;
-		case 18:
+		}else if(opc == 18){
 			system("cls");
 			
 			system("pause");
-			break;
-		case 19:
+		}else if(opc == 19){
 			system("cls");
 			
 			system("pause");
-			break;
-		case 20:
+		}else if(opc == 20){
 			system("cls");
 			cout<<endl<<"Fin del programa, muchas gracias..."<<endl;
 			return 0;
-			break;
-		default:
+		}else{
 			system("cls");
 			cout<<"Opcion invalida, por favor ingrese otra de las disponibles en el menu."<<endl;
 			system("pause");
-			break;
 		}
 	}	
 }
