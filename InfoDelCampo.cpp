@@ -33,7 +33,9 @@ string InfoDelCampo::toString (  ) {
 	return r.str();
 }
 
-
+void InfoDelCampo::estadoOcupado(){
+	estadoCampo = 'O';
+}
 void InfoDelCampo::setEstadoCampo (char estadoCampo) {
 	if(estadoCampo == 'M' || 'O' || 'L'){
 		this -> estadoCampo = estadoCampo;

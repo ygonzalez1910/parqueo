@@ -15,6 +15,7 @@ public:
 	void setNumeroCampo(int);
 	int getNumeroCampo();
 	char getEstadoCampo();
+	void estadoOcupado();
 	
 private:
 	int numeroCampo;

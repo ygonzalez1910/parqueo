@@ -13,10 +13,12 @@ public:
 	string toString();
 	bool estaLleno();
 	Vehiculo* seleccionarParqueo(int);
+	
 private:
 	Vehiculo** vehiculos;
 	int tamano;
 	int cantidad;
+	
 };
 
 #endif

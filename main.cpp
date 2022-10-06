@@ -11,13 +11,13 @@ int main () {
 	string nombre=" ", direccion=" ";
 	int telefono=0, opc=0;
 	int cantEspaciosParqueo=0;
-	string nombreChofer;
-	string cedulaChofer;
-	string horaEntrada, horaSalida;
-	int numeroCampo;
-	char estadoCampo;
+	string nombreChofer = " ";
+	string cedulaChofer = " ";
+	string horaEntrada = " ", horaSalida = " ";
+	int numeroCampo = 0;
+	char estadoCampo = ' ';
 	char continuar = 'S';
-	int posicionParqueo;
+	int posicionParqueo = 0;
 	
 	string marca = " ", placa = " ", color = " ";
 	float tonelaje = 0.0;
@@ -31,12 +31,17 @@ int main () {
 	
 	cout << "Digite la cantidad de espacios del parqueo del Mall." << endl;
 	cin >> cantEspaciosParqueo;
-
+	
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
-	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(tamano);
+	
+	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(10);
+	
 	Chofer* chofer = new Chofer(nombreChofer,cedulaChofer);
+	
 	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color);
-	Hora* horaEntradaParqueo = new Hora(horaEntrada,horaSalida);
+	
+	Hora* hora = new Hora(horaEntrada,horaSalida);
+	
 	InfoDelCampo* numCampo = new InfoDelCampo(numeroCampo,estadoCampo);
 	
 	InfoDelCampo* info = new InfoDelCampo(4, 'O');
@@ -78,71 +83,95 @@ int main () {
 		switch(opc){
 		case 1:
 			system("cls");
-			cout << parqueo-> toString();
+			cout << parqueo -> toString();
 			system("pause");
 			break;
+			
 		case 2:
 			system("cls");
 			cout << parqueo -> toStringOcupados();
 			system("pause");
 			break;
+			
 		case 3:
 			system("cls");
 			cout << parqueo -> toStringMantenimiento();
 			system("pause");
 			break;
+			
 		case 4:
 			system("cls");
-			//el sistema le deberá permitir, 
-			//ingresar la información básica del vehículo, del chofer, la hora 
-			//de entrada y del número de campo que está siendo utilizado
+			//el sistema le debera permitir, 
+			//ingresar la informacion basica del vehiculo, del chofer, la hora 
+			//de entrada y del numero de campo que esto siendo utilizado
+			
+				cout << "Seleccione el lugar del parqueo que desea ocupar:";
+				cin >> posicionParqueo;
+				
+				for(int i = 0; i<cantEspaciosParqueo;i++){
+					
+					if(posicionParqueo != numCampo -> getEstadoCampo()){
+						
+						conjuntoVehiculos->seleccionarParqueo(posicionParqueo);
+						
+						numCampo->estadoOcupado();
 			do{
 				if(conjuntoVehiculos->estaLleno() == false){
+					system("cls");
+					cout<<"Datos del chofer: \n";
 					cout << "Digite su nombre: ";
 					cin >> nombreChofer;
 					chofer -> setNombre(nombreChofer);
 					cout << "Digite su cedula: ";
 					cin >> cedulaChofer;
 					chofer -> setCedula(cedulaChofer);
-					cout << "Ingrese la marca: ";
+					cout<<"\n\nDatos del vehiculo: \n";
+					cout << "Ingrese la marca de su vehiculo: ";
 					cin >> marca;
 					vehiculo -> setMarca(marca);
-					cout << "Ingrese la placa: ";
+					cout << "Ingrese la placa de su vehiculo: ";
 					cin >> placa;
 					vehiculo -> setPlaca(placa);
-					cout << "Ingrese el tonelaje: ";
+					cout << "Ingrese el tonelaje de su vehiculo: ";
 					cin >> tonelaje;
 					vehiculo -> setTonelaje(tonelaje);
 					cout << "Ingrese el color: ";
 					cin >> color;
 					vehiculo -> setColor(color);
-					cout << "Ingrese la hora de entrada: ";
+					cout << "Ingrese la hora de entrada en numeros enteros: ";
 					cin >> horaEntrada;
-					horaEntradaParqueo -> setHoraEntrada(horaEntrada);
-					cout << "Ingrese el numero de campo: ";
-					cin >> numeroCampo;
-					numCampo -> setEstadoCampo(numeroCampo);
+					hora -> setHoraEntrada(horaEntrada);
+					cout << "Ingrese la hora de entrada en numeros enteros: ";
+					cin >> horaEntrada;
+					hora -> setHoraEntrada(horaSalida);
+					
+//					cout << "Ingrese el estado de campo: ";
+//					cin >> numeroCampo;
+//					numCampo -> setEstadoCampo(numeroCampo);
+					
+					cout << endl;
+					cout << parqueo -> toString()<<"\n";
+					
+					
 					//agregar la informacion de vehiculos al vector
 					conjuntoVehiculos ->agregarVehiculo(vehiculo);
-					cout << "\nDesea agregar mas vehiculos:";
+					cout << "\nDesea agregar mas vehiculos: \n Si lo desea digite S, si no digite N.\n";
 					cin >> continuar;
 				}else{
 					cout <<"\nYa no puede registrar mas vehiculos en ese parqueo.";
 					continuar = 'N';
 				}
 			} while(continuar == 'S');
+				}
+			}
+				
 			cout <<"\nLas vehiculos registradas son:\n";
 			cout << conjuntoVehiculos->toString();
 			cout <<"Lugares del parqueo...\n";
-			for(int i = 0; i < cantEspaciosParqueo; i++){
-				cout << lugaresParqueo[i]->toString();
-			}
-			cout << "Seleccione el lugar del parqueo que desea ocupar:";
-			cin >> posicionParqueo;
-			Vehiculo* v1 = conjuntoVehiculos->seleccionarParqueo(posicionParqueo);
-			v1->estadoOcupado();
-			cout << endl;
-			cout << cP->toString()<<"\n";
+			
+			cout << parqueo -> toString();
+			
+			
 			system("pause");
 			break;
 		case 5:
@@ -157,7 +186,7 @@ int main () {
 			break;
 		case 7:
 			system("cls");
-			cout<< parqueo-> cantVehiculosParqueo();
+			cout<< parqueo-> toStringLibres();
 			break;
 		case 8:
 			system("cls");
@@ -166,7 +195,7 @@ int main () {
 			break;
 		case 9:
 			system("cls");
-			cout << "Cantidad de espacios ocupados en todo el parqueo: " << parqueo -> cantidadEspaciosOcupados() <
+			cout << "Cantidad de espacios ocupados en todo el parqueo: " << parqueo -> cantidadEspaciosOcupados();
 			system("pause");
 			break;
 		case 10:
