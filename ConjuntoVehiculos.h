@@ -1,6 +1,7 @@
 #ifndef CONJUNTOVEHICULOS_H
 #define CONJUNTOVEHICULOS_H
 #include "Vehiculo.h"
+#include "Cobro.h"
 #include <sstream>
 #include <string>
 using namespace std;
@@ -15,11 +16,12 @@ public:
 	bool estaLleno();
 	Vehiculo* seleccionarParqueo(int);
 	string toStringMostrarVehiculosQueEstenONo();
-	
+	double cantidadDineroIngresadoAlDia(Cobro*);
 private:
 	Vehiculo** vehiculos;
 	int tamano;
 	int cantidad;
+	Cobro* cobroTotal;
 	
 };
 

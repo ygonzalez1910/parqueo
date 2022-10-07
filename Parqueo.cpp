@@ -159,11 +159,11 @@ void Parqueo::llenarVacios(){
 	}	
 }
 
-double Parqueo::cobroPapi(int campo, double tonelaje, int entrada, int salida){
+void Parqueo::cobroTotal(int campo, double tonelaje, int entrada, int salida){
 	
 	for(int i = 0; i < tamano; i++){
 		if(lugaresParqueo[i] -> getNumeroCampo() == campo){
-			return cobro -> totalAPagar(tonelaje, entrada, salida);
+			cobro -> totalAPagar(tonelaje, entrada, salida);
 		}
 	}
 }

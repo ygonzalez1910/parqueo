@@ -1,6 +1,6 @@
 #include "Cobro.h"
 
-Cobro::Cobro(){
+Cobro::Cobro():totalPagar(totalPagar){
 	
 }
 
@@ -8,10 +8,9 @@ Cobro::~Cobro() {
 	
 }
 
-double Cobro::totalAPagar (double tonelaje, int entrada, int salida) {
+void Cobro::totalAPagar (double tonelaje, int entrada, int salida) {
 	
 	int totalHoras = 0;
-	double totalCobro = 0;
 	double cobroAdicional = 0;
 	
 	totalHoras = salida - entrada;
@@ -27,6 +26,10 @@ double Cobro::totalAPagar (double tonelaje, int entrada, int salida) {
 	}else{
 		cobroAdicional = 0.20;
 	}
-	
-	return (totalHoras * precioHora) * cobroAdicional;
+	totalPagar = (totalHoras * precioHora) * cobroAdicional;
 }
+
+float Cobro::getTotalPagar ( ) {
+	totalPagar = totalPagar;
+}
+

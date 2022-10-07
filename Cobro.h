@@ -8,10 +8,12 @@ class Cobro {
 public:
 	Cobro();
 	~Cobro();
-	double totalAPagar(double,int,int);
+	void totalAPagar(double,int,int);
+	float getTotalPagar();
 	
 private:
 	const int precioHora = 800;
+	float totalPagar;
 	
 };
 #endif

@@ -25,7 +25,7 @@ public:
 	string vehiculosDeterminadoCampo(int);
 	void llenarVacios();
 	void asignarContVehi();
-	double cobroPapi(int,double,int,int);
+	void cobroTotal(int,double,int,int);
 	string vehiculosRangoTonelaje(double);
 	
 private:
