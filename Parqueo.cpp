@@ -35,11 +35,8 @@ string Parqueo::toString(){
 	stringstream r;
 	
 	cout<<"Campos del parqueo: "<<endl;
-	for(int i = 0; i < cantidad; i++){
-		if(lugaresParqueo[i] == nullptr || lugaresParqueo[i] -> getEstadoCampo() == 'L' || 
-		   lugaresParqueo[i] -> getEstadoCampo() == 'O' || lugaresParqueo[i] -> getEstadoCampo() == 'M'){
+	for(int i = 0; i < tamano; i++){
 			r << i+1 <<".\n"<< lugaresParqueo[i]-> toString();	
-		}
 	}
 	return r.str();
 }
@@ -47,8 +44,6 @@ string Parqueo::toString(){
 void Parqueo::agregarVehiculo(InfoDelCampo* vehiculo){
 	lugaresParqueo[cantidad++] = vehiculo;
 }
-
-
 
 string Parqueo::toStringLibres ( ) {
 	stringstream r;
@@ -115,7 +110,7 @@ int Parqueo::cantCampLibres(){
 	int campLibres = 0;
 	//Aqui puse == nullptr porque campos vacios son campos libres, tecnicamente
 	for(int i = 0; i < tamano; i++){
-		if(lugaresParqueo[i] == nullptr || lugaresParqueo[i] -> getEstadoCampo() == 'L'){
+		if(lugaresParqueo[i] -> getEstadoCampo() == 'L'){
 			campLibres++;
 		}
 	}
@@ -141,7 +136,7 @@ string Parqueo::vehiculosDeterminadoCampo(int campo){
 	for(int i = 0; i < tamano; i++){
 		if(lugaresParqueo[i] -> getNumeroCampo() == campo /*&& lugaresParqueo[i] != nullptr*/){
 			r << lugaresParqueo[i] -> toString();
-		}else if( campo == lugaresParqueo[i] -> getEstadoCampo() && lugaresParqueo[i] == nullptr){
+		}else if( campo == lugaresParqueo[i] -> getEstadoCampo()){
 			r << "Ningun vehiculo ha utilizado ese espacio del parqueo...\n";
 		}else if( campo != lugaresParqueo[i] -> getEstadoCampo()){
 			r << "El numero de campo digitado no existe...\n" << endl;

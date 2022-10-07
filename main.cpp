@@ -36,7 +36,6 @@ int main () {
 	
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
 	
-	parqueo -> llenarVacios();
 	
 	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(10);
 	
@@ -49,17 +48,17 @@ int main () {
 	Cobro* cobro = new Cobro;
 	
 	InfoDelCampo* numCampo = new InfoDelCampo(numeroCampo,estadoCampo);
-	InfoDelCampo* numCampo2 = new InfoDelCampo(numeroCampo,estadoCampo);
+	
 	
 	InfoDelCampo* info = new InfoDelCampo(4, 'O');
-	InfoDelCampo* info2 = new InfoDelCampo(2, 'L');
-	InfoDelCampo* info3 = new InfoDelCampo(1, 'M');
+	InfoDelCampo* info2 = new InfoDelCampo(10, 'L');
+	InfoDelCampo* info3 = new InfoDelCampo(6, 'M');
 	
 	parqueo->agregarVehiculo(info);
 	parqueo->agregarVehiculo(info2);
 	parqueo->agregarVehiculo(info3);
 	
-	
+	parqueo -> llenarVacios();
 	
 	for(;;){
 		system("cls");
