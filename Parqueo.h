@@ -26,6 +26,7 @@ public:
 	void llenarVacios();
 	void asignarContVehi();
 	double cobroPapi(int,double,int,int);
+	string vehiculosRangoTonelaje(double);
 	
 private:
 	InfoDelCampo** lugaresParqueo;

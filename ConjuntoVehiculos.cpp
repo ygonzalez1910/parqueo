@@ -45,3 +45,14 @@ void ConjuntoVehiculos::crearCarrito(string marca, string placa, float tonelaje,
 
 }
 
+
+string ConjuntoVehiculos::toStringMostrarVehiculosQueEstenONo ( ) {
+	
+	stringstream r;
+	for(int i=0; i < cantidad; i++){
+		r << i <<"."<< vehiculos[i]->toString();
+	}
+	return r.str();
+	
+}
+

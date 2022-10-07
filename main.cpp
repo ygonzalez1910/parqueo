@@ -242,17 +242,13 @@ int main () {
 			system("pause");
 		}else if(opc == 17){
 			system("cls");
-			
+			conjuntoVehiculos -> toStringMostrarVehiculosQueEstenONo();
 			system("pause");
 		}else if(opc == 18){
 			system("cls");
-			
+			parqueo -> vehiculosRangoTonelaje( vehiculo -> getTonelaje() );
 			system("pause");
 		}else if(opc == 19){
-			system("cls");
-			
-			system("pause");
-		}else if(opc == 20){
 			system("cls");
 			cout<<endl<<"Fin del programa, muchas gracias..."<<endl;
 			return 0;

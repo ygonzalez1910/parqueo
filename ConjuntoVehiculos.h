@@ -14,6 +14,7 @@ public:
 	string toString();
 	bool estaLleno();
 	Vehiculo* seleccionarParqueo(int);
+	string toStringMostrarVehiculosQueEstenONo();
 	
 private:
 	Vehiculo** vehiculos;
