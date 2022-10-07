@@ -10,6 +10,7 @@ public:
 	ConjuntoVehiculos(int);
 	~ConjuntoVehiculos();
 	void agregarVehiculo(Vehiculo*);
+	void crearCarrito(string,string,float,string);
 	string toString();
 	bool estaLleno();
 	Vehiculo* seleccionarParqueo(int);

@@ -1,6 +1,7 @@
 #ifndef PARQUEO_H
 #define PARQUEO_H
 #include "InfoDelCampo.h"
+#include "Cobro.h"
 #include<iostream>
 using namespace std;
 class Parqueo {
@@ -21,11 +22,13 @@ public:
 	int porcOcupParqueo();
 	int cantCampLibres();
 	int cantVehiculosParqueo();
-	InfoDelCampo* vehiculosDeterminadoCampo( InfoDelCampo* );
+	string vehiculosDeterminadoCampo(int);
+	double cobroPapi(int,double,int,int);
 	
 private:
 	InfoDelCampo** lugaresParqueo;
 	Vehiculo* vehiculo;
+	Cobro* cobro;
 	int cantidad;
 	int tamano;
 };

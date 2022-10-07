@@ -6,14 +6,16 @@ using namespace std;
 
 class Hora {
 public:
-	Hora(string,string);
+	Hora(int,int);
 	~Hora();
-	void setHoraEntrada(string);
-	void setHoraSalida(string);
+	void setHoraEntrada(int);
+	void setHoraSalida(int);
+	int getHoraEntrada();
+	int getHoraSalida();
 	
 private:
-	string horaEntrada;
-	string horaSalida;
+	int horaEntrada;
+	int horaSalida;
 };
 
 #endif

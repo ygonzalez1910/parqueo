@@ -1,6 +1,6 @@
 #include "Hora.h"
 
-Hora::Hora(string horaEntrada,string horaSalida): 
+Hora::Hora(int horaEntrada,int horaSalida): 
 	horaEntrada(horaEntrada),horaSalida(horaSalida){
 	
 }
@@ -9,13 +9,21 @@ Hora::~Hora(){
 	
 }
 
-void Hora::setHoraEntrada(string){
+void Hora::setHoraEntrada(int){
 	
 	this -> horaEntrada = horaEntrada;
 	
 }
 
-void Hora::setHoraSalida(string){
+void Hora::setHoraSalida(int){
 	this -> horaSalida = horaSalida;
+}
+
+int Hora::getHoraEntrada ( ) {
+	return horaEntrada;
+}
+
+int Hora::getHoraSalida ( ) {
+	return horaSalida;
 }
 

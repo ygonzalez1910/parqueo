@@ -36,7 +36,10 @@ string Parqueo::toString(){
 	
 	cout<<"Campos del parqueo: "<<endl;
 	for(int i = 0; i < cantidad; i++){
-	r << i+1 <<".\n"<< lugaresParqueo[i]-> toString();	
+		if(lugaresParqueo[i] == nullptr || lugaresParqueo[i] -> getEstadoCampo() == 'L' || 
+		   lugaresParqueo[i] -> getEstadoCampo() == 'O' || lugaresParqueo[i] -> getEstadoCampo() == 'M'){
+			r << i+1 <<".\n"<< lugaresParqueo[i]-> toString();	
+		}
 	}
 	return r.str();
 }
@@ -131,19 +134,37 @@ int Parqueo::cantVehiculosParqueo ( ) {
 	return cantVehiculos;
 }
 
-InfoDelCampo * Parqueo::vehiculosDeterminadoCampo ( InfoDelCampo* info ) {
+string Parqueo::vehiculosDeterminadoCampo(int campo){
 	
-	int numCampoDigitado;
-	cout << "Digite el numero de campo que desea saber cuales vehiculos han estado: " << endl;
-	cin >> numCampoDigitado;
-	for(int i = 0; i < cantidad; i++){
-		if ( numCampoDigitado == lugaresParqueo[i] -> getEstadoCampo() && lugaresParqueo[i] != nullptr){
-			cout << lugaresParqueo[i] -> toString();
-		}else if( numCampoDigitado == lugaresParqueo[i] -> getEstadoCampo() && lugaresParqueo[i] == nullptr){
-			cout << "Ningun vehiculo ha utilizado ese espacio del parqueo...";
-		}else if( numCampoDigitado != lugaresParqueo[i] -> getEstadoCampo()){
-			cout << "El numero de campo digitado no existe..." << endl;
+	stringstream r;
+	
+	for(int i = 0; i < tamano; i++){
+		if(lugaresParqueo[i] -> getNumeroCampo() == campo /*&& lugaresParqueo[i] != nullptr*/){
+			r << lugaresParqueo[i] -> toString();
+		}else if( campo == lugaresParqueo[i] -> getEstadoCampo() && lugaresParqueo[i] == nullptr){
+			r << "Ningun vehiculo ha utilizado ese espacio del parqueo...\n";
+		}else if( campo != lugaresParqueo[i] -> getEstadoCampo()){
+			r << "El numero de campo digitado no existe...\n" << endl;
+		}
+	}
+	return r.str();
+}
+
+//void Parqueo::llenarVacios(){
+//	
+//	for(int i = 0; i < tamano; i++){
+//		if(lugaresParqueo[i] == nullptr){
+//			lugaresParqueo[i] -> setNumeroCampo(i);
+//			lugaresParqueo[i] -> setEstadoCampo('L');
+//		}
+//	}	
+//}
+
+double Parqueo::cobroPapi(int campo, double tonelaje, int entrada, int salida){
+	
+	for(int i = 0; i < tamano; i++){
+		if(lugaresParqueo[i] -> getNumeroCampo() == campo){
+			return cobro -> totalAPagar(tonelaje, entrada, salida);
 		}
 	}
 }
-

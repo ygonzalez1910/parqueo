@@ -14,14 +14,15 @@ int main () {
 	int cantEspaciosParqueo=0;
 	string nombreChofer = " ";
 	string cedulaChofer = " ";
-	string horaEntrada = " ", horaSalida = " ";
+	int horaEntrada = 0, horaSalida = 0;
 	int numeroCampo = 0;
 	char estadoCampo = ' ';
-	char continuar;
+	bool continuar = false;
 	int posicionParqueo = 0;
-	
+	int campo = 0;
 	string marca = " ", placa = " ", color = " ";
 	float tonelaje = 0.0;
+	int campoCancelar = 0;
 
 //	cout<<"Digite el nombre del Mall."<<endl;
 //	cin>>nombre;
@@ -35,15 +36,17 @@ int main () {
 	
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
 	
+	//parqueo -> llenarVacios();
+	
 	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(10);
 	
 	Chofer* chofer = new Chofer(nombreChofer,cedulaChofer);
 	
 	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color);
-	
+
 	Hora* hora = new Hora(horaEntrada,horaSalida);
 	
-	Cobro* cobro = new Cobro(hora);
+	Cobro* cobro = new Cobro;
 	
 	InfoDelCampo* numCampo = new InfoDelCampo(numeroCampo,estadoCampo);
 	InfoDelCampo* numCampo2 = new InfoDelCampo(numeroCampo,estadoCampo);
@@ -55,6 +58,8 @@ int main () {
 	parqueo->agregarVehiculo(info);
 	parqueo->agregarVehiculo(info2);
 	parqueo->agregarVehiculo(info3);
+	
+	
 	
 	for(;;){
 		system("cls");
@@ -107,9 +112,8 @@ int main () {
 			//ingresar la informacion basica del vehiculo, del chofer, la hora 
 			//de entrada y del numero de campo que esto siendo utilizado
 			cout <<"Lugares del parqueo...\n";
-			for(int i = 0; i < cantEspaciosParqueo; i++){
-				cout << parqueo -> lugaresParqueo[i]->toString();
-			}
+			
+			cout << parqueo ->toString();
 			
 			//no se estan mostrando la cantidad completa de espacios, solo los vehículos registrados
 			cout << "Seleccione el lugar del parqueo que desea ocupar:";
@@ -153,20 +157,17 @@ int main () {
 							cin >> horaEntrada;
 							hora -> setHoraEntrada(horaSalida);
 							
-							Vehiculo* vehiculoAgregao = new Vehiculo(marca,placa,tonelaje,color);
-							conjuntoVehiculos->agregarVehiculo(vehiculoAgregao);
+							conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color);
 							
 							cout << endl;
 							cout << conjuntoVehiculos -> toString()<<"\n";
-								//agregar la informacion de vehiculos al vector
-								conjuntoVehiculos ->agregarVehiculo(vehiculo);
-								cout << "\nDesea agregar mas vehiculos: \n Si lo desea digite S, si no digite N.\n";
+								cout << "\nDesea agregar mas vehiculos: \n Si lo desea digite 1, si no digite 0.\n";
 								cin >> continuar;
 							}else{
 								cout <<"\nYa no puede registrar mas vehiculos en ese parqueo.";
-								continuar = 'N';
+								continuar = true;
 							}
-						}while(continuar == 'N');
+						}while(continuar == false);
 							cout <<"\nLas vehiculos registradas son:\n";
 							cout << conjuntoVehiculos->toString();
 						system("pause");
@@ -175,9 +176,9 @@ int main () {
 			
 		}else if(opc == 5){
 			system("cls");
-			cout << cobro -> totalAPagar( vehiculo -> getTonelaje() );
+			cout << "Que campo desea cancelar: "; cin>>campoCancelar;
+			cout << parqueo -> cobroPapi(campoCancelar, vehiculo -> getTonelaje(), hora -> getHoraEntrada(), hora -> getHoraSalida());
 			system("pause");
-	
 			
 		}else if(opc == 6){
 			system("cls");
@@ -233,7 +234,11 @@ int main () {
 			system("pause");
 		}else if(opc == 16){
 			system("cls");
-			cout<< parqueo -> vehiculosDeterminadoCampo(numCampo2);
+			
+			cout << "Digite el numero de campo que desea saber cuales vehiculos han estado: " << endl;
+			cin >> campo;
+			cout << parqueo -> vehiculosDeterminadoCampo(campo);
+			
 			system("pause");
 		}else if(opc == 17){
 			system("cls");

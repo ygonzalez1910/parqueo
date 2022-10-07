@@ -36,3 +36,12 @@ Vehiculo* ConjuntoVehiculos::seleccionarParqueo (int posicion) {
 		return nullptr;
 	}
 }
+
+void ConjuntoVehiculos::crearCarrito(string marca, string placa, float tonelaje, string color){
+	
+	Vehiculo* carrito = new Vehiculo(marca,placa,tonelaje,color);
+	
+	agregarVehiculo(carrito);
+
+}
+
