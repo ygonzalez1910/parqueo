@@ -2,34 +2,13 @@
 #include <sstream>
 using std::stringstream;
 
-InfoDelCampo::InfoDelCampo(int numeroCampo,char estadoCampo):numeroCampo(numeroCampo),estadoCampo(estadoCampo) {
+InfoDelCampo::InfoDelCampo(int numeroCampo,char estadoCampo)
+	:numeroCampo(numeroCampo),estadoCampo(estadoCampo),vehiculo(vehiculo) {
 
 }
 
 InfoDelCampo::~InfoDelCampo(){
 	
-}
-
-string InfoDelCampo::toString (  ) {
-	stringstream r;
-
-	if(estadoCampo == 'L' ){
-		r << "Estado libre\n";
-	}else if(estadoCampo == 'O'){
-		r << "Estado ocupado\n";
-	}else if(estadoCampo == 'M'){
-		r << "Estado en mantenimiento\n";
-	}
-	
-	r << "Lugar: " << numeroCampo << endl;
-	
-	if(vehiculo != nullptr){
-		r << "Placa: " <<  vehiculo -> getPlaca() << endl;
-	}else{
-		r << "No existe placa en este campo."<<endl;
-	}
-	
-	return r.str();
 }
 
 void InfoDelCampo::estadoOcupado(){
@@ -53,3 +32,28 @@ char InfoDelCampo::getEstadoCampo ( ) {
 	return estadoCampo;
 }
 
+void InfoDelCampo::setVehiculos(ConjuntoVehiculos* conjuntoVehiculos){
+	this -> conjuntoVehiculos = conjuntoVehiculos;
+}
+
+string InfoDelCampo::toString (  ) {
+	stringstream r;
+	
+	if(estadoCampo == 'L' ){
+		r << "Estado libre\n";
+	}else if(estadoCampo == 'O'){
+		r << "Estado ocupado\n";
+	}else if(estadoCampo == 'M'){
+		r << "Estado en mantenimiento\n";
+	}
+	
+	r << "Lugar: " << numeroCampo << endl;
+	
+	if(vehiculo != nullptr){
+		r << "Placa: " <<  vehiculo -> getPlaca() << endl;
+	}else{
+		r << "No existe placa en este campo."<<endl;
+	}
+	
+	return r.str();
+}

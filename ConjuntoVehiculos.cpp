@@ -1,7 +1,7 @@
 #include "ConjuntoVehiculos.h"
 
 ConjuntoVehiculos::ConjuntoVehiculos(int tamano)
-	: tamano(tamano), cantidad(0), 
+	: tamano(10), cantidad(0), 
 	vehiculos(new Vehiculo*[tamano]) {
 	for(int i=0; i < tamano; i++){
 		vehiculos[i] = nullptr;

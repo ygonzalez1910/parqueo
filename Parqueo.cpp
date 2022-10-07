@@ -150,15 +150,14 @@ string Parqueo::vehiculosDeterminadoCampo(int campo){
 	return r.str();
 }
 
-//void Parqueo::llenarVacios(){
-//	
-//	for(int i = 0; i < tamano; i++){
-//		if(lugaresParqueo[i] == nullptr){
-//			lugaresParqueo[i] -> setNumeroCampo(i);
-//			lugaresParqueo[i] -> setEstadoCampo('L');
-//		}
-//	}	
-//}
+void Parqueo::llenarVacios(){
+	
+	for(int i = 0; i < tamano; i++){
+		if(lugaresParqueo[i] == nullptr){
+			agregarVehiculo(new InfoDelCampo(i,'L'));
+		}
+	}	
+}
 
 double Parqueo::cobroPapi(int campo, double tonelaje, int entrada, int salida){
 	
@@ -166,5 +165,11 @@ double Parqueo::cobroPapi(int campo, double tonelaje, int entrada, int salida){
 		if(lugaresParqueo[i] -> getNumeroCampo() == campo){
 			return cobro -> totalAPagar(tonelaje, entrada, salida);
 		}
+	}
+}
+
+void Parqueo::asignarContVehi(){
+	for(int i = 0; i < tamano; i++){
+		lugaresParqueo[i]->setVehiculos(new ConjuntoVehiculos(10));
 	}
 }

@@ -23,6 +23,8 @@ public:
 	int cantCampLibres();
 	int cantVehiculosParqueo();
 	string vehiculosDeterminadoCampo(int);
+	void llenarVacios();
+	void asignarContVehi();
 	double cobroPapi(int,double,int,int);
 	
 private:

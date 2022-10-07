@@ -36,7 +36,7 @@ int main () {
 	
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
 	
-	//parqueo -> llenarVacios();
+	parqueo -> llenarVacios();
 	
 	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(10);
 	
