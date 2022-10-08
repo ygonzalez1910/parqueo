@@ -58,3 +58,8 @@ string InfoDelCampo::toString (  ) {
 	
 	return r.str();
 }
+
+Vehiculo * InfoDelCampo::getVehiculo ( ) {
+	return vehiculo;
+}
+

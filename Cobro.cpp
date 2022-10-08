@@ -17,11 +17,11 @@ void Cobro::totalAPagar (double tonelaje, int entrada, int salida) {
 	
 	if( tonelaje < 1.0){
 		cobroAdicional = 0.0;
-	}else if( tonelaje <= 1.0 && tonelaje <= 1.5){
+	}else if( tonelaje >= 1.0 && tonelaje <= 1.5){
 		cobroAdicional = 0.05;
-	}else if( tonelaje <= 1.6 && tonelaje <= 3.5){
+	}else if( tonelaje >= 1.6 && tonelaje <= 3.5){
 		cobroAdicional = 0.10;
-	}else if( tonelaje <= 3.6 && tonelaje <= 5.0){
+	}else if( tonelaje >= 3.6 && tonelaje <= 5.0){
 		cobroAdicional = 0.15;
 	}else{
 		cobroAdicional = 0.20;

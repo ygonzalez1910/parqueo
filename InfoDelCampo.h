@@ -17,6 +17,7 @@ public:
 	int getNumeroCampo();
 	char getEstadoCampo();
 	void estadoOcupado();
+	Vehiculo* getVehiculo();
 	
 private:
 	int numeroCampo;

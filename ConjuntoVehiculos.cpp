@@ -65,4 +65,28 @@ double ConjuntoVehiculos::cantidadDineroIngresadoAlDia () {
 	return dineroTotal;
 }
 
+void ConjuntoVehiculos::tonelajeVehiculosMayorUso ( ) {
+	
+	int posicionMayorUso=0;
+	Vehiculo* vehiculosMayorTonelaje[cantidad]; 
+	int cantidad=0; 
+	
+	for(int i=0;i<tamano;i++){
+		if( vehiculos[posicionMayorUso] -> getTonelaje() < vehiculos[i] -> getTonelaje()){
+			posicionMayorUso=i; 
+		}
+	}
+	
+	for(int i=0;i<tamano;i++){ 
+		if(vehiculos[posicionMayorUso] -> getTonelaje() == vehiculos[i] -> getTonelaje()){
+			vehiculosMayorTonelaje[cantidad++]=vehiculos[i]; 
+		}
+	}
+	
+	for(int i=0;i<cantidad;i++){ 
+		cout<<vehiculos[i] -> toString()<<endl;
+	}
+	
+}
+
 
