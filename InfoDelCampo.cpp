@@ -39,21 +39,21 @@ void InfoDelCampo::setVehiculos(ConjuntoVehiculos* conjuntoVehiculos){
 
 string InfoDelCampo::toString (  ) {
 	stringstream r;
-	
+	r << " " << numeroCampo ;
 	if(estadoCampo == 'L' ){
-		r << "Estado libre\n";
+		r << "-Libre -> ";
 	}else if(estadoCampo == 'O'){
-		r << "Estado ocupado\n";
+		r << "-Ocupado -> ";
 	}else if(estadoCampo == 'M'){
-		r << "Estado en mantenimiento\n";
+		r << "-Mantenimiento -> ";
 	}
 	
-	r << "Lugar: " << numeroCampo << endl;
+	
 	
 	if(vehiculo != nullptr){
-		r << "Placa: " <<  vehiculo -> getPlaca() << endl;
+		r << " Placa: " <<  vehiculo -> getPlaca() << endl;
 	}else{
-		r << "No existe placa en este campo."<<endl;
+		r << "No existe placa en este campo\n"<<endl;
 	}
 	
 	return r.str();

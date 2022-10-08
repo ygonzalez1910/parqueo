@@ -28,6 +28,7 @@ public:
 	void asignarContVehi();
 	void cobroTotal(int,double,int,int);
 	string vehiculosRangoTonelaje(double);
+	double cobroDeterminadoCampo(int);
 	
 	
 private:

@@ -20,6 +20,7 @@ public:
 	double cantidadDineroIngresadoAlDia();
 	void tonelajeVehiculosMayorUso();
 	
+	
 private:
 	Vehiculo** vehiculos;
 	int tamano;

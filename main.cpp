@@ -17,7 +17,6 @@ int main () {
 	int horaEntrada = 0, horaSalida = 0;
 	int numeroCampo = 0;
 	char estadoCampo = ' ';
-	bool continuar = false;
 	int posicionParqueo = 0;
 	int campo = 0;
 	string marca = " ", placa = " ", color = " ";
@@ -106,23 +105,23 @@ int main () {
 			//el sistema le debera permitir, 
 			//ingresar la informacion basica del vehiculo, del chofer, la hora 
 			//de entrada y del numero de campo que esto siendo utilizado
+			
+			bool continuar = false;
 			cout <<"Lugares del parqueo...\n";
+			cout << parqueo -> toString();
 			
-			cout << parqueo ->toString();
-			
-			//no se estan mostrando la cantidad completa de espacios, solo los vehículos registrados
 			cout << "Seleccione el lugar del parqueo que desea ocupar:";
 			cin >> posicionParqueo;
 				
-			for(int i = 0; i<cantEspaciosParqueo;i++){
+			for(int i = 0; i < cantEspaciosParqueo;i++){
 					
 				if( posicionParqueo != numCampo -> getEstadoCampo() ){
 						
-					conjuntoVehiculos->seleccionarParqueo(posicionParqueo);
+					conjuntoVehiculos ->  seleccionarParqueo(posicionParqueo);
 						
-					numCampo->estadoOcupado();
+					numCampo -> estadoOcupado();
 						
-						do{
+						//do{
 							if(conjuntoVehiculos->estaLleno() == false){
 							system("cls");
 							cout<<"Datos del chofer: \n";
@@ -156,16 +155,15 @@ int main () {
 							
 							cout << endl;
 							cout << conjuntoVehiculos -> toString()<<"\n";
-								cout << "\nDesea agregar mas vehiculos: \n Si lo desea digite 1, si no digite 0.\n";
-								cin >> continuar;
+							cout << "\nDesea agregar mas vehiculos: \n Si lo desea digite 1, si no digite 0.\n";
+							cin >> continuar;
 							}else{
 								cout <<"\nYa no puede registrar mas vehiculos en ese parqueo.";
 								continuar = true;
 							}
-						}while(continuar == false);
+					/*	}while(continuar == false);*/
 							cout <<"\nLas vehiculos registradas son:\n";
 							cout << conjuntoVehiculos->toString();
-						system("pause");
 					}
 				}
 			
@@ -217,7 +215,10 @@ int main () {
 			system("pause");
 		}else if(opc == 13){
 			system("cls");
-			
+			int campoDigitado;
+			cout << "Digite el numero de campo que desea saber cual ha sido el monto obtenido total: " << endl;
+			cin >> campoDigitado;
+			cout << parqueo -> cobroDeterminadoCampo(campoDigitado);
 			system("pause");
 			
 		}else if(opc == 14){
@@ -265,3 +266,6 @@ int main () {
 	}	
 }
 
+void solicitarDatosChofer(){
+	
+}

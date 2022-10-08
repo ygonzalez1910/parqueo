@@ -34,9 +34,10 @@ void Parqueo::setTamano (int tamano) {
 string Parqueo::toString(){
 	stringstream r;
 	
-	cout<<"Campos del parqueo: "<<endl;
+	cout<<"\t\tCampos del parqueo: ";
+	cout << "\n--------------------------------------------------------------------------------------------------------------\n";
 	for(int i = 0; i < tamano; i++){
-			r << i <<".\n"<< lugaresParqueo[i]-> toString();	
+			r << lugaresParqueo[i]-> toString();	
 	}
 	return r.str();
 }
@@ -180,3 +181,17 @@ string Parqueo::vehiculosRangoTonelaje (double tonelaje) {
 	return r.str();
 }
 
+double Parqueo::cobroDeterminadoCampo(int campo){
+	
+	double dineroTotal;
+	for(int i = 0; i < tamano; i++){
+		if(lugaresParqueo[i] -> getNumeroCampo() == campo /*&& lugaresParqueo[i] != nullptr*/){
+			for(int i = 0; i < cantidad; i++){
+				dineroTotal += cobro -> getTotalPagar();
+			}
+		}else if( campo != lugaresParqueo[i] -> getEstadoCampo()){
+			cout << "El numero de campo digitado no existe...\n" << endl;
+		}
+	}
+	return dineroTotal;
+}
