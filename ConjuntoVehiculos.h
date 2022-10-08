@@ -19,6 +19,7 @@ public:
 	string toStringMostrarVehiculosQueEstenONo();
 	double cantidadDineroIngresadoAlDia();
 	void tonelajeVehiculosMayorUso();
+	int TotalVehiculosDia();
 	
 	
 private:

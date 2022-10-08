@@ -89,5 +89,15 @@ void ConjuntoVehiculos::tonelajeVehiculosMayorUso ( ) {
 	
 }
 
-
+int ConjuntoVehiculos::TotalVehiculosDia(){
+	
+	int contTotalVehiculosDia = 0;
+	
+	for(int i = 0; i < tamano; i++){
+		if(vehiculos[i] != nullptr){
+			contTotalVehiculosDia++;
+		}
+	}
+	return contTotalVehiculosDia;
+}
 

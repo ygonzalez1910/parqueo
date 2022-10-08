@@ -205,6 +205,8 @@ int main () {
 		}else if(opc == 11){
 			system("cls");
 			
+			cout << "El total de vehiculos que han ingresado en el dia es de: " << conjuntoVehiculos -> TotalVehiculosDia()<<endl;
+			
 			system("pause");
 			
 		}else if(opc == 12){
