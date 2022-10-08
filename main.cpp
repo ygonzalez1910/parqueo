@@ -32,8 +32,7 @@ int main () {
 	
 	cout << "Digite la cantidad de espacios del parqueo del Mall." << endl;
 	cin >> cantEspaciosParqueo;
-	
-	//hacer un set del vehiculo porque la informacion del parqueo no lo tiene
+
 //	int cantidadEspaciosMantenimiento = 0;
 //	int numeroEspacioMantenimiento;
 //	cout << "Digite cuantos espacios van a estar en mantenimiento: ";
@@ -42,7 +41,6 @@ int main () {
 //		cout << "Digite los espacios que van a estar en mantenimiento.";
 //		cin << numeroEspacioMantenimiento;
 //	}
-//	info -> setEstadoCampo();
 	
 	
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
@@ -66,6 +64,22 @@ int main () {
 //	parqueo->agregarVehiculo(info3);
 	
 	parqueo -> llenarVacios();
+	
+	int espacioEnMantenimiento;
+	for ( int i = 0; i < cantEspaciosParqueo ; i++ ){
+		
+		cout<<"Desea que el campo "<<i<<" este en mantenimiento? 0 = No, 1 = Si"<<endl;
+		cin >> espacioEnMantenimiento;
+		
+		if (espacioEnMantenimiento == 1 ){
+			parqueo->lugaresParqueo[i]->setEstadoCampo('M');
+		}else{
+			parqueo->lugaresParqueo[i]->setEstadoCampo('L');
+		}
+		//parqueo->lugaresParqueo[i]->setEstadoCampo( espacioEnMantenimiento == 1 ? 'M' : 'L' );
+	}
+	
+	
 	
 	for(;;){
 		system("cls");
@@ -135,35 +149,36 @@ int main () {
 						
 						//do{
 							if(conjuntoVehiculos->estaLleno() == false){
-							system("cls");
-							cout<<"Datos del chofer: \n";
-							cout << "Digite su nombre: ";
-							cin >> nombreChofer;
-							//chofer -> setNombre(nombreChofer);
-							cout << "Digite su cedula: ";
-							cin >> cedulaChofer;
-							//chofer -> setCedula(cedulaChofer);
-							cout<<"\n\nDatos del vehiculo: \n";
-							cout << "Ingrese la marca de su vehiculo: ";
-							cin >> marca;
-							vehiculo -> setMarca(marca);
-							cout << "Ingrese la placa de su vehiculo: ";
-							cin >> placa;
-							vehiculo -> setPlaca(placa);
-							cout << "Ingrese el tonelaje de su vehiculo: ";
-							cin >> tonelaje;
-							vehiculo -> setTonelaje(tonelaje);
-							cout << "Ingrese el color: ";
-							cin >> color;
-							vehiculo -> setColor(color);
-							cout << "Ingrese la hora de entrada en numeros enteros: ";
-							cin >> horaEntrada;
-							hora -> setHoraEntrada(horaEntrada);
-							cout << "Ingrese la hora de entrada en numeros enteros: ";
-							cin >> horaEntrada;
-							hora -> setHoraEntrada(horaSalida);
+							
 							
 							if ( parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'L' ){
+								system("cls");
+								cout<<"Datos del chofer: \n";
+								cout << "Digite su nombre: ";
+								cin >> nombreChofer;
+								//chofer -> setNombre(nombreChofer);
+								cout << "Digite su cedula: ";
+								cin >> cedulaChofer;
+								//chofer -> setCedula(cedulaChofer);
+								cout<<"\n\nDatos del vehiculo: \n";
+								cout << "Ingrese la marca de su vehiculo: ";
+								cin >> marca;
+								vehiculo -> setMarca(marca);
+								cout << "Ingrese la placa de su vehiculo: ";
+								cin >> placa;
+								vehiculo -> setPlaca(placa);
+								cout << "Ingrese el tonelaje de su vehiculo: ";
+								cin >> tonelaje;
+								vehiculo -> setTonelaje(tonelaje);
+								cout << "Ingrese el color: ";
+								cin >> color;
+								vehiculo -> setColor(color);
+								cout << "Ingrese la hora de entrada en numeros enteros: ";
+								cin >> horaEntrada;
+								hora -> setHoraEntrada(horaEntrada);
+								cout << "Ingrese la hora de entrada en numeros enteros: ";
+								cin >> horaEntrada;
+								hora -> setHoraEntrada(horaSalida);
 								
 								Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color);
 								
@@ -180,7 +195,7 @@ int main () {
 								//parqueo->agregarVehiculo(info);
 							}
 							else{
-								cout << "Espacio ocupado- Vehiculo no fue agregado";
+								cout << "Espacio ocupado o en mantenimiento -> Vehiculo no fue agregado";
 								
 							}
 								
@@ -202,7 +217,8 @@ int main () {
 			
 		}else if(opc == 5){
 			system("cls");
-			cout << "Que campo desea cancelar: "; cin>>campoCancelar;
+			cout << "Que campo desea cancelar: "; 
+			cin>>campoCancelar;
 			parqueo -> cobroTotal(campoCancelar, vehiculo -> getTonelaje(), hora -> getHoraEntrada(), hora -> getHoraSalida());
 			parqueo -> lugaresParqueo[campoCancelar] -> setEstadoCampo('L');
 			system("pause");

@@ -49,8 +49,6 @@ string InfoDelCampo::toString (  ) {
 		r << "-Mantenimiento -> ";
 	}
 	
-
-	
 	if(vehiculo != nullptr){
 		r << " Placa: " <<  vehiculo -> getPlaca() << endl;
 	}else{
