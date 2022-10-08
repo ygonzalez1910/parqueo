@@ -39,13 +39,9 @@ int main () {
 	
 	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(10);
 	
-	Chofer* chofer = new Chofer(nombreChofer,cedulaChofer);
-	
 	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color);
 
 	Hora* hora = new Hora(horaEntrada,horaSalida);
-	
-	Cobro* cobro = new Cobro;
 	
 	InfoDelCampo* numCampo = new InfoDelCampo(numeroCampo,estadoCampo);
 	
@@ -128,33 +124,33 @@ int main () {
 						
 						do{
 							if(conjuntoVehiculos->estaLleno() == false){
-						system("cls");
-						cout<<"Datos del chofer: \n";
+							system("cls");
+							cout<<"Datos del chofer: \n";
 							cout << "Digite su nombre: ";
 							cin >> nombreChofer;
-							chofer -> setNombre(nombreChofer);
+							//chofer -> setNombre(nombreChofer);
 							cout << "Digite su cedula: ";
 							cin >> cedulaChofer;
-							chofer -> setCedula(cedulaChofer);
+							//chofer -> setCedula(cedulaChofer);
 							cout<<"\n\nDatos del vehiculo: \n";
 							cout << "Ingrese la marca de su vehiculo: ";
 							cin >> marca;
-							vehiculo -> setMarca(marca);
+							//vehiculo -> setMarca(marca);
 							cout << "Ingrese la placa de su vehiculo: ";
 							cin >> placa;
-							vehiculo -> setPlaca(placa);
+							//vehiculo -> setPlaca(placa);
 							cout << "Ingrese el tonelaje de su vehiculo: ";
 							cin >> tonelaje;
-							vehiculo -> setTonelaje(tonelaje);
+							//vehiculo -> setTonelaje(tonelaje);
 							cout << "Ingrese el color: ";
 							cin >> color;
-							vehiculo -> setColor(color);
+							//vehiculo -> setColor(color);
 							cout << "Ingrese la hora de entrada en numeros enteros: ";
 							cin >> horaEntrada;
-							hora -> setHoraEntrada(horaEntrada);
+							//hora -> setHoraEntrada(horaEntrada);
 							cout << "Ingrese la hora de entrada en numeros enteros: ";
 							cin >> horaEntrada;
-							hora -> setHoraEntrada(horaSalida);
+							//hora -> setHoraEntrada(horaSalida);
 							
 							conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color);
 							
@@ -206,7 +202,7 @@ int main () {
 			system("cls");
 			cout << "Cantidad de espacios en mantenimiento en todo el parqueo: " << parqueo -> cantidadEspaciosMantenimiento() << endl;
 			system("pause");
-
+			
 			
 		}else if(opc == 11){
 			system("cls");
@@ -216,17 +212,23 @@ int main () {
 		}else if(opc == 12){
 			system("cls");
 			
+			cout << "La cantidad de dinero ingresado en el dia es de: "<< conjuntoVehiculos -> cantidadDineroIngresadoAlDia()<<endl;
+			
 			system("pause");
 		}else if(opc == 13){
 			system("cls");
 			
 			system("pause");
-
+			
 		}else if(opc == 14){
 			system("cls");
 			
+			cout<<"-----------------------------------------------------------------------------------------------------------------"<<endl;
+			cout<<"A continuacion se mostraran los productos de mayor existencia..."<<endl;
+			cout<<"-----------------------------------------------------------------------------------------------------------------"<<endl;
+			
 			system("pause");
-	
+			
 		}else if(opc == 15){
 			system("cls");
 			cout << "La ocupacion del parqueo es del: "<< parqueo->porcOcupParqueo()<<"%.\n"; 
@@ -241,11 +243,15 @@ int main () {
 			system("pause");
 		}else if(opc == 17){
 			system("cls");
+			
 			conjuntoVehiculos -> toStringMostrarVehiculosQueEstenONo();
+			
 			system("pause");
 		}else if(opc == 18){
 			system("cls");
+			
 			parqueo -> vehiculosRangoTonelaje( vehiculo -> getTonelaje() );
+			
 			system("pause");
 		}else if(opc == 19){
 			system("cls");

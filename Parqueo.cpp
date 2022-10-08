@@ -36,7 +36,7 @@ string Parqueo::toString(){
 	
 	cout<<"Campos del parqueo: "<<endl;
 	for(int i = 0; i < tamano; i++){
-			r << i+1 <<".\n"<< lugaresParqueo[i]-> toString();	
+			r << i <<".\n"<< lugaresParqueo[i]-> toString();	
 	}
 	return r.str();
 }
@@ -180,3 +180,26 @@ string Parqueo::vehiculosRangoTonelaje (double tonelaje) {
 	return r.str();
 }
 
+void Parqueo::tonelajeVehiculosMayorUso ( ) {
+	
+	int posicionMayorUso=0;
+	ConjuntoVehiculos** vehiculosMayorTonelaje; 
+	int cantidad=0; 
+	
+	for(int i=0;i<cantidad;i++){
+		if(vehiculo[posicionMayorUso] -> getTonelaje() < vehiculo[i] -> getTonelaje()){
+			posicionMayorUso=i; 
+		}
+	}
+	
+	for(int i=0;i<cantidad;i++){ 
+		if(vehiculos[posicionMayorUso] -> getTonelaje() == vehiculo[i] -> getTonelaje()){
+			vehiculosMayorTonelaje[cantidad++]=vehiculos[i]; 
+		}
+	}
+	
+	for(int i=0;i<cantidad;i++){ 
+		cout<<vehiculo[i] -> toString()<<endl;
+	}
+	
+}

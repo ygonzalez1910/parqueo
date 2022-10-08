@@ -56,7 +56,7 @@ string ConjuntoVehiculos::toStringMostrarVehiculosQueEstenONo ( ) {
 	
 }
 
-double ConjuntoVehiculos::cantidadDineroIngresadoAlDia ( Cobro* cobro) {
+double ConjuntoVehiculos::cantidadDineroIngresadoAlDia () {
 	
 	double dineroTotal = 0;
 	for(int i = 0; i < cantidad; i++){
@@ -64,4 +64,5 @@ double ConjuntoVehiculos::cantidadDineroIngresadoAlDia ( Cobro* cobro) {
 	}
 	return dineroTotal;
 }
+
 

@@ -3,7 +3,7 @@
 using std::stringstream;
 
 InfoDelCampo::InfoDelCampo(int numeroCampo,char estadoCampo)
-	:numeroCampo(numeroCampo),estadoCampo(estadoCampo),vehiculo(vehiculo) {
+	:numeroCampo(numeroCampo),estadoCampo(estadoCampo),vehiculo(nullptr) {
 
 }
 
@@ -14,6 +14,7 @@ InfoDelCampo::~InfoDelCampo(){
 void InfoDelCampo::estadoOcupado(){
 	estadoCampo = 'O';
 }
+
 void InfoDelCampo::setEstadoCampo (char estadoCampo) {
 	if(estadoCampo == 'M' || 'O' || 'L' || nullptr){
 		this -> estadoCampo = estadoCampo;

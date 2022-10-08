@@ -27,6 +27,7 @@ public:
 	void asignarContVehi();
 	void cobroTotal(int,double,int,int);
 	string vehiculosRangoTonelaje(double);
+	void tonelajeVehiculosMayorUso();
 	
 private:
 	InfoDelCampo** lugaresParqueo;
