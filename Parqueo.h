@@ -29,10 +29,10 @@ public:
 	void cobroTotal(int,double,int,int);
 	string vehiculosRangoTonelaje(double);
 	double cobroDeterminadoCampo(int);
+	InfoDelCampo** lugaresParqueo;
 	
 	
 private:
-	InfoDelCampo** lugaresParqueo;
 	Vehiculo* vehiculo;
 	Cobro* cobro;
 	int cantidad;

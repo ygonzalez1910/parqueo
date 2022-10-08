@@ -16,7 +16,7 @@ void InfoDelCampo::estadoOcupado(){
 }
 
 void InfoDelCampo::setEstadoCampo (char estadoCampo) {
-	if(estadoCampo == 'M' || 'O' || 'L' || nullptr){
+	if(estadoCampo == 'M' || 'O' || 'L' ){
 		this -> estadoCampo = estadoCampo;
 	}
 }
@@ -44,11 +44,12 @@ string InfoDelCampo::toString (  ) {
 		r << "-Libre -> ";
 	}else if(estadoCampo == 'O'){
 		r << "-Ocupado -> ";
+		//r << vehiculo -> getPlaca();
 	}else if(estadoCampo == 'M'){
 		r << "-Mantenimiento -> ";
 	}
 	
-	
+
 	
 	if(vehiculo != nullptr){
 		r << " Placa: " <<  vehiculo -> getPlaca() << endl;
@@ -61,5 +62,9 @@ string InfoDelCampo::toString (  ) {
 
 Vehiculo * InfoDelCampo::getVehiculo ( ) {
 	return vehiculo;
+}
+
+void InfoDelCampo::setVehiculo (Vehiculo * vehiculo ) {
+	this -> vehiculo = vehiculo;
 }
 

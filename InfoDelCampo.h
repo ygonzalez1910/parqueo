@@ -13,6 +13,7 @@ public:
 	string toString();
 	void setEstadoCampo(char);
 	void setNumeroCampo(int);
+	void setVehiculo( Vehiculo*);
 	void setVehiculos(ConjuntoVehiculos*);
 	int getNumeroCampo();
 	char getEstadoCampo();

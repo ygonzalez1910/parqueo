@@ -33,6 +33,18 @@ int main () {
 	cout << "Digite la cantidad de espacios del parqueo del Mall." << endl;
 	cin >> cantEspaciosParqueo;
 	
+	//hacer un set del vehiculo porque la informacion del parqueo no lo tiene
+//	int cantidadEspaciosMantenimiento = 0;
+//	int numeroEspacioMantenimiento;
+//	cout << "Digite cuantos espacios van a estar en mantenimiento: ";
+//	cin >> cantidadEspaciosMantenimiento;
+//	for(int i = 0; i < cantidadEspaciosMantenimiento; i++){
+//		cout << "Digite los espacios que van a estar en mantenimiento.";
+//		cin << numeroEspacioMantenimiento;
+//	}
+//	info -> setEstadoCampo();
+	
+	
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
 	
 	
@@ -45,13 +57,13 @@ int main () {
 	InfoDelCampo* numCampo = new InfoDelCampo(numeroCampo,estadoCampo);
 	
 	
-	InfoDelCampo* info = new InfoDelCampo(4, 'O');
-	InfoDelCampo* info2 = new InfoDelCampo(10, 'L');
-	InfoDelCampo* info3 = new InfoDelCampo(6, 'M');
+//	InfoDelCampo* info = new InfoDelCampo(4, 'O');
+//	InfoDelCampo* info2 = new InfoDelCampo(10, 'L');
+//	InfoDelCampo* info3 = new InfoDelCampo(6, 'M');
 	
-	parqueo->agregarVehiculo(info);
-	parqueo->agregarVehiculo(info2);
-	parqueo->agregarVehiculo(info3);
+//	parqueo->agregarVehiculo(info);
+//	parqueo->agregarVehiculo(info2);
+//	parqueo->agregarVehiculo(info3);
 	
 	parqueo -> llenarVacios();
 	
@@ -113,7 +125,7 @@ int main () {
 			cout << "Seleccione el lugar del parqueo que desea ocupar:";
 			cin >> posicionParqueo;
 				
-			for(int i = 0; i < cantEspaciosParqueo;i++){
+			//for(int i = 0; i < cantEspaciosParqueo;i++){
 					
 				if( posicionParqueo != numCampo -> getEstadoCampo() ){
 						
@@ -134,24 +146,46 @@ int main () {
 							cout<<"\n\nDatos del vehiculo: \n";
 							cout << "Ingrese la marca de su vehiculo: ";
 							cin >> marca;
-							//vehiculo -> setMarca(marca);
+							vehiculo -> setMarca(marca);
 							cout << "Ingrese la placa de su vehiculo: ";
 							cin >> placa;
-							//vehiculo -> setPlaca(placa);
+							vehiculo -> setPlaca(placa);
 							cout << "Ingrese el tonelaje de su vehiculo: ";
 							cin >> tonelaje;
-							//vehiculo -> setTonelaje(tonelaje);
+							vehiculo -> setTonelaje(tonelaje);
 							cout << "Ingrese el color: ";
 							cin >> color;
-							//vehiculo -> setColor(color);
+							vehiculo -> setColor(color);
 							cout << "Ingrese la hora de entrada en numeros enteros: ";
 							cin >> horaEntrada;
-							//hora -> setHoraEntrada(horaEntrada);
+							hora -> setHoraEntrada(horaEntrada);
 							cout << "Ingrese la hora de entrada en numeros enteros: ";
 							cin >> horaEntrada;
-							//hora -> setHoraEntrada(horaSalida);
+							hora -> setHoraEntrada(horaSalida);
 							
-							conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color);
+							if ( parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'L' )
+							{
+								Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color);
+								
+								
+								parqueo ->lugaresParqueo[posicionParqueo]->setVehiculo(vehiculo);
+								parqueo ->lugaresParqueo[posicionParqueo]->setEstadoCampo('O');
+								
+								vehiculo->toString();
+								//parqueo ->lugaresParqueo[posicionParqueo]->toString();
+								
+								
+								
+								
+								//info->setVehiculo( vehiculo );
+								//parqueo->agregarVehiculo(info);
+							}
+							else{
+								cout << "Espacio ocupado- Vehiculo no fue agregado";
+								
+							}
+								
+							
 							
 							cout << endl;
 							cout << conjuntoVehiculos -> toString()<<"\n";
@@ -164,8 +198,8 @@ int main () {
 					/*	}while(continuar == false);*/
 							cout <<"\nLas vehiculos registradas son:\n";
 							cout << conjuntoVehiculos->toString();
-					}
 				}
+			//}//
 			
 		}else if(opc == 5){
 			system("cls");
