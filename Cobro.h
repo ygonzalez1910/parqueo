@@ -12,6 +12,8 @@ public:
 	float getTotalPagar();
 	
 private:
+	Hora* entrada;
+	Hora* salida;
 	const int precioHora = 800;
 	float totalPagar;
 	

@@ -163,8 +163,8 @@ int main () {
 							cin >> horaEntrada;
 							hora -> setHoraEntrada(horaSalida);
 							
-							if ( parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'L' )
-							{
+							if ( parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'L' ){
+								
 								Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color);
 								
 								
@@ -172,9 +172,8 @@ int main () {
 								parqueo ->lugaresParqueo[posicionParqueo]->setEstadoCampo('O');
 								
 								vehiculo->toString();
+								
 								//parqueo ->lugaresParqueo[posicionParqueo]->toString();
-								
-								
 								
 								
 								//info->setVehiculo( vehiculo );
@@ -205,6 +204,7 @@ int main () {
 			system("cls");
 			cout << "Que campo desea cancelar: "; cin>>campoCancelar;
 			parqueo -> cobroTotal(campoCancelar, vehiculo -> getTonelaje(), hora -> getHoraEntrada(), hora -> getHoraSalida());
+			parqueo -> lugaresParqueo[campoCancelar] -> setEstadoCampo('L');
 			system("pause");
 			
 		}else if(opc == 6){
@@ -302,6 +302,4 @@ int main () {
 	}	
 }
 
-void solicitarDatosChofer(){
-	
-}
+
