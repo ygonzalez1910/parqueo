@@ -29,7 +29,7 @@ public:
 	double cobroTotal(int,double,Hora*);
 	string vehiculosRangoTonelaje(double);
 	double cobroDeterminadoCampo(int);
-	double cancelarParqueo(int,int,string);
+	double cancelarEstancia(int,int,int);
 	
 	InfoDelCampo** lugaresParqueo;
 	

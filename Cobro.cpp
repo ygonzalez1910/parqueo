@@ -16,12 +16,19 @@ float Cobro::getTotalPagar ( ) {
 //	return horas;
 //}
 
-double Cobro::total(int salida, float tonelaje,string placa){
+double Cobro::total(int horaSalida,int minutoSalida, float tonelaje){
 	
-	horaSalida->setHoraSalida(salida);
+	horaSalida->setHora(horaSalida);
+	horaSalida->setMinuto(minutoSalida);
 	int totalHoras = 0;
 	double cobroAdicional = 0;
-	
+	double total;
+	if(horaEntrada -> getHora() > horaSalida -> getHora()){
+		totalHoras = horaEntrada->getHora() - horaSalida->getHora();
+	}else{
+		totalHoras = horaSalida->getHora() - horaEntrada->getHora();
+	}
+		
 	totalHoras = hora -> getHoraSalida() - hora -> getHoraEntrada();
 	
 
@@ -36,7 +43,9 @@ double Cobro::total(int salida, float tonelaje,string placa){
 	}else{
 		cobroAdicional = 0.20;
 	}
-	totalPagar = (totalHoras * precioHora) * cobroAdicional;
+	total = totalHoras * precioHora;
+	totalPagar = (total * cobroAdicional) + total;
+	return totalPago;
 }
 
 //	double totalHoras2 = 0;

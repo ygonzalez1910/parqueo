@@ -71,6 +71,6 @@ void InfoDelCampo::setVehiculo (Vehiculo * vehiculo ) {
 }
 
 
-double InfoDelCampo::cancelarParqueo2(int campo,int salida,string placa){
-	return vehiculo->total(salida, placa);
+double InfoDelCampo::cancelarEstancia(string placa,int horaSalida,int minutoSalida){
+	return vehiculo->total(horaSalida, minutoSalida,placa);
 }

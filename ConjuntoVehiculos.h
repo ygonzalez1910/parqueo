@@ -21,7 +21,7 @@ public:
 	double cantidadDineroIngresadoAlDia();
 	void tonelajeVehiculosMayorUso();
 	int TotalVehiculosDia();
-	
+	double totalPagar(int,int,string );
 private:
 	Vehiculo** vehiculos;
 	int tamano;

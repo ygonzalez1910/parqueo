@@ -19,7 +19,9 @@ public:
 	string getColor();
 	string getPlaca();
 	string toString();
-	double total(int,string);
+	double total(int,int);
+	double totalPago;
+	double getTotalPago();
 	
 private:
 	string marca;

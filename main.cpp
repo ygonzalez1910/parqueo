@@ -181,7 +181,7 @@ int main () {
 							vehiculo -> setColor(color);
 							cout << "Ingrese la hora de entrada en formato 24 horas: ";
 							cin >> entrada;
-							hora -> setHoraEntrada(entrada);
+							//hora -> setHoraEntrada(entrada);
 							
 							Hora* h = new Hora(entrada);
 							
@@ -219,13 +219,8 @@ int main () {
 			cout << "Digite el campo que desea cancelar: "<<endl;
 			cin>>campoCancelar;
 			cout << "Digite hora de salida en formato 24h: "<<endl;
-			cin>>salida;
-			cout << "Digite la placa para identificar su vehiculo: "<<endl;
-			cin>>placa2;
-			cout<< parqueo -> cancelarParqueo(campoCancelar,salida,placa2);
-			
-			parqueo -> lugaresParqueo[campoCancelar] -> setEstadoCampo('L');
-			
+			cin>> salida;
+			cout << parqueo -> cancelarEstancia(campoCancelar,salida,salida);
 			system("pause");
 		}else if(opc == 6){
 			system("cls");

@@ -10,10 +10,10 @@ public:
 	double totalCobro();
 	float getTotalPagar();
 	Hora* getHoras();
-	double total(int, float,string);
+	double total(int, int,float);
 	
 private:
-	Hora* hora;
+	Hora* horaEntrada;
 	const int precioHora = 800;
 	float totalPagar;
 	

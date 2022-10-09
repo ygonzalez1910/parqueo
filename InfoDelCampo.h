@@ -20,7 +20,7 @@ public:
 	void estadoOcupado();
 	Vehiculo* getVehiculo();
 	void estadoLibre();
-	double cancelarParqueo2(int,int,string);
+	double cancelarEstancia(string,int,int);
 	
 private:
 	int numeroCampo;

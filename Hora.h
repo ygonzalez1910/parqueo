@@ -14,8 +14,7 @@ public:
 	int getHoraSalida();
 	
 private:
-	int horaEntrada;
-	int horaSalida;
+	int hora;
 };
 
 #endif
