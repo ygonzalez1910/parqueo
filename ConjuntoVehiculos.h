@@ -3,6 +3,7 @@
 #include "Vehiculo.h"
 #include "Cobro.h"
 #include "Chofer.h"
+#include "Hora.h"
 #include <sstream>
 #include <string>
 using namespace std;
@@ -12,7 +13,7 @@ public:
 	ConjuntoVehiculos(int);
 	~ConjuntoVehiculos();
 	void agregarVehiculo(Vehiculo*);
-	Vehiculo* crearCarrito(string,string,float,string);
+	Vehiculo* crearCarrito(string,string,float,string, Hora*);
 	string toString();
 	bool estaLleno();
 	Vehiculo* seleccionarParqueo(int);
@@ -21,13 +22,13 @@ public:
 	void tonelajeVehiculosMayorUso();
 	int TotalVehiculosDia();
 	
-	
 private:
 	Vehiculo** vehiculos;
 	int tamano;
 	int cantidad;
 	Chofer* chofer;
 	Cobro* cobro;
+	Hora* hora;
 	
 };
 

@@ -180,15 +180,6 @@ void Parqueo::llenarVacios(){
 	}	
 }
 
-void Parqueo::cobroTotal(int campo, double tonelaje, int entrada, int salida){
-	
-	for(int i = 0; i < tamano; i++){
-		if(lugaresParqueo[i] -> getNumeroCampo() == campo){
-			cobro -> totalAPagar(tonelaje, entrada, salida);
-		}
-	}
-}
-
 void Parqueo::asignarContVehi(){
 	for(int i = 0; i < tamano; i++){
 		lugaresParqueo[i]->setVehiculos(new ConjuntoVehiculos(10));

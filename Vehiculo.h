@@ -2,12 +2,13 @@
 #define VEHICULO_H
 #include "Chofer.h"
 #include "Cobro.h"
+#include "Hora.h"
 #include<iostream>
 using namespace std;
 
 class Vehiculo {
 public:
-	Vehiculo(string,string,float,string);
+	Vehiculo(string,string,float,string,Hora*);
 	~Vehiculo();
 	void setMarca(string);
 	void setPlaca(string);
@@ -19,7 +20,6 @@ public:
 	string getPlaca();
 	string toString();
 	
-	
 private:
 	string marca;
 	string placa;
@@ -27,6 +27,7 @@ private:
 	string color;
 	Chofer* chofer;
 	Cobro* cobro;
+	Hora* hora;
 	
 };
 

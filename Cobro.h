@@ -2,18 +2,17 @@
 #define COBRO_H
 #include<iostream>
 using namespace std;
-
 #include "Hora.h"
 class Cobro {
 public:
 	Cobro();
 	~Cobro();
-	void totalAPagar(double,int,int);
+	double totalCobro();
 	float getTotalPagar();
+	Hora* getHoras();
 	
 private:
-	Hora* entrada;
-	Hora* salida;
+	Hora* horas;
 	const int precioHora = 800;
 	float totalPagar;
 	

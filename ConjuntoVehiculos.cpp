@@ -20,6 +20,7 @@ string ConjuntoVehiculos::toString ( ) {
 	for(int i=0; i < cantidad; i++){
 		if(vehiculos[i] != nullptr){
 			r << i <<".\n"<< vehiculos[i]->toString();
+		
 		}
 	}
 	return r.str();
@@ -37,13 +38,12 @@ Vehiculo* ConjuntoVehiculos::seleccionarParqueo (int posicion) {
 	}
 }
 
-Vehiculo* ConjuntoVehiculos::crearCarrito(string marca, string placa, float tonelaje, string color){
+Vehiculo* ConjuntoVehiculos::crearCarrito(string marca, string placa, float tonelaje, string color, Hora* hora){
 	
-	Vehiculo* carrito = new Vehiculo(marca,placa,tonelaje,color);
+	Vehiculo* carrito = new Vehiculo(marca,placa,tonelaje,color,hora);
 	
 	agregarVehiculo(carrito);
 	return carrito;
-
 }
 
 

@@ -26,7 +26,7 @@ public:
 	string vehiculosDeterminadoCampo(int);
 	void llenarVacios();
 	void asignarContVehi();
-	void cobroTotal(int,double,int,int);
+	double cobroTotal(int,double,Hora*);
 	string vehiculosRangoTonelaje(double);
 	double cobroDeterminadoCampo(int);
 	InfoDelCampo** lugaresParqueo;

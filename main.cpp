@@ -14,7 +14,7 @@ int main () {
 	int cantEspaciosParqueo=0;
 	string nombreChofer = " ";
 	string cedulaChofer = " ";
-	int horaEntrada = 0, horaSalida = 0;
+	int entrada = 0, salida = 0;
 	int numeroCampo = 0;
 	char estadoCampo = ' ';
 	int posicionParqueo = 0;
@@ -39,14 +39,14 @@ int main () {
 	
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
 
+	Hora* hora = new Hora(entrada,salida);
+	
 	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(10);
 	
-	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color);
+	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color, hora);
 	
 	Chofer* chofer = new Chofer(nombreChofer, cedulaChofer);
 
-	Hora* hora = new Hora(horaEntrada,horaSalida);
-	
 	InfoDelCampo* numCampo = new InfoDelCampo(numeroCampo,estadoCampo);
 	
 	
@@ -179,13 +179,15 @@ int main () {
 							cin >> color;
 							vehiculo -> setColor(color);
 							cout << "Ingrese la hora de entrada en formato 24 horas: ";
-							cin >> horaEntrada;
-							hora -> setHoraEntrada(horaEntrada);
+							cin >> entrada;
+							hora -> setHoraEntrada(entrada);
 							cout << "Ingrese la hora de salida en formato 24 horas: ";
-							cin >> horaEntrada;
-							hora -> setHoraEntrada(horaSalida);
+							cin >> entrada;
+							hora -> setHoraSalida(salida);
 							
-							Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color);
+							Hora* h = new Hora(entrada,salida);
+							
+							Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color,h);
 							
 							
 							parqueo ->lugaresParqueo[posicionParqueo]->setVehiculo(vehiculo);
@@ -205,28 +207,31 @@ int main () {
 							}
 								
 							cout << endl;
-							cout << conjuntoVehiculos -> toString()<<"\n";
+							//cout << conjuntoVehiculos -> toString()<<"\n";
 							}else{
 								cout <<"\nYa no puede registrar mas vehiculos en ese parqueo.";
 							}
-						cout <<"\nLas vehiculos registradas son:\n";
+						cout <<"\nEl vehiculo registrado es:\n";
 						cout << conjuntoVehiculos->toString();
 			}
 			system("pause");
 		}else if(opc == 5){
 			system("cls");
-			cout << "Que campo desea cancelar: "; 
-			cin>>campoCancelar;
-			parqueo -> cobroTotal(campoCancelar, vehiculo -> getTonelaje(), hora -> getHoraEntrada(), hora -> getHoraSalida());
-			parqueo -> lugaresParqueo[campoCancelar] -> setEstadoCampo('L');
-			system("pause");
 			
+			cout << "Digite el campo que desea cancelar: "<<endl;
+			cin>>campoCancelar;
+			
+			//metodo
+			
+			parqueo -> lugaresParqueo[campoCancelar] -> setEstadoCampo('L');
+			
+			system("pause");
 		}else if(opc == 6){
 			system("cls");
-			cout<< parqueo -> toStringLibres();
-			system("pause");
-
 			
+			cout<< parqueo -> toStringLibres();
+			
+			system("pause");
 		}else if(opc == 7){
 			system("cls");
 			cout<< parqueo -> toStringLibres();
@@ -265,24 +270,26 @@ int main () {
 			system("pause");
 		}else if(opc == 13){
 			system("cls");
+			
 			int campoDigitado;
 			cout << "Digite el numero de campo que desea saber cual ha sido el monto obtenido total: " << endl;
 			cin >> campoDigitado;
 			cout << parqueo -> cobroDeterminadoCampo(campoDigitado);
+			
 			system("pause");
 			
 		}else if(opc == 14){
 			system("cls");
 			
-			cout<<"-----------------------------------------------------------------------------------------------------------------"<<endl;
 			cout<<"A continuacion se mostraran los productos de mayor existencia..."<<endl;
-			cout<<"-----------------------------------------------------------------------------------------------------------------"<<endl;
 			
 			system("pause");
 			
 		}else if(opc == 15){
 			system("cls");
-			cout << "La ocupacion del parqueo es del: "<< parqueo->porcOcupParqueo()<<"%.\n"; 
+			
+			cout << "La ocupacion del parqueo es del: "<< parqueo->porcOcupParqueo()<<"%.\n";
+			
 			system("pause");
 		}else if(opc == 16){
 			system("cls");
@@ -306,11 +313,15 @@ int main () {
 			system("pause");
 		}else if(opc == 19){
 			system("cls");
-			cout<<endl<<"Fin del programa, muchas gracias..."<<endl;
+			
+			cout<<endl<<"Fin del programa, muchas gracias por apoyar a Yuli y Jeremy..."<<endl;
+			
 			return 0;
 		}else{
 			system("cls");
+			
 			cout<<"Opcion invalida, por favor ingrese otra de las disponibles en el menu."<<endl;
+			
 			system("pause");
 		}
 	}	
