@@ -134,7 +134,6 @@ int Parqueo::porcOcupParqueo(){
 
 int Parqueo::cantCampLibres(){
 	int campLibres = 0;
-	//Aqui puse == nullptr porque campos vacios son campos libres, tecnicamente
 	for(int i = 0; i < tamano; i++){
 		if(lugaresParqueo[i] -> getEstadoCampo() == 'L'){
 			campLibres++;
@@ -190,7 +189,9 @@ string Parqueo::vehiculosRangoTonelaje (double tonelaje) {
 	stringstream r;
 	for(int i= 0; i < cantidad; i++){
 		if( tonelaje > 1.0 && tonelaje < 1.5){
-			r << "Los vehiculos que se encuentran en el rango de tonelaje de 1.0 y 1.5 son: \n" << lugaresParqueo[i] << endl;
+			r << "Los vehiculos que se encuentran en el rango de tonelaje de 1.0 y 1.5 son: \n" << lugaresParqueo[i]->toString() << endl;
+		}else{
+			cout << "No se encontraron vehiculos en ese rango..." << endl;
 		}
 	}
 	return r.str();

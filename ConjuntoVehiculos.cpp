@@ -20,7 +20,6 @@ string ConjuntoVehiculos::toString ( ) {
 	for(int i=0; i < cantidad; i++){
 		if(vehiculos[i] != nullptr){
 			r << i <<".\n"<< vehiculos[i]->toString();
-		
 		}
 	}
 	return r.str();
@@ -93,9 +92,7 @@ void ConjuntoVehiculos::tonelajeVehiculosMayorUso ( ) {
 }
 
 int ConjuntoVehiculos::TotalVehiculosDia(){
-	
 	int contTotalVehiculosDia = 0;
-	
 	for(int i = 0; i < tamano; i++){
 		if(vehiculos[i] != nullptr){
 			contTotalVehiculosDia++;
