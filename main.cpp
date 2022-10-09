@@ -14,13 +14,13 @@ int main () {
 	int cantEspaciosParqueo=0;
 	string nombreChofer = " ";
 	string cedulaChofer = " ";
-	int entrada = 0, salida = 0;
+	int entrada = 0, hsalida = 0;
 	int numeroCampo = 0;
 	char estadoCampo = ' ';
 	int posicionParqueo = 0;
 	string marca = " ", placa = " ", color = " ", placa2 = " ";
 	float tonelaje = 0.0;
-	int campoCancelar = 0;
+	int campo = 0;
 	int campoInfo = 0;
 	
 //	cout<<"Digite el nombre del Mall."<<endl;
@@ -41,9 +41,11 @@ int main () {
 
 	Hora* hora = new Hora(entrada);
 	
+	Cobro* cobro = new Cobro(hora);
+	
 	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(10);
 	
-	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color, hora);
+	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color, cobro);
 	
 	Chofer* chofer = new Chofer(nombreChofer, cedulaChofer);
 
@@ -175,7 +177,6 @@ int main () {
 							
 							Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color,entrada);
 							
-							
 							parqueo ->lugaresParqueo[posicionParqueo]->setVehiculo(vehiculo);
 							parqueo ->lugaresParqueo[posicionParqueo]->setEstadoCampo('O');
 							
@@ -197,17 +198,15 @@ int main () {
 			system("cls");
 			
 			cout << "Digite el campo que desea cancelar: "<<endl;
-			cin>>campoCancelar;
+			cin>>campo;
 			cout << "Digite hora de salida en formato 24h: "<<endl;
-			cin>>salida;
+			cin>>hsalida;
 			cout << "Digite la placa para identificar su vehiculo: "<<endl;
 			cin>>placa2;
 			
-			Hora* hora2 = new Hora(salida);
+			cout<< parqueo -> seleccionarParqueo(campo,placa,hsalida);
 			
-			cout<< parqueo -> seleccionarParqueo(campoCancelar,hora2, placa2, parqueo->lugaresParqueo[campoCancelar]->getVehiculo()->getHora());
-			
-			parqueo -> lugaresParqueo[campoCancelar] -> setEstadoCampo('L');
+			parqueo -> lugaresParqueo[campo] -> setEstadoCampo('L');
 			
 			system("pause");
 		}else if(opc == 6){

@@ -1,6 +1,8 @@
 #include "Cobro.h"
+#include <sstream>
+using std::stringstream;
 
-Cobro::Cobro(Hora* entrada,Hora* salida):entrada(entrada),salida(salida),precioHora(800),totalPagar(0){
+Cobro::Cobro(Hora* entrada):entrada(entrada),precioHora(800),totalPagar(0){
 	
 }
 
@@ -9,28 +11,39 @@ Cobro::~Cobro() {
 }
 
 
-
 double Cobro::getTotalPagar ( ) {
 	return totalPagar;
 }
 
-int Cobro::getHoraSalida(){
-	return salida -> getHora();
-}
 
 int Cobro::getHoraEntrada(){
 	return entrada -> getHora();
 }
 
+
 void Cobro::setHoraEntrada(Hora* entrada){
 	this -> entrada = entrada;
 }
 
-void Cobro::setHoraSalida(Hora* salida){
-	this -> salida = salida;
+
+void Cobro::setTotalPagar (double totalPagar) {
+	this -> totalPagar = totalPagar;
 }
 
-double Cobro::total(Hora* salida, float tonelaje, Hora* entrada){
+string Cobro::toString ( ) {
+	stringstream r;
+	
+	r << "Hora entrada: " << entrada -> getHora() << endl;
+	r << "Hora salida: " << salida -> getHora() << endl;
+	r << "Total a pagar: " <<  totalPagar << endl;
+	
+	return r.str();
+}
+
+
+double Cobro::total(int hsalida, float tonelaje){
+	
+	salida->setHora(hsalida);
 	
 	int totalHoras = 0;
 	double cobroAdicional = 0;
@@ -54,7 +67,4 @@ double Cobro::total(Hora* salida, float tonelaje, Hora* entrada){
 }
 
 
-void Cobro::setTotalPagar (double totalPagar) {
-	this -> totalPagar = totalPagar;
-}
 

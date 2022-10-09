@@ -3,17 +3,18 @@
 #include<iostream>
 using namespace std;
 #include "Hora.h"
+
 class Cobro {
 public:
-	Cobro(Hora*,Hora*);
+	Cobro(Hora*);
 	~Cobro();
 	int getHoraEntrada();
 	int getHoraSalida();
 	double getTotalPagar();
 	void setTotalPagar(double);
 	void setHoraEntrada(Hora*);
-	void setHoraSalida(Hora*);
-	double total(Hora*, float, Hora*);
+	double total(int,float);
+	string toString();
 	
 private:
 	Hora* entrada;

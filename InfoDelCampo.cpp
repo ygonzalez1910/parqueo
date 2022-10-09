@@ -69,6 +69,6 @@ void InfoDelCampo::setVehiculo (Vehiculo * vehiculo ) {
 	this -> vehiculo = vehiculo;
 }
 
-double InfoDelCampo::cobrarParqueo(Hora* horaSalida,string placa, Hora* horaEntrada){
-	return conjuntoVehiculos -> total(horaSalida,placa,horaEntrada);
+double InfoDelCampo::cobrarParqueo(string placa, int hsalida){
+	return conjuntoVehiculos -> total(placa,hsalida);
 }

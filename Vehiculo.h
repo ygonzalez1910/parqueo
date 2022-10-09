@@ -8,7 +8,7 @@ using namespace std;
 
 class Vehiculo {
 public:
-	Vehiculo(string,string,float,string,Hora*);
+	Vehiculo(string,string,float,string,Cobro*);
 	~Vehiculo();
 	
 	void setMarca(string);
@@ -25,7 +25,9 @@ public:
 	string toString();
 	int getHoraEntrada();
 	Hora* getHora();
-	double total(Hora*,Hora*);
+	Cobro* getCobro();
+	
+	double total(int);
 	
 private:
 	string marca;

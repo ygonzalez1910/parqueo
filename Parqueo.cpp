@@ -212,10 +212,6 @@ double Parqueo::cobroDeterminadoCampo(int campo){
 	return dineroTotal;
 }
 
-double Parqueo::seleccionarParqueo(int campo,Hora* horaSalida, string placa, Hora* horaEntrada){
-	
-	//Cobro* cobro = new Cobro(horaEntrada, horaSalida);
-	
-	return lugaresParqueo[campo]->cobrarParqueo(horaSalida,placa, horaEntrada);
+double Parqueo::seleccionarParqueo(int campo, string placa, int hsalida){
+	return lugaresParqueo[campo]->cobrarParqueo(placa, hsalida);
 }
-

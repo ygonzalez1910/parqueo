@@ -11,6 +11,8 @@ public:
 	Parqueo(int);
 	~Parqueo();
 	
+	InfoDelCampo** lugaresParqueo;
+	
 	int getCantidad();
 	int getTamano();
 	void setCantidad(int);
@@ -36,12 +38,9 @@ public:
 	double cobroTotal(int,double,Hora*);
 	double cobroDeterminadoCampo(int);
 	
-	//double cancelarParqueo(int,int,string,int);
-	double seleccionarParqueo(int,Hora*,string,Hora*);
+	double seleccionarParqueo(int,string,int);
 	
-	InfoDelCampo** lugaresParqueo;
-	
-	
+
 private:
 	Vehiculo* vehiculo;
 	Cobro* cobro;
