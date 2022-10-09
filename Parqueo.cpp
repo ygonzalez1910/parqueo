@@ -35,7 +35,7 @@ string Parqueo::toString(){
 	stringstream r;
 	
 	cout<<"\t\tCampos del parqueo: ";
-	cout << "\n--------------------------------------------------------------------------------------------------------------\n";
+	cout << "\n-----------------------------------------------------\n";
 	for(int i = 0; i < tamano; i++){
 			r << lugaresParqueo[i]-> toString();	
 	}
@@ -158,14 +158,13 @@ int Parqueo::cantVehiculosParqueo ( ) {
 string Parqueo::vehiculosDeterminadoCampo(int campo){
 	
 	stringstream r;
-	
+	r << "Vehiculos del campo " << campo << " : "<<endl;
 	for(int i = 0; i < tamano; i++){
+		
 		if(lugaresParqueo[i] -> getNumeroCampo() == campo){
 			r << lugaresParqueo[i] -> toString();
-		}else if( campo == lugaresParqueo[i] -> getEstadoCampo()){
+		}else{
 			r << "Ningun vehiculo ha utilizado ese espacio del parqueo...\n";
-		}else if( campo != lugaresParqueo[i] -> getEstadoCampo()){
-			r << "El numero de campo digitado no existe...\n" << endl;
 		}
 	}
 	return r.str();
@@ -212,8 +211,20 @@ double Parqueo::cobroDeterminadoCampo(int campo){
 	return dineroTotal;
 }
 
-double Parqueo::cancelarParqueo(int campo, int salida, string placa){
-	lugaresParqueo[campo]->estadoLibre();
-	
-	return lugaresParqueo[campo]->cancelarParqueo2(campo,salida,placa);
-}
+//double Parqueo::cancelarParqueo(int campo, int salida, string placa, int entrada){
+//	
+//	return lugaresParqueo[campo]->cancelarParqueo2(campo,salida,placa,entrada);
+//}
+
+//double Parqueo::seleccionarParqueo(Hora* horaEntrada, Hora* horaSalida, string placa){
+//	Cobro* cobro = new Cobro(horaEntrada, horaSalida);
+//	
+//	for(int i = 0; i < tamano; i++){
+//		if(lugaresParqueo[i]->getVehiculo()->getPlaca() == placa){
+//			lugaresParqueo[i]->getVehiculo()->setCobro(cobro);
+//			return lugaresParqueo[i]->cobrarParqueo();
+//		}
+//	}
+//	
+//}
+

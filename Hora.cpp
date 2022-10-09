@@ -9,21 +9,12 @@ Hora::~Hora(){
 	
 }
 
-void Hora::setHoraEntrada(int){
-	
-	this -> horaEntrada = horaEntrada;
-	
+void Hora::setHora(int){
+	this -> hora = hora;
 }
 
-void Hora::setHoraSalida(int){
-	this -> horaSalida = horaSalida;
+int Hora::getHora ( ) {
+	return hora;
 }
 
-int Hora::getHoraEntrada ( ) {
-	return horaEntrada;
-}
-
-int Hora::getHoraSalida ( ) {
-	return horaSalida;
-}
 

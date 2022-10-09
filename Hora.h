@@ -8,14 +8,12 @@ class Hora {
 public:
 	Hora(int);
 	~Hora();
-	void setHoraEntrada(int);
-	void setHoraSalida(int);
-	int getHoraEntrada();
-	int getHoraSalida();
+	void setHora(int);
+	int getHora();
 	
 private:
-	int horaEntrada;
-	int horaSalida;
+	int hora;
+	
 };
 
 #endif

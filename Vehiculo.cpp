@@ -2,8 +2,8 @@
 #include <sstream> 
 using std::stringstream;
 
-Vehiculo::Vehiculo(string marca,string placa,float tonelaje,string color, Hora* hora): 
-	marca(marca),placa(placa),tonelaje(tonelaje),color(color),hora(nullptr){
+Vehiculo::Vehiculo(string marca,string placa,float tonelaje,string color, Hora* entrada): 
+	marca(marca),placa(placa),tonelaje(tonelaje),color(color),entrada(nullptr){
 	
 }
 
@@ -28,20 +28,20 @@ void Vehiculo::setColor(string color){
 	this->color=color;
 }
 
+void Vehiculo::setHora(Hora* entrada){
+	this -> entrada = entrada;
+}
+
+void Vehiculo::setCobro(Cobro* cobro){
+	this -> cobro = cobro;
+}
+
 string Vehiculo::getPlaca ( ) {
 	return placa;
 }
 
-
-string Vehiculo::toString ( ) {
-	stringstream r;
-	
-	r << "Marca: " << marca << endl;
-	r << "Placa: " << placa << endl;
-	r << "Tonelaje: " <<  tonelaje << endl;
-	r << "Color: " << color << endl;
-	
-	return r.str();
+int Vehiculo::getHoraEntrada(){
+	return entrada->getHora();
 }
 
 string Vehiculo::getMarca ( ) {
@@ -56,6 +56,20 @@ string Vehiculo::getColor ( ) {
 	return color;
 }
 
-double Vehiculo::total(int salida, string placa){
-	return cobro -> total(salida,tonelaje,placa);
+
+string Vehiculo::toString ( ) {
+	stringstream r;
+	
+	r << "Marca: " << marca << endl;
+	r << "Placa: " << placa << endl;
+	r << "Tonelaje: " <<  tonelaje << endl;
+	r << "Color: " << color << endl;
+	r << "Hora entrada: " << entrada<<endl;
+	
+	return r.str();
 }
+
+
+//double Vehiculo::total(int salida,int entrada){
+//	return cobro -> total(salida,tonelaje,entrada);
+//}

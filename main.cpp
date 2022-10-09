@@ -18,11 +18,11 @@ int main () {
 	int numeroCampo = 0;
 	char estadoCampo = ' ';
 	int posicionParqueo = 0;
-	int campo = 0;
 	string marca = " ", placa = " ", color = " ", placa2 = " ";
 	float tonelaje = 0.0;
 	int campoCancelar = 0;
-
+	int campoInfo = 0;
+	
 //	cout<<"Digite el nombre del Mall."<<endl;
 //	cin>>nombre;
 //	cout<<"\n";
@@ -48,15 +48,6 @@ int main () {
 	Chofer* chofer = new Chofer(nombreChofer, cedulaChofer);
 
 	InfoDelCampo* numCampo = new InfoDelCampo(numeroCampo,estadoCampo);
-	
-	
-//	InfoDelCampo* info = new InfoDelCampo(4, 'O');
-//	InfoDelCampo* info2 = new InfoDelCampo(10, 'L');
-//	InfoDelCampo* info3 = new InfoDelCampo(6, 'M');
-	
-//	parqueo->agregarVehiculo(info);
-//	parqueo->agregarVehiculo(info2);
-//	parqueo->agregarVehiculo(info3);
 	
 	parqueo -> llenarVacios();
 	
@@ -180,11 +171,9 @@ int main () {
 							vehiculo -> setColor(color);
 							cout << "Ingrese la hora de entrada en formato 24 horas: ";
 							cin >> entrada;
-							hora -> setHoraEntrada(entrada);
+							vehiculo -> setHora(new Hora(entrada));
 							
-							Hora* h = new Hora(entrada);
-							
-							Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color,h);
+							Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color,hora);
 							
 							
 							parqueo ->lugaresParqueo[posicionParqueo]->setVehiculo(vehiculo);
@@ -192,25 +181,17 @@ int main () {
 							
 							vehiculo->toString();
 							
-							//parqueo ->lugaresParqueo[posicionParqueo]->toString();
-							
-							
-							//info->setVehiculo( vehiculo );
-							//parqueo->agregarVehiculo(info);
-							}
-							else{
+							}else if(parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'O' || parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'M'){
 								cout << "Espacio ocupado o en mantenimiento -> Vehiculo no fue agregado";
-								
-							}
-								
-							cout << endl;
-							//cout << conjuntoVehiculos -> toString()<<"\n";
+								cout << endl;
 							}else{
 								cout <<"\nYa no puede registrar mas vehiculos en ese parqueo.";
 							}
 						cout <<"\nEl vehiculo registrado es:\n";
 						cout << conjuntoVehiculos->toString();
-			}
+						
+						}
+						}
 			system("pause");
 		}else if(opc == 5){
 			system("cls");
@@ -221,7 +202,9 @@ int main () {
 			cin>>salida;
 			cout << "Digite la placa para identificar su vehiculo: "<<endl;
 			cin>>placa2;
-			cout<< parqueo -> cancelarParqueo(campoCancelar,salida,placa2);
+			
+			entrada = parqueo->lugaresParqueo[campoCancelar]->getVehiculo()->getHoraEntrada();
+			//cout<< parqueo -> cancelarParqueo(campoCancelar, salida, placa2, entrada);
 			
 			parqueo -> lugaresParqueo[campoCancelar] -> setEstadoCampo('L');
 			
@@ -283,6 +266,7 @@ int main () {
 			
 			cout<<"A continuacion se mostraran los productos de mayor existencia..."<<endl;
 			
+			
 			system("pause");
 			
 		}else if(opc == 15){
@@ -294,21 +278,27 @@ int main () {
 		}else if(opc == 16){
 			system("cls");
 			
-			cout << "Digite el numero de campo que desea saber cuales vehiculos han estado: " << endl;
-			cin >> campo;
-			cout << parqueo -> vehiculosDeterminadoCampo(campo);
+			cout << "Digite el campo donde desea ver la informacion: ";
+			cin >> campoInfo;
+			
+			if(campoInfo<=cantEspaciosParqueo && campoInfo>=0){
+				cout<<parqueo->vehiculosDeterminadoCampo(campoInfo);
+			}else{
+				cout<<"Campo no existe en el parqueo."<<endl;
+			}
+			
 			
 			system("pause");
 		}else if(opc == 17){
 			system("cls");
 			
-			conjuntoVehiculos -> toStringMostrarVehiculosQueEstenONo();
+			cout << conjuntoVehiculos -> toStringMostrarVehiculosQueEstenONo();
 			
 			system("pause");
 		}else if(opc == 18){
 			system("cls");
 			
-			parqueo -> vehiculosRangoTonelaje( vehiculo -> getTonelaje() );
+			parqueo -> vehiculosRangoTonelaje(vehiculo -> getTonelaje() );
 			
 			system("pause");
 		}else if(opc == 19){
@@ -325,6 +315,6 @@ int main () {
 			system("pause");
 		}
 	}	
-}
+	}
 
 

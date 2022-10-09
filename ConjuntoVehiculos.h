@@ -13,7 +13,7 @@ public:
 	ConjuntoVehiculos(int);
 	~ConjuntoVehiculos();
 	void agregarVehiculo(Vehiculo*);
-	Vehiculo* crearCarrito(string,string,float,string, Hora*);
+	Vehiculo* crearCarrito(string,string,float,string,Hora*);
 	string toString();
 	bool estaLleno();
 	Vehiculo* seleccionarParqueo(int);
@@ -21,6 +21,8 @@ public:
 	double cantidadDineroIngresadoAlDia();
 	void tonelajeVehiculosMayorUso();
 	int TotalVehiculosDia();
+	string vehiculosRangoTonelaje();
+	double totalPagar(int,string, int);
 	
 private:
 	Vehiculo** vehiculos;

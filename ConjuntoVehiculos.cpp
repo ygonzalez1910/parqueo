@@ -38,9 +38,9 @@ Vehiculo* ConjuntoVehiculos::seleccionarParqueo (int posicion) {
 	}
 }
 
-Vehiculo* ConjuntoVehiculos::crearCarrito(string marca, string placa, float tonelaje, string color, Hora* hora){
+Vehiculo* ConjuntoVehiculos::crearCarrito(string marca, string placa, float tonelaje, string color, Hora* entrada){
 	
-	Vehiculo* carrito = new Vehiculo(marca,placa,tonelaje,color,hora);
+	Vehiculo* carrito = new Vehiculo(marca,placa,tonelaje,color,entrada);
 	
 	agregarVehiculo(carrito);
 	
@@ -103,13 +103,36 @@ int ConjuntoVehiculos::TotalVehiculosDia(){
 	return contTotalVehiculosDia;
 }
 
-double ConjuntoVehiculos::totalPagar(int salida,string placa){
-	double total = 0;
+
+
+string ConjuntoVehiculos::vehiculosRangoTonelaje () {
+	stringstream r;
+	int cont = 0;
 	
-	for(int i = 0; i< cantidad; i++){
-		if(vehiculos[i] -> getPlaca()== placa){
-			total = vehiculos[i]->totalPagar(salida);
+	for(int i = 0; i < cantidad;i++){
+		if(vehiculos[i] -> getTonelaje() > 1.0 && vehiculos[i] -> getTonelaje() < 1.5){
+		cont++;
 		}
 	}
+	if(cont != 0){
+		for(int i= 0; i < cantidad; i++){
+			if(vehiculos[i] -> getTonelaje() > 1.0 && vehiculos[i] -> getTonelaje() < 1.5){
+				r << "Los vehiculos que se encuentran en el rango de tonelaje de 1.0 y 1.5 son: \n" << vehiculos[i] << endl;
+			}
+		}
+	}else{
+		r << "No hay vehiculos en este rango de tonelaje." <<endl;
+	}
+	return r.str();
 }
 
+//double ConjuntoVehiculos::totalPagar(int salida,string placa,int entrada){
+//	double total = 0;
+//	
+//	for(int i = 0; i< cantidad; i++){
+//		if(vehiculos[i] -> getPlaca()== placa){
+//			total = vehiculos[i]->total(salida,entrada);
+//		}
+//	}
+//	return total;
+//}

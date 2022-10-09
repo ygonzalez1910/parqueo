@@ -5,17 +5,21 @@ using namespace std;
 #include "Hora.h"
 class Cobro {
 public:
-	Cobro();
+	Cobro(Hora*,Hora*);
 	~Cobro();
-	double totalCobro();
-	float getTotalPagar();
-	Hora* getHoras();
-	double total(int, float,string);
+	int getHoraEntrada();
+	int getHoraSalida();
+	double getTotalPagar();
+	void setTotalPagar(double);
+	void setHoraEntrada(Hora*);
+	void setHoraSalida(Hora*);
+	double total(int, float, int);
 	
 private:
-	Hora* hora;
+	Hora* entrada;
+	Hora* salida;
 	const int precioHora = 800;
-	float totalPagar;
+	double totalPagar;
 	
 };
 #endif

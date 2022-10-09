@@ -1,4 +1,6 @@
 #include "Chofer.h"
+#include <sstream> 
+using std::stringstream;
 
 Chofer::Chofer(string nombre, string cedula):
 	nombre(nombre),cedula(cedula){
@@ -18,3 +20,11 @@ void Chofer::setCedula(string cedula){
 	this->cedula = cedula;
 }
 
+string Chofer::toString(){
+	stringstream r;
+	
+	r << "Nombre chofer: "<< nombre << endl;
+	r << "Cedula chofer: "<< cedula << endl;
+	
+	return r.str();
+}

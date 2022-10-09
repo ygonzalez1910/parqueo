@@ -10,16 +10,22 @@ class Vehiculo {
 public:
 	Vehiculo(string,string,float,string,Hora*);
 	~Vehiculo();
+	
 	void setMarca(string);
 	void setPlaca(string);
 	void setTonelaje(float);
 	void setColor(string);
+	void setHora(Hora*);
+	void setCobro(Cobro*);
+	
 	string getMarca();
 	float getTonelaje();
 	string getColor();
 	string getPlaca();
 	string toString();
-	double total(int,string);
+	int getHoraEntrada();
+	
+	//double total(int,int);
 	
 private:
 	string marca;
@@ -28,7 +34,7 @@ private:
 	string color;
 	Chofer* chofer;
 	Cobro* cobro;
-	Hora* hora;
+	Hora* entrada;
 	
 };
 

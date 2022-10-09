@@ -9,7 +9,7 @@ public:
 	~Chofer();
 	void setNombre(string);
 	void setCedula(string);
-	double total(int, float, string);
+	string toString();
 	
 private:
 	string nombre;

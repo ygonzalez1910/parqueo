@@ -37,6 +37,10 @@ char InfoDelCampo::getEstadoCampo ( ) {
 	return estadoCampo;
 }
 
+Vehiculo * InfoDelCampo::getVehiculo ( ) {
+	return vehiculo;
+}
+
 void InfoDelCampo::setVehiculos(ConjuntoVehiculos* conjuntoVehiculos){
 	this -> conjuntoVehiculos = conjuntoVehiculos;
 }
@@ -48,7 +52,6 @@ string InfoDelCampo::toString (  ) {
 		r << "-Libre -> ";
 	}else if(estadoCampo == 'O'){
 		r << "-Ocupado -> ";
-		//r << vehiculo -> getPlaca();
 	}else if(estadoCampo == 'M'){
 		r << "-Mantenimiento -> ";
 	}
@@ -62,14 +65,10 @@ string InfoDelCampo::toString (  ) {
 	return r.str();
 }
 
-Vehiculo * InfoDelCampo::getVehiculo ( ) {
-	return vehiculo;
-}
-
 void InfoDelCampo::setVehiculo (Vehiculo * vehiculo ) {
 	this -> vehiculo = vehiculo;
 }
 
-double InfoDelCampo::cancelarParqueo2(int campo,int salida,string placa){
-	return vehiculo->total(salida, placa);
-}
+//double InfoDelCampo::cancelarParqueo2(int campo,int salida,string placa,int entrada){
+//	return conjuntoVehiculos -> totalPagar(salida, placa,entrada);
+//}
