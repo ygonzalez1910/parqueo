@@ -37,7 +37,7 @@ public:
 	double cobroDeterminadoCampo(int);
 	
 	//double cancelarParqueo(int,int,string,int);
-	double seleccionarParqueo(Hora*,string,Hora*);
+	double seleccionarParqueo(int,Hora*,string,Hora*);
 	
 	InfoDelCampo** lugaresParqueo;
 	

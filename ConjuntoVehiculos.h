@@ -23,8 +23,7 @@ public:
 	int TotalVehiculosDia();
 	string vehiculosRangoTonelaje();
 	
-	
-	double totalPagar(int,string, int);
+	double total(Hora*,string, Hora*);
 	
 private:
 	Vehiculo** vehiculos;

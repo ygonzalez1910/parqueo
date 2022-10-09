@@ -41,7 +41,6 @@ int main () {
 
 	Hora* hora = new Hora(entrada);
 	
-	
 	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(10);
 	
 	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color, hora);
@@ -206,8 +205,7 @@ int main () {
 			
 			Hora* hora2 = new Hora(salida);
 			
-			//entrada = parqueo->lugaresParqueo[campoCancelar]->getVehiculo()->getHora();
-			cout<< parqueo -> seleccionarParqueo(hora2, placa2, parqueo->lugaresParqueo[campoCancelar]->getVehiculo()->getHora());
+			cout<< parqueo -> seleccionarParqueo(campoCancelar,hora2, placa2, parqueo->lugaresParqueo[campoCancelar]->getVehiculo()->getHora());
 			
 			parqueo -> lugaresParqueo[campoCancelar] -> setEstadoCampo('L');
 			

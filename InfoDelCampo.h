@@ -20,7 +20,7 @@ public:
 	void estadoOcupado();
 	Vehiculo* getVehiculo();
 	void estadoLibre();
-	double cobrarParqueo(Hora*, Hora*);
+	double cobrarParqueo(Hora*,string, Hora*);
 	
 private:
 	int numeroCampo;

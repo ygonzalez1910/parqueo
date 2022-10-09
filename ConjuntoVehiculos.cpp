@@ -124,3 +124,13 @@ string ConjuntoVehiculos::vehiculosRangoTonelaje () {
 	return r.str();
 }
 
+double ConjuntoVehiculos::total(Hora* salida,string placa,Hora* entrada){
+	double pago = 0.0;
+	for(int i=0;i<cantidad;i++){
+		if(vehiculos[i]->getPlaca()== placa){
+			pago=vehiculos[i]->total(salida,entrada);
+		}
+		
+	}
+	return pago;
+}
