@@ -11,15 +11,16 @@ public:
 	InfoDelCampo(int,char);
 	~InfoDelCampo();
 	string toString();
+	
 	void setEstadoCampo(char);
 	void setNumeroCampo(int);
 	void setVehiculo( Vehiculo*);
 	void setVehiculos(ConjuntoVehiculos*);
+	
 	int getNumeroCampo();
 	char getEstadoCampo();
 	void estadoOcupado();
 	Vehiculo* getVehiculo();
-	void estadoLibre();
 	
 	double cobrarParqueo(string,int);
 	

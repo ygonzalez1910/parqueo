@@ -15,9 +15,6 @@ void InfoDelCampo::estadoOcupado(){
 	estadoCampo = 'O';
 }
 
-void InfoDelCampo::estadoLibre(){
-	estadoCampo = 'L';
-}
 
 void InfoDelCampo::setEstadoCampo (char estadoCampo) {
 	if(estadoCampo == 'M' || 'O' || 'L' ){

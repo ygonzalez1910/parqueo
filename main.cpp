@@ -204,7 +204,7 @@ int main () {
 			cout << "Digite la placa para identificar su vehiculo: "<<endl;
 			cin>>placa2;
 			
-			cout<< parqueo -> seleccionarParqueo(campo,placa,hsalida);
+			cout<< parqueo -> seleccionarParqueo(campo,placa2,hsalida);
 			
 			parqueo -> lugaresParqueo[campo] -> setEstadoCampo('L');
 			
@@ -287,7 +287,6 @@ int main () {
 				cout<<"Campo no existe en el parqueo."<<endl;
 			}
 			
-			
 			system("pause");
 		}else if(opc == 17){
 			system("cls");
@@ -298,7 +297,12 @@ int main () {
 		}else if(opc == 18){
 			system("cls");
 			
-			parqueo -> vehiculosRangoTonelaje(vehiculo -> getTonelaje() );
+			if(vehiculo->getTonelaje() > 1.0 && vehiculo->getTonelaje() < 1.5){
+				cout << conjuntoVehiculos -> vehiculosRangoTonelaje();
+			}
+			else{
+				cout << "No hay vehiculos dentro del rango de tonelaje." << endl;
+			}
 			
 			system("pause");
 		}else if(opc == 19){

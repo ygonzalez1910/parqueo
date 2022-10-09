@@ -137,4 +137,3 @@ double ConjuntoVehiculos::total(string placa,int hsalida){
 	return pago;
 }
 
-

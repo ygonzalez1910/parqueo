@@ -22,7 +22,6 @@ public:
 	string toStringLibres();
 	string toStringOcupados();
 	string toStringMantenimiento();
-	string vehiculosRangoTonelaje(double);
 	string vehiculosDeterminadoCampo(int);
 	
 	void agregarVehiculo(InfoDelCampo*);

@@ -2,7 +2,7 @@
 #include <sstream>
 using std::stringstream;
 
-Cobro::Cobro(Hora* entrada):entrada(entrada),precioHora(800),totalPagar(0){
+Cobro::Cobro(Hora* entrada):entrada(entrada),salida(salida),precioHora(800),totalPagar(0){
 	
 }
 
@@ -43,7 +43,8 @@ string Cobro::toString ( ) {
 
 double Cobro::total(int hsalida, float tonelaje){
 	
-	salida->setHora(hsalida);
+	Hora* hora = new Hora(hsalida);
+	setHoraSalida(hora);
 	
 	int totalHoras = 0;
 	double cobroAdicional = 0;
@@ -67,4 +68,12 @@ double Cobro::total(int hsalida, float tonelaje){
 }
 
 
+
+int Cobro::getHoraSalida ( ) {
+	return salida -> getHora();
+}
+
+void Cobro::setHoraSalida (Hora * salida) {
+	this -> salida = salida;
+}
 
