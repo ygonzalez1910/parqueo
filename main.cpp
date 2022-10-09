@@ -41,6 +41,7 @@ int main () {
 
 	Hora* hora = new Hora(entrada);
 	
+	
 	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(10);
 	
 	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color, hora);

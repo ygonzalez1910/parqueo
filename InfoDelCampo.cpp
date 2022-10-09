@@ -70,6 +70,7 @@ void InfoDelCampo::setVehiculo (Vehiculo * vehiculo ) {
 	this -> vehiculo = vehiculo;
 }
 
+
 double InfoDelCampo::cancelarParqueo2(int campo,int salida,string placa){
 	return vehiculo->total(salida, placa);
 }
