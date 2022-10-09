@@ -19,6 +19,7 @@ public:
 	string getColor();
 	string getPlaca();
 	string toString();
+	double total(int,string);
 	
 private:
 	string marca;

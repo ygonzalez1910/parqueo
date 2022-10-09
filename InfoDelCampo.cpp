@@ -15,6 +15,10 @@ void InfoDelCampo::estadoOcupado(){
 	estadoCampo = 'O';
 }
 
+void InfoDelCampo::estadoLibre(){
+	estadoCampo = 'L';
+}
+
 void InfoDelCampo::setEstadoCampo (char estadoCampo) {
 	if(estadoCampo == 'M' || 'O' || 'L' ){
 		this -> estadoCampo = estadoCampo;
@@ -66,3 +70,6 @@ void InfoDelCampo::setVehiculo (Vehiculo * vehiculo ) {
 	this -> vehiculo = vehiculo;
 }
 
+double InfoDelCampo::cancelarParqueo2(int campo,int salida,string placa){
+	return vehiculo->total(salida, placa);
+}

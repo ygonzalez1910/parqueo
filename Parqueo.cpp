@@ -160,7 +160,7 @@ string Parqueo::vehiculosDeterminadoCampo(int campo){
 	stringstream r;
 	
 	for(int i = 0; i < tamano; i++){
-		if(lugaresParqueo[i] -> getNumeroCampo() == campo /*&& lugaresParqueo[i] != nullptr*/){
+		if(lugaresParqueo[i] -> getNumeroCampo() == campo){
 			r << lugaresParqueo[i] -> toString();
 		}else if( campo == lugaresParqueo[i] -> getEstadoCampo()){
 			r << "Ningun vehiculo ha utilizado ese espacio del parqueo...\n";
@@ -210,4 +210,10 @@ double Parqueo::cobroDeterminadoCampo(int campo){
 		}
 	}
 	return dineroTotal;
+}
+
+double Parqueo::cancelarParqueo(int campo, int salida, string placa){
+	lugaresParqueo[campo]->estadoLibre();
+	
+	return lugaresParqueo[campo]->cancelarParqueo2(campo,salida,placa);
 }

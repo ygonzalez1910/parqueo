@@ -56,3 +56,6 @@ string Vehiculo::getColor ( ) {
 	return color;
 }
 
+double Vehiculo::total(int salida, string placa){
+	return cobro -> total(salida,tonelaje,placa);
+}

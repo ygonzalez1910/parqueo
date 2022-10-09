@@ -6,7 +6,7 @@ using namespace std;
 
 class Hora {
 public:
-	Hora(int,int);
+	Hora(int);
 	~Hora();
 	void setHoraEntrada(int);
 	void setHoraSalida(int);

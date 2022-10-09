@@ -43,6 +43,7 @@ Vehiculo* ConjuntoVehiculos::crearCarrito(string marca, string placa, float tone
 	Vehiculo* carrito = new Vehiculo(marca,placa,tonelaje,color,hora);
 	
 	agregarVehiculo(carrito);
+	
 	return carrito;
 }
 
@@ -100,5 +101,15 @@ int ConjuntoVehiculos::TotalVehiculosDia(){
 		}
 	}
 	return contTotalVehiculosDia;
+}
+
+double ConjuntoVehiculos::totalPagar(int salida,string placa){
+	double total = 0;
+	
+	for(int i = 0; i< cantidad; i++){
+		if(vehiculos[i] -> getPlaca()== placa){
+			total = vehiculos[i]->totalPagar(salida);
+		}
+	}
 }
 

@@ -1,7 +1,7 @@
 #include "Hora.h"
 
-Hora::Hora(int horaEntrada,int horaSalida): 
-	horaEntrada(horaEntrada),horaSalida(horaSalida){
+Hora::Hora(int hora): 
+	hora(hora){
 	
 }
 

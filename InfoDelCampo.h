@@ -19,6 +19,8 @@ public:
 	char getEstadoCampo();
 	void estadoOcupado();
 	Vehiculo* getVehiculo();
+	void estadoLibre();
+	double cancelarParqueo2(int,int,string);
 	
 private:
 	int numeroCampo;
