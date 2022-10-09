@@ -13,7 +13,7 @@ public:
 	void setTotalPagar(double);
 	void setHoraEntrada(Hora*);
 	void setHoraSalida(Hora*);
-	double total(int, float, int);
+	double total(Hora*, float, Hora*);
 	
 private:
 	Hora* entrada;

@@ -38,9 +38,10 @@ Vehiculo* ConjuntoVehiculos::seleccionarParqueo (int posicion) {
 	}
 }
 
-Vehiculo* ConjuntoVehiculos::crearCarrito(string marca, string placa, float tonelaje, string color, Hora* entrada){
+Vehiculo* ConjuntoVehiculos::crearCarrito(string marca, string placa, float tonelaje, string color, int entrada){
 	
-	Vehiculo* carrito = new Vehiculo(marca,placa,tonelaje,color,entrada);
+	Hora* horaEntrada = new Hora(entrada);
+	Vehiculo* carrito = new Vehiculo(marca,placa,tonelaje,color,horaEntrada);
 	
 	agregarVehiculo(carrito);
 	
@@ -126,13 +127,3 @@ string ConjuntoVehiculos::vehiculosRangoTonelaje () {
 	return r.str();
 }
 
-//double ConjuntoVehiculos::totalPagar(int salida,string placa,int entrada){
-//	double total = 0;
-//	
-//	for(int i = 0; i< cantidad; i++){
-//		if(vehiculos[i] -> getPlaca()== placa){
-//			total = vehiculos[i]->total(salida,entrada);
-//		}
-//	}
-//	return total;
-//}

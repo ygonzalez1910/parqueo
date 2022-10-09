@@ -171,9 +171,9 @@ int main () {
 							vehiculo -> setColor(color);
 							cout << "Ingrese la hora de entrada en formato 24 horas: ";
 							cin >> entrada;
-							vehiculo -> setHora(new Hora(entrada));
+							hora -> setHora(entrada);
 							
-							Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color,hora);
+							Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color,entrada);
 							
 							
 							parqueo ->lugaresParqueo[posicionParqueo]->setVehiculo(vehiculo);
@@ -203,8 +203,10 @@ int main () {
 			cout << "Digite la placa para identificar su vehiculo: "<<endl;
 			cin>>placa2;
 			
-			entrada = parqueo->lugaresParqueo[campoCancelar]->getVehiculo()->getHoraEntrada();
-			//cout<< parqueo -> cancelarParqueo(campoCancelar, salida, placa2, entrada);
+			Hora* hora2 = new Hora(salida);
+			
+			//entrada = parqueo->lugaresParqueo[campoCancelar]->getVehiculo()->getHora();
+			cout<< parqueo -> seleccionarParqueo(hora2, placa2, parqueo->lugaresParqueo[campoCancelar]->getVehiculo()->getHora());
 			
 			parqueo -> lugaresParqueo[campoCancelar] -> setEstadoCampo('L');
 			

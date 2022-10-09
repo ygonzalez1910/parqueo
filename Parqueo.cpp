@@ -211,20 +211,16 @@ double Parqueo::cobroDeterminadoCampo(int campo){
 	return dineroTotal;
 }
 
-//double Parqueo::cancelarParqueo(int campo, int salida, string placa, int entrada){
-//	
-//	return lugaresParqueo[campo]->cancelarParqueo2(campo,salida,placa,entrada);
-//}
-
-//double Parqueo::seleccionarParqueo(Hora* horaEntrada, Hora* horaSalida, string placa){
-//	Cobro* cobro = new Cobro(horaEntrada, horaSalida);
-//	
-//	for(int i = 0; i < tamano; i++){
-//		if(lugaresParqueo[i]->getVehiculo()->getPlaca() == placa){
-//			lugaresParqueo[i]->getVehiculo()->setCobro(cobro);
-//			return lugaresParqueo[i]->cobrarParqueo();
-//		}
-//	}
-//	
-//}
+double Parqueo::seleccionarParqueo(Hora* horaSalida, string placa, Hora* horaEntrada){
+	
+	Cobro* cobro = new Cobro(horaEntrada, horaSalida);
+	
+	for(int i = 0; i < tamano; i++){
+		if(lugaresParqueo[i]->getVehiculo()->getPlaca() == placa){
+			lugaresParqueo[i]->getVehiculo()->setCobro(cobro);
+			return lugaresParqueo[i]->cobrarParqueo(horaSalida, horaEntrada);
+		}
+	}
+	return 0;
+}
 

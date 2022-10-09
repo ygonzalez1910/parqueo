@@ -24,8 +24,8 @@ public:
 	string getPlaca();
 	string toString();
 	int getHoraEntrada();
-	
-	//double total(int,int);
+	Hora* getHora();
+	double total(Hora*,Hora*);
 	
 private:
 	string marca;

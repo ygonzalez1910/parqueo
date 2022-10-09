@@ -3,7 +3,7 @@
 using std::stringstream;
 
 Vehiculo::Vehiculo(string marca,string placa,float tonelaje,string color, Hora* entrada): 
-	marca(marca),placa(placa),tonelaje(tonelaje),color(color),entrada(nullptr){
+	marca(marca),placa(placa),tonelaje(tonelaje),color(color),entrada(entrada){
 	
 }
 
@@ -44,6 +44,10 @@ int Vehiculo::getHoraEntrada(){
 	return entrada->getHora();
 }
 
+Hora* Vehiculo::getHora(){
+	return entrada;
+}
+
 string Vehiculo::getMarca ( ) {
 	return marca;
 }
@@ -64,12 +68,12 @@ string Vehiculo::toString ( ) {
 	r << "Placa: " << placa << endl;
 	r << "Tonelaje: " <<  tonelaje << endl;
 	r << "Color: " << color << endl;
-	r << "Hora entrada: " << entrada<<endl;
+	r << "Hora entrada: " << entrada->getHora() <<endl;
 	
 	return r.str();
 }
 
 
-//double Vehiculo::total(int salida,int entrada){
-//	return cobro -> total(salida,tonelaje,entrada);
-//}
+double Vehiculo::total(Hora* salida,Hora* entrada){
+	return cobro -> total(salida,tonelaje,entrada);
+}
