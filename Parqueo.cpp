@@ -61,24 +61,49 @@ string Parqueo::toStringLibres ( ) {
 string Parqueo::toStringOcupados ( ) {
 	
 	stringstream r;
-	for(int i=0; i < cantidad; i++){
-		if(lugaresParqueo[i] -> getEstadoCampo() == 'O'){
-			r << i+1 <<".\n"<< lugaresParqueo[i]->toString();	
+	int hola = 0;
+	
+	for(int i = 0; i<cantidad;i++){
+		if(lugaresParqueo[i] -> getEstadoCampo() == 'M'){
+			hola++;
 		}
+	}
+	
+	if(hola != 0){
+		r << "Campos ocupados: \n";
+		for(int i=0; i < cantidad; i++){
+			if(lugaresParqueo[i] -> getEstadoCampo() == 'O'){
+				r << i+1 <<".\n"<< lugaresParqueo[i]->toString()<<"\n";	
+			}
+		}
+	}else{
+		r << "No hay campos ocupados."<<endl;
 	}
 	return r.str();
 }
 
 string Parqueo::toStringMantenimiento ( ) {
 	stringstream r;
+	int hola = 0;
 	
-	r << "Campos en mantenimiento: \n";
-	for(int i=0; i < cantidad; i++){
+	for(int i = 0; i<cantidad;i++){
 		if(lugaresParqueo[i] -> getEstadoCampo() == 'M'){
-			r << "Numero campo: " <<lugaresParqueo[i] -> getNumeroCampo() << ".\n";
-			r << "Estado campo: " << "Mantenimiento.\n";	
+			hola++;
 		}
 	}
+	
+	if(hola != 0){
+		r << "Campos en mantenimiento: \n";
+		for(int i=0; i < cantidad; i++){
+			if(lugaresParqueo[i] -> getEstadoCampo() == 'M'){
+				r << "Numero campo: " <<lugaresParqueo[i] -> getNumeroCampo() << ".\n";
+				r << "Estado campo: " << "Mantenimiento.\n";	
+			}
+		}
+	}else{
+		r << "No hay campos en mantenimiento."<<endl;
+	}
+	
 	return r.str();
 }
 
@@ -185,7 +210,7 @@ double Parqueo::cobroDeterminadoCampo(int campo){
 	
 	double dineroTotal;
 	for(int i = 0; i < tamano; i++){
-		if(lugaresParqueo[i] -> getNumeroCampo() == campo /*&& lugaresParqueo[i] != nullptr*/){
+		if(lugaresParqueo[i] -> getNumeroCampo() == campo){
 			for(int i = 0; i < cantidad; i++){
 				dineroTotal += cobro -> getTotalPagar();
 			}

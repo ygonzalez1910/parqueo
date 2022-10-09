@@ -3,7 +3,7 @@
 using std::stringstream;
 
 Vehiculo::Vehiculo(string marca,string placa,float tonelaje,string color): 
-	marca(marca),placa(placa),tonelaje(tonelaje),color(color) {
+	marca(marca),placa(placa),tonelaje(tonelaje),color(color){
 	
 }
 

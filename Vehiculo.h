@@ -19,6 +19,7 @@ public:
 	string getPlaca();
 	string toString();
 	
+	
 private:
 	string marca;
 	string placa;

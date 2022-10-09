@@ -19,7 +19,7 @@ string ConjuntoVehiculos::toString ( ) {
 	stringstream r;
 	for(int i=0; i < cantidad; i++){
 		if(vehiculos[i] != nullptr){
-			r << i <<"."<< vehiculos[i]->toString();
+			r << i <<".\n"<< vehiculos[i]->toString();
 		}
 	}
 	return r.str();

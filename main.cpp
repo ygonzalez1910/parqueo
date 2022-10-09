@@ -25,30 +25,25 @@ int main () {
 
 //	cout<<"Digite el nombre del Mall."<<endl;
 //	cin>>nombre;
+//	cout<<"\n";
 //	cout<<"Digite el telefono del Mall."<<endl;
 //	cin>>telefono;
+//	cout<<"\n";
 //	cout<<"Digite la direccion del Mall."<<endl;
 //	cin>>direccion;
+//	cout<<"\n";
 	
 	cout << "Digite la cantidad de espacios del parqueo del Mall." << endl;
 	cin >> cantEspaciosParqueo;
-
-//	int cantidadEspaciosMantenimiento = 0;
-//	int numeroEspacioMantenimiento;
-//	cout << "Digite cuantos espacios van a estar en mantenimiento: ";
-//	cin >> cantidadEspaciosMantenimiento;
-//	for(int i = 0; i < cantidadEspaciosMantenimiento; i++){
-//		cout << "Digite los espacios que van a estar en mantenimiento.";
-//		cin << numeroEspacioMantenimiento;
-//	}
-	
+	cout<<"\n";
 	
 	Parqueo* parqueo= new Parqueo(cantEspaciosParqueo);
-	
-	
+
 	ConjuntoVehiculos* conjuntoVehiculos= new ConjuntoVehiculos(10);
 	
 	Vehiculo* vehiculo = new Vehiculo(marca,placa,tonelaje,color);
+	
+	Chofer* chofer = new Chofer(nombreChofer, cedulaChofer);
 
 	Hora* hora = new Hora(horaEntrada,horaSalida);
 	
@@ -65,46 +60,58 @@ int main () {
 	
 	parqueo -> llenarVacios();
 	
-	int espacioEnMantenimiento;
-	for ( int i = 0; i < cantEspaciosParqueo ; i++ ){
-		
-		cout<<"Desea que el campo "<<i<<" este en mantenimiento? 0 = No, 1 = Si"<<endl;
-		cin >> espacioEnMantenimiento;
-		
-		if (espacioEnMantenimiento == 1 ){
-			parqueo->lugaresParqueo[i]->setEstadoCampo('M');
-		}else{
-			parqueo->lugaresParqueo[i]->setEstadoCampo('L');
-		}
-		//parqueo->lugaresParqueo[i]->setEstadoCampo( espacioEnMantenimiento == 1 ? 'M' : 'L' );
+//	int espacioEnMantenimiento;
+//	for ( int i = 0; i < cantEspaciosParqueo ; i++ ){
+//		
+//		cout<<"Desea que el campo "<<i<<" este en mantenimiento? 0 = No, 1 = Si"<<endl;
+//		cin >> espacioEnMantenimiento;
+//		
+//		if (espacioEnMantenimiento == 1 ){
+//			parqueo->lugaresParqueo[i]->setEstadoCampo('M');
+//		}else{
+//			parqueo->lugaresParqueo[i]->setEstadoCampo('L');
+//		}
+//		//parqueo->lugaresParqueo[i]->setEstadoCampo( espacioEnMantenimiento == 1 ? 'M' : 'L' );
+//	}
+	
+	int cantidadEspaciosMantenimiento = 0;
+	int numeroEspacioMantenimiento = 0;
+	
+	cout << "Digite cuantos espacios van a estar en mantenimiento: ";
+	cin >> cantidadEspaciosMantenimiento;
+	cout<<"\n";
+	
+	for(int i = 0; i < cantidadEspaciosMantenimiento; i++){
+		cout << "Digite los espacios que van a estar en mantenimiento: ";
+		cin >> numeroEspacioMantenimiento;
+		cout<<"\n";
+		parqueo -> lugaresParqueo[numeroEspacioMantenimiento] -> setEstadoCampo('M');
 	}
-	
-	
 	
 	for(;;){
 		system("cls");
-		cout<<"-----------------------MENU-----------------------"<<endl;
-		cout<<"\tBienvenidos al parqueo de "<<nombre<<"."<<endl;
-		cout<<"1 - Ver TODOS los campos del parqueo. (solo lugar, estado y placa)"<<endl;
-		cout<<"2 - Ver solo los campos que estan OCUPADOS.(solo lugar, estado y placa)"<<endl;
-		cout<<"3 - Ver solo los campos que estan en MANTENIMIENTO.(solo lugar Y estado)"<<endl;
-		cout<<"4 - Ingresar un vehiculo al parqueo. Solicitar posicion o lugar."<<endl;
-		cout<<"5 - Cancelar la estancia en el lugar. Realizar el debido cobro del alquiler."<<endl;
-		cout<<"6 - Ver solo los campos que estan LIBRES. (solo lugar y estado)"<<endl;
-		cout<<"7 - Saber la cantidad de vehiculos que existen en el parqueo."<<endl;
-		cout<<"8 - Saber la cantidad de campos libres en el parqueo."<<endl;
-		cout<<"9 - Saber la cantidad de campos ocupados en el parqueo."<<endl;
-		cout<<"10 - Saber la cantidad de campos en mantenimiento en el parqueo."<<endl;
-		cout<<"11 - Saber la cantidad de vehiculos que han ingresado en el dia."<<endl;
-		cout<<"12 - Saber la cantidad de dinero que ha ingresado al parqueo este dia."<<endl; 
-		cout<<"13 - Saber la cantidad de dinero que ha ingresado, por un solo campo."<<endl;
-		cout<<"14 - Saber el tonelaje de los vehiculos que hacen mas uso del parqueo."<<endl; 
-		cout<<"15 - Saber el porcentaje de ocupacion que tiene el parqueo."<<endl;
-		cout<<"16 - Mostrar la informacion de los vehiculos que han estado en un determinado campo."<<endl;
-		cout<<"17 - Mostrar la informacion de todos (que esten o no) los vehiculos del parqueo."<<endl;
-		cout<<"18 - Mostrar los vehiculos que se encuentran en el rango de tonelaje de 1.0 a 1.5."<<endl;
-		cout<<"19 - Salir."<<endl;
-		cout<<"--------------------------------------------------"<<endl;
+		cout<<"-------------------------------------MENU---------------------------------------"<<endl;
+		cout<<"   Bienvenidos al parqueo de "<<nombre<<"."<<endl;
+		cout<<"\t1 - Ver TODOS los campos del parqueo. (solo lugar, estado y placa)"<<endl;
+		cout<<"\t2 - Ver solo los campos que estan OCUPADOS.(solo lugar, estado y placa)"<<endl;
+		cout<<"\t3 - Ver solo los campos que estan en MANTENIMIENTO.(solo lugar Y estado)"<<endl;
+		cout<<"\t4 - Ingresar un vehiculo al parqueo. Solicitar posicion o lugar."<<endl;
+		cout<<"\t5 - Cancelar la estancia en el lugar. Realizar el debido cobro del alquiler."<<endl;
+		cout<<"\t6 - Ver solo los campos que estan LIBRES. (solo lugar y estado)"<<endl;
+		cout<<"\t7 - Saber la cantidad de vehiculos que existen en el parqueo."<<endl;
+		cout<<"\t8 - Saber la cantidad de campos libres en el parqueo."<<endl;
+		cout<<"\t9 - Saber la cantidad de campos ocupados en el parqueo."<<endl;
+		cout<<"\t10 - Saber la cantidad de campos en mantenimiento en el parqueo."<<endl;
+		cout<<"\t11 - Saber la cantidad de vehiculos que han ingresado en el dia."<<endl;
+		cout<<"\t12 - Saber la cantidad de dinero que ha ingresado al parqueo este dia."<<endl; 
+		cout<<"\t13 - Saber la cantidad de dinero que ha ingresado, por un solo campo."<<endl;
+		cout<<"\t14 - Saber el tonelaje de los vehiculos que hacen mas uso del parqueo."<<endl; 
+		cout<<"\t15 - Saber el porcentaje de ocupacion que tiene el parqueo."<<endl;
+		cout<<"\t16 - Mostrar la informacion de los vehiculos que han estado en un determinado campo."<<endl;
+		cout<<"\t17 - Mostrar la informacion de todos (que esten o no) los vehiculos del parqueo."<<endl;
+		cout<<"\t18 - Mostrar los vehiculos que se encuentran en el rango de tonelaje de 1.0 a 1.5."<<endl;
+		cout<<"\t19 - Salir."<<endl;
+		cout<<"--------------------------------------------------------------------------------"<<endl;
 		cout<<"Digite la opcion a realizar: ";
 		cin>>opc;
 		cout<<endl;
@@ -128,93 +135,84 @@ int main () {
 			
 		}else if(opc == 4){
 			system("cls");
+			
 			//el sistema le debera permitir, 
 			//ingresar la informacion basica del vehiculo, del chofer, la hora 
 			//de entrada y del numero de campo que esto siendo utilizado
 			
-			bool continuar = false;
 			cout <<"Lugares del parqueo...\n";
 			cout << parqueo -> toString();
 			
 			cout << "Seleccione el lugar del parqueo que desea ocupar:";
 			cin >> posicionParqueo;
 				
-			//for(int i = 0; i < cantEspaciosParqueo;i++){
+				
+			if( posicionParqueo != numCampo -> getEstadoCampo() ){
+				
+				conjuntoVehiculos ->  seleccionarParqueo(posicionParqueo);
 					
-				if( posicionParqueo != numCampo -> getEstadoCampo() ){
-						
-					conjuntoVehiculos ->  seleccionarParqueo(posicionParqueo);
-						
 					numCampo -> estadoOcupado();
 						
-						//do{
-							if(conjuntoVehiculos->estaLleno() == false){
+						if(conjuntoVehiculos->estaLleno() == false){
 							
 							
-							if ( parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'L' ){
-								system("cls");
-								cout<<"Datos del chofer: \n";
-								cout << "Digite su nombre: ";
-								cin >> nombreChofer;
-								//chofer -> setNombre(nombreChofer);
-								cout << "Digite su cedula: ";
-								cin >> cedulaChofer;
-								//chofer -> setCedula(cedulaChofer);
-								cout<<"\n\nDatos del vehiculo: \n";
-								cout << "Ingrese la marca de su vehiculo: ";
-								cin >> marca;
-								vehiculo -> setMarca(marca);
-								cout << "Ingrese la placa de su vehiculo: ";
-								cin >> placa;
-								vehiculo -> setPlaca(placa);
-								cout << "Ingrese el tonelaje de su vehiculo: ";
-								cin >> tonelaje;
-								vehiculo -> setTonelaje(tonelaje);
-								cout << "Ingrese el color: ";
-								cin >> color;
-								vehiculo -> setColor(color);
-								cout << "Ingrese la hora de entrada en numeros enteros: ";
-								cin >> horaEntrada;
-								hora -> setHoraEntrada(horaEntrada);
-								cout << "Ingrese la hora de entrada en numeros enteros: ";
-								cin >> horaEntrada;
-								hora -> setHoraEntrada(horaSalida);
-								
-								Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color);
-								
-								
-								parqueo ->lugaresParqueo[posicionParqueo]->setVehiculo(vehiculo);
-								parqueo ->lugaresParqueo[posicionParqueo]->setEstadoCampo('O');
-								
-								vehiculo->toString();
-								
-								//parqueo ->lugaresParqueo[posicionParqueo]->toString();
-								
-								
-								//info->setVehiculo( vehiculo );
-								//parqueo->agregarVehiculo(info);
+						if ( parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'L' ){
+							system("cls");
+							cout<<"Datos del chofer: \n";
+							cout << "Digite su nombre: ";
+							cin >> nombreChofer;
+							chofer -> setNombre(nombreChofer);
+							cout << "Digite su cedula: ";
+							cin >> cedulaChofer;
+							chofer -> setCedula(cedulaChofer);
+							cout<<"\n\nDatos del vehiculo: \n";
+							cout << "Ingrese la marca de su vehiculo: ";
+							cin >> marca;
+							vehiculo -> setMarca(marca);
+							cout << "Ingrese la placa de su vehiculo: ";
+							cin >> placa;
+							vehiculo -> setPlaca(placa);
+							cout << "Ingrese el tonelaje de su vehiculo: ";
+							cin >> tonelaje;
+							vehiculo -> setTonelaje(tonelaje);
+							cout << "Ingrese el color: ";
+							cin >> color;
+							vehiculo -> setColor(color);
+							cout << "Ingrese la hora de entrada en formato 24 horas: ";
+							cin >> horaEntrada;
+							hora -> setHoraEntrada(horaEntrada);
+							cout << "Ingrese la hora de salida en formato 24 horas: ";
+							cin >> horaEntrada;
+							hora -> setHoraEntrada(horaSalida);
+							
+							Vehiculo* vehiculo = conjuntoVehiculos->crearCarrito(marca,placa,tonelaje,color);
+							
+							
+							parqueo ->lugaresParqueo[posicionParqueo]->setVehiculo(vehiculo);
+							parqueo ->lugaresParqueo[posicionParqueo]->setEstadoCampo('O');
+							
+							vehiculo->toString();
+							
+							//parqueo ->lugaresParqueo[posicionParqueo]->toString();
+							
+							
+							//info->setVehiculo( vehiculo );
+							//parqueo->agregarVehiculo(info);
 							}
 							else{
 								cout << "Espacio ocupado o en mantenimiento -> Vehiculo no fue agregado";
 								
 							}
 								
-							
-							
 							cout << endl;
 							cout << conjuntoVehiculos -> toString()<<"\n";
-							cout << "\nDesea agregar mas vehiculos: \n Si lo desea digite 1, si no digite 0.\n";
-							cin >> continuar;
 							}else{
 								cout <<"\nYa no puede registrar mas vehiculos en ese parqueo.";
-								continuar = true;
 							}
-					/*	}while(continuar == false);*/
-							cout <<"\nLas vehiculos registradas son:\n";
-							cout << conjuntoVehiculos->toString();
-				}
-			//}//
-			
+						cout <<"\nLas vehiculos registradas son:\n";
+						cout << conjuntoVehiculos->toString();
+			}
+			system("pause");
 		}else if(opc == 5){
 			system("cls");
 			cout << "Que campo desea cancelar: "; 
