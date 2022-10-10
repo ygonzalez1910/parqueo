@@ -25,15 +25,15 @@ int main () {
 	int campo = 0;
 	int campoInfo = 0;
 	
-//	cout<<"Digite el nombre del Mall."<<endl;
-//	cin>>nombre;
-//	cout<<"\n";
-//	cout<<"Digite el telefono del Mall."<<endl;
-//	cin>>telefono;
-//	cout<<"\n";
-//	cout<<"Digite la direccion del Mall."<<endl;
-//	cin>>direccion;
-//	cout<<"\n";
+	cout<<"Digite el nombre del Mall."<<endl;
+	cin>>nombre;
+	cout<<"\n";
+	cout<<"Digite el telefono del Mall."<<endl;
+	cin>>telefono;
+	cout<<"\n";
+	cout<<"Digite la direccion del Mall."<<endl;
+	cin>>direccion;
+	cout<<"\n";
 	
 	cout << "Digite la cantidad de espacios del parqueo del Mall." << endl;
 	cin >> cantEspaciosParqueo;
@@ -57,20 +57,6 @@ int main () {
 	
 	parqueo->conjuntoVehiculos = conjuntoVehiculos;
 	
-//	int espacioEnMantenimiento;
-//	for ( int i = 0; i < cantEspaciosParqueo ; i++ ){
-//		
-//		cout<<"Desea que el campo "<<i<<" este en mantenimiento? 0 = No, 1 = Si"<<endl;
-//		cin >> espacioEnMantenimiento;
-//		
-//		if (espacioEnMantenimiento == 1 ){
-//			parqueo->lugaresParqueo[i]->setEstadoCampo('M');
-//		}else{
-//			parqueo->lugaresParqueo[i]->setEstadoCampo('L');
-//		}
-//		//parqueo->lugaresParqueo[i]->setEstadoCampo( espacioEnMantenimiento == 1 ? 'M' : 'L' );
-//	}
-	
 	int cantidadEspaciosMantenimiento = 0;
 	int numeroEspacioMantenimiento = 0;
 	
@@ -89,24 +75,24 @@ int main () {
 		system("cls");
 		cout<<"-------------------------------------MENU---------------------------------------"<<endl;
 		cout<<"   Bienvenidos al parqueo de "<<nombre<<"."<<endl;
-		cout<<"\t1 - Ver TODOS los campos del parqueo. (solo lugar, estado y placa)"<<endl;
-		cout<<"\t2 - Ver solo los campos que estan OCUPADOS.(solo lugar, estado y placa)"<<endl;
-		cout<<"\t3 - Ver solo los campos que estan en MANTENIMIENTO.(solo lugar Y estado)"<<endl;
-		cout<<"\t4 - Ingresar un vehiculo al parqueo. Solicitar posicion o lugar."<<endl;
-		cout<<"\t5 - Cancelar la estancia en el lugar. Realizar el debido cobro del alquiler."<<endl;
-		cout<<"\t6 - Ver solo los campos que estan LIBRES. (solo lugar y estado)"<<endl;
-		cout<<"\t7 - Saber la cantidad de vehiculos que existen en el parqueo."<<endl;
-		cout<<"\t8 - Saber la cantidad de campos libres en el parqueo."<<endl;
-		cout<<"\t9 - Saber la cantidad de campos ocupados en el parqueo."<<endl;
-		cout<<"\t10 - Saber la cantidad de campos en mantenimiento en el parqueo."<<endl;
-		cout<<"\t11 - Saber la cantidad de vehiculos que han ingresado en el dia."<<endl;
-		cout<<"\t12 - Saber la cantidad de dinero que ha ingresado al parqueo este dia."<<endl; 
-		cout<<"\t13 - Saber la cantidad de dinero que ha ingresado, por un solo campo."<<endl;
-		cout<<"\t14 - Saber el tonelaje de los vehiculos que hacen mas uso del parqueo."<<endl; 
-		cout<<"\t15 - Saber el porcentaje de ocupacion que tiene el parqueo."<<endl;
-		cout<<"\t16 - Mostrar la informacion de los vehiculos que han estado en un determinado campo."<<endl;
-		cout<<"\t17 - Mostrar la informacion de todos (que esten o no) los vehiculos del parqueo."<<endl;
-		cout<<"\t18 - Mostrar los vehiculos que se encuentran en el rango de tonelaje de 1.0 a 1.5."<<endl;
+		cout<<"\t1 - Ver TODOS los campos del parqueo. (solo lugar, estado y placa)"<<endl; //listo
+		cout<<"\t2 - Ver solo los campos que estan OCUPADOS.(solo lugar, estado y placa)"<<endl;//listo
+		cout<<"\t3 - Ver solo los campos que estan en MANTENIMIENTO.(solo lugar Y estado)"<<endl;//listo
+		cout<<"\t4 - Ingresar un vehiculo al parqueo. Solicitar posicion o lugar."<<endl;//listo
+		cout<<"\t5 - Cancelar la estancia en el lugar. Realizar el debido cobro del alquiler."<<endl;//listo
+		cout<<"\t6 - Ver solo los campos que estan LIBRES. (solo lugar y estado)"<<endl;//listo
+		cout<<"\t7 - Saber la cantidad de vehiculos que existen en el parqueo."<<endl;//listo
+		cout<<"\t8 - Saber la cantidad de campos libres en el parqueo."<<endl;//listo
+		cout<<"\t9 - Saber la cantidad de campos ocupados en el parqueo."<<endl;//listo
+		cout<<"\t10 - Saber la cantidad de campos en mantenimiento en el parqueo."<<endl;//listo
+		cout<<"\t11 - Saber la cantidad de vehiculos que han ingresado en el dia."<<endl;//listo
+		cout<<"\t12 - Saber la cantidad de dinero que ha ingresado al parqueo este dia."<<endl; //listo
+		cout<<"\t13 - Saber la cantidad de dinero que ha ingresado, por un solo campo."<<endl;//listo
+		cout<<"\t14 - Saber el tonelaje de los vehiculos que hacen mas uso del parqueo."<<endl; //listo
+		cout<<"\t15 - Saber el porcentaje de ocupacion que tiene el parqueo."<<endl;//listo
+		cout<<"\t16 - Mostrar la informacion de los vehiculos que han estado en un determinado campo."<<endl; //listo
+		cout<<"\t17 - Mostrar la informacion de todos (que esten o no) los vehiculos del parqueo."<<endl; //listo
+		cout<<"\t18 - Mostrar los vehiculos que se encuentran en el rango de tonelaje de 1.0 a 1.5."<<endl;//listo
 		cout<<"\t19 - Salir."<<endl;
 		cout<<"--------------------------------------------------------------------------------"<<endl;
 		cout<<"Digite la opcion a realizar: ";
@@ -187,6 +173,7 @@ int main () {
 							
 							parqueo ->lugaresParqueo[posicionParqueo]->setVehiculo(vehiculo);
 							parqueo ->lugaresParqueo[posicionParqueo]->setEstadoCampo('O');
+							parqueo -> lugaresParqueo[posicionParqueo]->contadorUsos--;
 							
 							cout <<"\nEl vehiculo registrado es:\n";
 							
@@ -212,16 +199,29 @@ int main () {
 			cout << "Digite la placa para identificar su vehiculo: "<<endl;
 			cin>>placa2;
 			
-			for ( int i = 0 ; i < cantEspaciosParqueo ; i ++ )
-			{
-				if (  parqueo -> lugaresParqueo[campo]->getVehiculo() != nullptr && parqueo -> lugaresParqueo[campo]->getVehiculo()->getPlaca() == placa2  )
-				{
-					parqueo -> lugaresParqueo[campo]->setVehiculo( nullptr );
-					parqueo -> lugaresParqueo[campo]->setEstadoCampo( 'L');
-				}
-			}			
-			cout<< parqueo -> seleccionarParqueo(campo,placa2,hsalida);
+			Vehiculo* vehiCobro;
 			
+
+			if (parqueo -> lugaresParqueo[campo]->getVehiculo() != nullptr && parqueo -> lugaresParqueo[campo]->getVehiculo()->getPlaca() == placa2){
+				vehiCobro = parqueo -> lugaresParqueo[campo] -> getVehiculo();
+				parqueo -> lugaresParqueo[campo]->setVehiculo(nullptr);
+				parqueo -> lugaresParqueo[campo]->setEstadoCampo('L');
+				
+				double totalPagado = parqueo -> seleccionarParqueo(campo,placa2,hsalida);
+				
+				cout << "El total a pagar es de "<< totalPagado <<". "<<endl;
+				
+				vehiCobro -> getCobro() -> setTotalPagar(totalPagado);
+				
+				double ingresoCobro = parqueo -> lugaresParqueo[campo] -> getIngresoCobro();
+
+				parqueo -> lugaresParqueo[campo] -> setIngresoCobro(totalPagado+ingresoCobro);
+				
+				
+			}else{
+				cout << "Vehiculo no encontrado." <<endl;
+			}
+
 			//parqueo -> lugaresParqueo[campo] -> setEstadoCampo('L');
 			
 			system("pause");
@@ -233,7 +233,7 @@ int main () {
 			system("pause");
 		}else if(opc == 7){
 			system("cls");
-			cout<< parqueo -> toStringLibres();
+			cout<< "La cantidad de vehiculos que existe en el parqueo es de: " <<parqueo -> cantVehiculosParqueo()<<endl;
 			system("pause");
 			
 		}else if(opc == 8){
@@ -273,22 +273,28 @@ int main () {
 			int campoDigitado;
 			cout << "Digite el numero de campo que desea saber cual ha sido el monto obtenido total: " << endl;
 			cin >> campoDigitado;
-			cout << parqueo -> cobroDeterminadoCampo(campoDigitado);
+			
+			if(parqueo -> lugaresParqueo[campoDigitado] -> getIngresoCobro() != 0){
+			cout << parqueo -> cobroDeterminadoCampo(campoDigitado)<<endl;
+			}else{
+				cout<<"Este campo no ha sido pagado."<<endl;
+			}
 			
 			system("pause");
 			
 		}else if(opc == 14){
 			system("cls");
 			
-			cout<<"A continuacion se mostraran los productos de mayor existencia..."<<endl;
-			
+			cout<<"A continuacion se mostraran los vehiculos de mayor tonelaje..."<<endl;
+			cout<<conjuntoVehiculos -> tonelajeVehiculosMayorUso();
 			
 			system("pause");
 			
 		}else if(opc == 15){
 			system("cls");
-			
-			cout << "La ocupacion del parqueo es del: "<< parqueo->porcOcupParqueo()<<"%.\n";
+			int porcentaje = 0;
+			porcentaje = (parqueo->porcOcupParqueo()*100)/cantEspaciosParqueo;
+			cout << "La ocupacion del parqueo es del: "<< porcentaje <<"%.\n";
 			
 			system("pause");
 		}else if(opc == 16){

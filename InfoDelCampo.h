@@ -16,7 +16,9 @@ public:
 	void setNumeroCampo(int);
 	void setVehiculo( Vehiculo*);
 	void setVehiculos(ConjuntoVehiculos*);
+	void setIngresoCobro(double);
 	
+	double getIngresoCobro();
 	int getNumeroCampo();
 	char getEstadoCampo();
 	void estadoOcupado();
@@ -31,7 +33,7 @@ private:
 	int numeroCampo;
 	char estadoCampo;
 	Vehiculo* vehiculo;
-	
+	double ingresoCobro = 0;
 	ConjuntoVehiculos* conjuntoVehiculos;
 	
 };

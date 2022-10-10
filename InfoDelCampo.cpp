@@ -69,3 +69,12 @@ void InfoDelCampo::setVehiculo (Vehiculo * vehiculo ) {
 double InfoDelCampo::cobrarParqueo(string placa, int hsalida){
 	return conjuntoVehiculos -> total(placa,hsalida);
 }
+
+void InfoDelCampo::setIngresoCobro (double ingresoCobro) {
+	this -> ingresoCobro = ingresoCobro;
+}
+
+double InfoDelCampo::getIngresoCobro ( ) {
+	return ingresoCobro;
+}
+

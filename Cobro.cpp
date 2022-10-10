@@ -55,7 +55,7 @@ double Cobro::total(int hsalida, float tonelaje){
 
 	totalHoras = salida->getHora() - entrada->getHora();
 	
-	cout<<"Iniciando calculo de cobro. Tonelaje: "<< tonelaje<<" HE: "<<entrada->getHora()<<", HS: "<<salida->getHora() <<endl; 
+	cout<<"Iniciando calculo de cobro. Tonelaje: "<< tonelaje<<". \nHora entrada: "<<entrada->getHora()<<".\nHora salida: "<<salida->getHora() <<endl; 
 	
 	if( tonelaje <= 1.0){
 		cobroAdicional = 0.0;

@@ -64,7 +64,7 @@ string Parqueo::toStringOcupados ( ) {
 	int hola = 0;
 	
 	for(int i = 0; i<cantidad;i++){
-		if(lugaresParqueo[i] -> getEstadoCampo() == 'M'){
+		if(lugaresParqueo[i] -> getEstadoCampo() == 'O'){
 			hola++;
 		}
 	}
@@ -129,7 +129,14 @@ int Parqueo::cantidadEspaciosMantenimiento ( ) {
 }
 
 int Parqueo::porcOcupParqueo(){
-	return (cantidad*100)/tamano;
+	int cont = 0;
+	
+	for(int i=0;i<tamano;i++){
+		if(lugaresParqueo[i]->getEstadoCampo() == 'O' ){
+			cont++;
+		}
+	}
+	return cont;
 }
 
 int Parqueo::cantCampLibres(){
@@ -147,7 +154,7 @@ int Parqueo::cantVehiculosParqueo ( ) {
 	int cantVehiculos = 0;
 	
 	for(int i = 0; i < tamano; i++){
-		if(lugaresParqueo[i] -> getEstadoCampo() == 'O' || lugaresParqueo[i] -> getEstadoCampo() == 'L' || lugaresParqueo[i] -> getEstadoCampo() == 'M'){
+		if(lugaresParqueo[i] -> getEstadoCampo() == 'O'){
 			cantVehiculos++;
 		}
 	}
@@ -157,15 +164,29 @@ int Parqueo::cantVehiculosParqueo ( ) {
 string Parqueo::vehiculosDeterminadoCampo(int campo){
 	
 	stringstream r;
-	r << "Vehiculos del campo " << campo << " : "<<endl;
-	for(int i = 0; i < tamano; i++){
-		
+	int cont = 0;
+	
+	for(int i =0;i<tamano;i++){
 		if(lugaresParqueo[i] -> getNumeroCampo() == campo){
-			r << lugaresParqueo[i] -> toString();
-		}else{
-			r << "Ningun vehiculo ha utilizado ese espacio del parqueo...\n";
+			cont++;
 		}
 	}
+	
+	
+	if(cont != 0){
+		r << "Vehiculos del campo " << campo << " : "<<endl;
+		for(int i = 0; i < tamano; i++){
+		
+			if(lugaresParqueo[i] -> getNumeroCampo() == campo){
+				r << lugaresParqueo[i] -> getVehiculo() -> toString();
+			}
+		}
+		
+	}
+		else{
+		r << "Ningun vehiculo ha utilizado ese espacio del parqueo...\n";
+	}
+	
 	return r.str();
 }
 
@@ -188,32 +209,21 @@ void Parqueo::asignarContVehi(){
 
 double Parqueo::cobroDeterminadoCampo(int campo){
 	
-	double dineroTotal;
-	for(int i = 0; i < tamano; i++){
-		if(lugaresParqueo[i] -> getNumeroCampo() == campo){
-			for(int i = 0; i < cantidad; i++){
-				dineroTotal += cobro -> getTotalPagar();
-			}
-		}else if( campo != lugaresParqueo[i] -> getEstadoCampo()){
-			cout << "El numero de campo digitado no existe...\n" << endl;
-		}
-	}
-	return dineroTotal;
+	return lugaresParqueo[campo] -> getIngresoCobro();
 }
 
 
 double Parqueo::seleccionarParqueo(int campo, string placa, int hsalida){
 	double pago = 0.0;
+	
 	for(int i=0;i<tamano;i++){
 		
 		if( conjuntoVehiculos->vehiculos[i] != nullptr && placa == conjuntoVehiculos->vehiculos[i]->getPlaca()){
-			cout<<"Cobrando a espacio "<<i<< endl;
 			pago=conjuntoVehiculos->vehiculos[i]->total(hsalida);
 		}
 		
 	}
-	
-	cout<<"Total a Pagar"<<pago<< endl;
+
 	return pago;
 }
 

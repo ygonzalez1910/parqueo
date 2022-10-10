@@ -19,7 +19,7 @@ public:
 	Vehiculo* seleccionarParqueo(int);
 	string toStringMostrarVehiculosQueEstenONo();
 	double cantidadDineroIngresadoAlDia();
-	void tonelajeVehiculosMayorUso();
+	string tonelajeVehiculosMayorUso();
 	int TotalVehiculosDia();
 	string vehiculosRangoTonelaje();
 	

@@ -55,6 +55,7 @@ string ConjuntoVehiculos::toStringMostrarVehiculosQueEstenONo ( ) {
 	stringstream r;
 	for(int i=0; i < cantidad; i++){
 		r << i <<"."<< vehiculos[i]->toString();
+		r << "---------------------\n";
 	}
 	return r.str();
 	
@@ -64,33 +65,24 @@ double ConjuntoVehiculos::cantidadDineroIngresadoAlDia () {
 	
 	double dineroTotal = 0;
 	for(int i = 0; i < cantidad; i++){
-		dineroTotal += cobro -> getTotalPagar();
+		dineroTotal += vehiculos[i] -> getCobro() -> getTotalPagar(); 
 	}
 	return dineroTotal;
 }
 
-void ConjuntoVehiculos::tonelajeVehiculosMayorUso ( ) {
+string ConjuntoVehiculos::tonelajeVehiculosMayorUso(){
 	
-	int posicionMayorUso=0;
-	Vehiculo* vehiculosMayorTonelaje[cantidad]; 
-	int cantidad=0; 
+	stringstream x;
+	Vehiculo* vehiculoMayorTonelaje;
+	vehiculoMayorTonelaje = vehiculos[0];
 	
-	for(int i=0;i<tamano;i++){
-		if( vehiculos[posicionMayorUso] -> getTonelaje() < vehiculos[i] -> getTonelaje()){
-			posicionMayorUso=i; 
+	for(int i = 0; i < cantidad; i++){
+		if(vehiculoMayorTonelaje->getTonelaje() < vehiculos[i]->getTonelaje()){
+			vehiculoMayorTonelaje = vehiculos[i];
 		}
 	}
-	
-	for(int i=0;i<tamano;i++){ 
-		if(vehiculos[posicionMayorUso] -> getTonelaje() == vehiculos[i] -> getTonelaje()){
-			vehiculosMayorTonelaje[cantidad++]=vehiculos[i]; 
-		}
-	}
-	
-	for(int i=0;i<cantidad;i++){ 
-		cout<<vehiculos[i] -> toString()<<endl;
-	}
-	
+	x << vehiculoMayorTonelaje->toString();
+	return x.str();
 }
 
 int ConjuntoVehiculos::TotalVehiculosDia(){
@@ -104,20 +96,20 @@ int ConjuntoVehiculos::TotalVehiculosDia(){
 }
 
 
-
 string ConjuntoVehiculos::vehiculosRangoTonelaje () {
 	stringstream r;
 	int cont = 0;
 	
 	for(int i = 0; i < cantidad;i++){
-		if(vehiculos[i] -> getTonelaje() > 1.0 && vehiculos[i] -> getTonelaje() < 1.5){
+		if(vehiculos[i] -> getTonelaje() >= 1.0 && vehiculos[i] -> getTonelaje() <= 1.5){
 		cont++;
 		}
 	}
+	
 	if(cont != 0){
 		for(int i= 0; i < cantidad; i++){
 			if(vehiculos[i] -> getTonelaje() > 1.0 && vehiculos[i] -> getTonelaje() < 1.5){
-				r << "Los vehiculos que se encuentran en el rango de tonelaje de 1.0 y 1.5 son: \n" << vehiculos[i] << endl;
+				r << "Los vehiculos que se encuentran en el rango de tonelaje de 1.0 y 1.5 son: \n" << vehiculos[i]-> toString()<<"\n\n";
 			}
 		}
 	}else{
@@ -142,6 +134,8 @@ double ConjuntoVehiculos::total(string placa,int hsalida){
 		}
 		
 	}
+	cout <<"El pago es de: "<<pago<<"."<<endl;
 	return pago;
 }
+
 

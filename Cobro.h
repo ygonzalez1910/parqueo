@@ -21,7 +21,7 @@ private:
 	Hora* entrada;
 	Hora* salida;
 	const int precioHora = 800;
-	double totalPagar;
+	double totalPagar = 0;
 	
 };
 #endif
