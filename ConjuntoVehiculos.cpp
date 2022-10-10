@@ -3,6 +3,7 @@
 ConjuntoVehiculos::ConjuntoVehiculos(int tamano)
 	: tamano(10), cantidad(0), 
 	vehiculos(new Vehiculo*[tamano]) {
+	cout<<"Iniciando Vehiculos"<<endl;
 	for(int i=0; i < tamano; i++){
 		vehiculos[i] = nullptr;
 	}
@@ -128,8 +129,15 @@ string ConjuntoVehiculos::vehiculosRangoTonelaje () {
 double ConjuntoVehiculos::total(string placa,int hsalida){
 	
 	double pago = 0.0;
-	for(int i=0;i<cantidad;i++){
-		if(placa == vehiculos[i]->getPlaca()){
+	for(int i=0;i<tamano;i++){
+
+		cout<<"Buscando.. "<< endl;
+		cout<<vehiculos[i]<< endl;
+		if ( vehiculos[i] == nullptr )
+		{
+			cout<<"Espacio vacio "<<i<< endl;
+		}
+		if( vehiculos[i] != nullptr && placa == vehiculos[i]->getPlaca()){
 			pago=vehiculos[i]->total(hsalida);
 		}
 		

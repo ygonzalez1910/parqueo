@@ -38,7 +38,7 @@ public:
 	double cobroDeterminadoCampo(int);
 	
 	double seleccionarParqueo(int,string,int);
-	
+	ConjuntoVehiculos* conjuntoVehiculos;
 
 private:
 	Vehiculo* vehiculo;

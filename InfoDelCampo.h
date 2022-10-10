@@ -24,10 +24,14 @@ public:
 	
 	double cobrarParqueo(string,int);
 	
+	int contadorUsos = 10;
+	
+	
 private:
 	int numeroCampo;
 	char estadoCampo;
 	Vehiculo* vehiculo;
+	
 	ConjuntoVehiculos* conjuntoVehiculos;
 	
 };

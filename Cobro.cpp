@@ -43,13 +43,19 @@ string Cobro::toString ( ) {
 
 double Cobro::total(int hsalida, float tonelaje){
 	
+	
 	Hora* hora = new Hora(hsalida);
 	setHoraSalida(hora);
 	
 	int totalHoras = 0;
 	double cobroAdicional = 0;
+	
+	
+	
 
 	totalHoras = salida->getHora() - entrada->getHora();
+	
+	cout<<"Iniciando calculo de cobro. Tonelaje: "<< tonelaje<<" HE: "<<entrada->getHora()<<", HS: "<<salida->getHora() <<endl; 
 	
 	if( tonelaje <= 1.0){
 		cobroAdicional = 0.0;
@@ -62,7 +68,7 @@ double Cobro::total(int hsalida, float tonelaje){
 	}else{
 		cobroAdicional = 0.20;
 	}
-	totalPagar = (totalHoras * precioHora) * cobroAdicional;
+	totalPagar = (totalHoras * precioHora) + ( cobroAdicional * (totalHoras * precioHora));
 	
 	return totalPagar;
 }

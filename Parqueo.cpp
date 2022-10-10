@@ -201,6 +201,20 @@ double Parqueo::cobroDeterminadoCampo(int campo){
 	return dineroTotal;
 }
 
+
 double Parqueo::seleccionarParqueo(int campo, string placa, int hsalida){
-	return lugaresParqueo[campo]->cobrarParqueo(placa, hsalida);
+	double pago = 0.0;
+	for(int i=0;i<tamano;i++){
+		
+		if( conjuntoVehiculos->vehiculos[i] != nullptr && placa == conjuntoVehiculos->vehiculos[i]->getPlaca()){
+			cout<<"Cobrando a espacio "<<i<< endl;
+			pago=conjuntoVehiculos->vehiculos[i]->total(hsalida);
+		}
+		
+	}
+	
+	cout<<"Total a Pagar"<<pago<< endl;
+	return pago;
 }
+
+

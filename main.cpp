@@ -9,6 +9,8 @@ using namespace std;
 
 int main () {
 	
+
+	
 	string nombre=" ", direccion=" ";
 	int telefono=0, opc=0;
 	int cantEspaciosParqueo=0;
@@ -52,6 +54,8 @@ int main () {
 	InfoDelCampo* numCampo = new InfoDelCampo(numeroCampo,estadoCampo);
 	
 	parqueo -> llenarVacios();
+	
+	parqueo->conjuntoVehiculos = conjuntoVehiculos;
 	
 //	int espacioEnMantenimiento;
 //	for ( int i = 0; i < cantEspaciosParqueo ; i++ ){
@@ -148,8 +152,12 @@ int main () {
 						
 						if(conjuntoVehiculos->estaLleno() == false){
 							
+						if	( parqueo ->lugaresParqueo[posicionParqueo]->contadorUsos == 0 )
+						{
+							cout<<"Este campo no esta disponible. Ya se uso 10 veces";
+						}
 							
-						if ( parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'L' ){
+						else if ( parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'L' ){
 							system("cls");
 							cout<<"Datos del chofer: \n";
 							cout << "Digite su nombre: ";
@@ -180,7 +188,7 @@ int main () {
 							parqueo ->lugaresParqueo[posicionParqueo]->setVehiculo(vehiculo);
 							parqueo ->lugaresParqueo[posicionParqueo]->setEstadoCampo('O');
 							
-							vehiculo->toString();
+							cout <<"\nEl vehiculo registrado es:\n";
 							
 							}else if(parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'O' || parqueo ->lugaresParqueo[posicionParqueo]->getEstadoCampo() == 'M'){
 								cout << "Espacio ocupado o en mantenimiento -> Vehiculo no fue agregado";
@@ -188,8 +196,8 @@ int main () {
 							}else{
 								cout <<"\nYa no puede registrar mas vehiculos en ese parqueo.";
 							}
-						cout <<"\nEl vehiculo registrado es:\n";
-						cout << conjuntoVehiculos->toString();
+						
+							cout << conjuntoVehiculos->toString();
 						
 						}
 						}
@@ -204,9 +212,17 @@ int main () {
 			cout << "Digite la placa para identificar su vehiculo: "<<endl;
 			cin>>placa2;
 			
+			for ( int i = 0 ; i < cantEspaciosParqueo ; i ++ )
+			{
+				if (  parqueo -> lugaresParqueo[campo]->getVehiculo() != nullptr && parqueo -> lugaresParqueo[campo]->getVehiculo()->getPlaca() == placa2  )
+				{
+					parqueo -> lugaresParqueo[campo]->setVehiculo( nullptr );
+					parqueo -> lugaresParqueo[campo]->setEstadoCampo( 'L');
+				}
+			}			
 			cout<< parqueo -> seleccionarParqueo(campo,placa2,hsalida);
 			
-			parqueo -> lugaresParqueo[campo] -> setEstadoCampo('L');
+			//parqueo -> lugaresParqueo[campo] -> setEstadoCampo('L');
 			
 			system("pause");
 		}else if(opc == 6){
@@ -218,7 +234,7 @@ int main () {
 		}else if(opc == 7){
 			system("cls");
 			cout<< parqueo -> toStringLibres();
-
+			system("pause");
 			
 		}else if(opc == 8){
 			system("cls");

@@ -24,9 +24,10 @@ public:
 	string vehiculosRangoTonelaje();
 	
 	double total(string,int);
+	Vehiculo** vehiculos;
 	
 private:
-	Vehiculo** vehiculos;
+	
 	int tamano;
 	int cantidad;
 	Chofer* chofer;
